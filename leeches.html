@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>ヒル（難しいカード） - Ankiマニュアル</title>
+        <title>Leeches - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,23 +172,53 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="リーチleech"><a class="header" href="#リーチleech">リーチ（Leech）</a></h1>
+                        <h1 id="leeches"><a class="header" href="#leeches">Leeches</a></h1>
 <ul>
-<li><a href="#%E7%B7%A8%E9%9B%86">編集</a></li>
-<li><a href="#%E5%89%8A%E9%99%A4">削除</a></li>
-<li><a href="#%E5%BE%85%E6%A9%9F">待機</a></li>
+<li><a href="#editing">Editing</a></li>
+<li><a href="#deleting">Deleting</a></li>
+<li><a href="#waiting">Waiting</a></li>
 </ul>
-<p>リーチは、何度も忘れてしまうカードのことです。多くの復習を必要とするため、他のカードと比較して、はるかに多くの時間を費やすことになります。</p>
-<p>Ankiはリーチを特定するのに役立ちます。復習カードが「忘却」（復習モード中に失敗）するたびに、カウンターが増加します。このカウンターが8に達すると、Ankiはノートをリーチとしてタグ付けし、カードを保留します。しきい値、および保留するかどうかは、<a href="deck-options.html">デッキオプション</a>で調整できます。</p>
-<p>そのカードを失敗し続けると、Ankiは定期的にリーチについて警告を続けます。これらの警告は、初期リーチしきい値の半分で発生します。例えば、警告を8回の忘却に設定すると、将来の警告は4回の忘却ごとに発生します（12、16など）。</p>
-<p>リーチが見つかったら、それに対処する方法がいくつかあります。</p>
-<h2 id="編集"><a class="header" href="#編集">編集</a></h2>
-<p>リーチに対処する最も効率的な方法は、情報の提示方法を変更することです。カードに情報が多すぎるか、完全に理解せずに何かを暗記しようとしているかもしれません。多くの場合、SuperMemoの作成者であるPiotr Wozniak博士が提案した<a href="https://supermemo.guru/wiki/20_rules_of_knowledge_formulation">知識定式化の20のルール</a>に従うことが役立ちます。一部のカードは記憶術から恩恵を受けることがあります。よく書かれたカードでも、関連する概念のカードを追加するなど、一貫性を高める必要がある場合があります。ただし、素材を適切に定式化し、可能な限り最小のコンポーネントに分解し、記憶術を使用する方法を知るには、多くの経験が必要です。</p>
-<h2 id="削除"><a class="header" href="#削除">削除</a></h2>
-<p>苦労している教材が費やした時間を正当化するほど重要でない場合は、単にカードを削除できます。難しくて曖昧なアイテムを選択的に削除することで、他の教材を学習するのにより多くの時間を費やすことができ、学習をより楽しくすることができます。カードが将来の参照に役立つかもしれないと思う場合は、保留のままにしておくことができます。</p>
-<h2 id="待機"><a class="header" href="#待機">待機</a></h2>
-<p>一部のリーチは「干渉」によって引き起こされます。例えば、英語学習者が最近「disappoint」と「disappear」という単語を学習したとします。それらは似て見えるため、学習者は答えようとするときに2つを混同してしまうかもしれません。このような状況では、一度に1つのアイデアに集中することが役立つことがよくあります。そのアイデアが心にしっかりと刻まれたら、もう一方のアイデアを学習し始めることができます。したがって、これらの状況では、もう一方をよく学習するまで、単語の1つを保留のままにしておき、その後保留を解除することをお勧めします。</p>
-<p>より詳細な議論については、Soren Bjornstadによって書かれた記事「<a href="https://controlaltbackspace.org/leech/">リーチへの対処</a>」を参照できます。</p>
+<p>Leeches are cards that you keep forgetting. Because they require so
+many reviews, they take up a lot more of your time, compared to other cards.</p>
+<p>Anki can help you identify leeches. Each time a review card “lapses” (is
+failed while it is in review mode), a counter increases. When this counter
+reaches 8, Anki tags the note as a leech and suspends the card. The
+threshold, and whether to suspend or not, can be adjusted in the
+<a href="deck-options.html">deck options</a>.</p>
+<p>If you keep failing that card, Anki will continue to alert you about the
+leech periodically. These warnings occur at half the initial leech
+threshold. For example, if you set the warning at 8 lapses, future
+warnings will happen every 4 lapses (at 12, 16, and so on).</p>
+<p>Once a leech is found, there are several ways to handle it.</p>
+<h2 id="editing"><a class="header" href="#editing">Editing</a></h2>
+<p>The most efficient method to deal with leeches is to change how the
+information is presented. Maybe your cards have too much information, or
+you’re trying to memorize something without fully understanding it. Often,
+it helps to follow the <a href="https://supermemo.guru/wiki/20_rules_of_knowledge_formulation">20 rules of formulating
+knowledge</a>,
+proposed by Dr Piotr Wozniak, the creator of SuperMemo. Some cards can
+benefit from a mnemonic. Even some well-written cards may need a boost in
+coherence, e.g. by adding cards for related concepts. However, it takes a
+lot of experience to know how to formulate the material properly, break it
+down into smallest possible components, and use mnemonic techniques.</p>
+<h2 id="deleting"><a class="header" href="#deleting">Deleting</a></h2>
+<p>If the material you’re struggling with isn’t important enough to justify
+the time spent, you can simply delete the card. By selectively deleting
+difficult and obscure items, you can spend more time learning other
+material, making studying more enjoyable. If you think the card might be
+useful for future reference, you can leave it suspended.</p>
+<h2 id="waiting"><a class="header" href="#waiting">Waiting</a></h2>
+<p>Some leeches are caused by “interference”. For example, an English
+learner may have recently learned the words “disappoint” and “disappear”.
+As they look similar, the learner may find themselves confusing the two
+when trying to answer. In such situations, it’s often helpful to
+concentrate on one idea at a time. Once that idea is firmly ingrained in
+your mind, you can then start learning the other idea. So, in these
+situations, you might want to leave one of the words suspended until you
+have learned the other one well, and then unsuspend it.</p>
+<p>For a more detailed discussion, you can refer to the article “<a href="https://controlaltbackspace.org/leech/">Dealing
+with Leeches</a>”, written by Soren
+Bjornstad.</p>
 
                     </main>
 

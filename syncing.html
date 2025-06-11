@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>AnkiWebと同期 - Ankiマニュアル</title>
+        <title>Syncing with AnkiWeb - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,94 +172,200 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="ankiwebとの同期"><a class="header" href="#ankiwebとの同期">AnkiWebとの同期</a></h1>
+                        <h1 id="syncing-with-ankiweb"><a class="header" href="#syncing-with-ankiweb">Syncing with AnkiWeb</a></h1>
 <ul>
-<li><a href="#%E7%B4%B9%E4%BB%8B%E5%8B%95%E7%94%BB">紹介動画</a></li>
-<li><a href="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97">セットアップ</a></li>
-<li><a href="#%E8%87%AA%E5%8B%95%E5%90%8C%E6%9C%9F">自動同期</a></li>
-<li><a href="#%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%AE%E8%89%B2">ボタンの色</a></li>
-<li><a href="#%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2">メディア</a></li>
-<li><a href="#%E7%AB%B6%E5%90%88">競合</a></li>
-<li><a href="#%E3%83%9E%E3%83%BC%E3%82%B8%E3%81%AE%E7%AB%B6%E5%90%88">マージの競合</a></li>
-<li><a href="#ankiweb%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%89%8A%E9%99%A4">AnkiWebデータの削除</a>
+<li><a href="#intro-videos">Intro Videos</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#automatic-syncing">Automatic Syncing</a></li>
+<li><a href="#button-color">Button Color</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#conflicts">Conflicts</a></li>
+<li><a href="#merging-conflicts">Merging Conflicts</a></li>
+<li><a href="#ankiweb-data-deletion">AnkiWeb Data Deletion</a>
 <ul>
-<li><a href="#%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%82%8B%E3%82%82%E3%81%AE">削除されるもの</a></li>
-<li><a href="#ankiweb%E3%81%B8%E3%81%AE%E5%BE%A9%E5%B8%B0">AnkiWebへの復帰</a></li>
-<li><a href="#%E3%83%87%E3%83%BC%E3%82%BF%E5%89%8A%E9%99%A4%E3%81%AE%E5%9B%9E%E9%81%BF">データ削除の回避</a></li>
+<li><a href="#what-gets-deleted">What Gets Deleted</a></li>
+<li><a href="#returning-to-ankiweb">Returning to AnkiWeb</a></li>
+<li><a href="#avoiding-data-deletion">Avoiding Data Deletion</a></li>
 </ul>
 </li>
-<li><a href="#%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB">ファイアウォール</a></li>
-<li><a href="#%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7">プロキシ</a></li>
+<li><a href="#firewalls">Firewalls</a></li>
+<li><a href="#proxies">Proxies</a></li>
 </ul>
-<p>AnkiWebは、複数のデバイス間でコレクションを同期し、オンラインで学習できるサービスです。以下の手順に従う前に、<a href="https://ankiweb.net/">無料アカウント</a>に登録してください。</p>
-<h2 id="紹介動画"><a class="header" href="#紹介動画">紹介動画</a></h2>
-<p>同期についての簡単な紹介は、<a href="https://www.youtube.com/watch?v=YkiM4DPzSVc&amp;list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&amp;yt:cc=on">同期の紹介動画</a>をご覧ください。</p>
-<h2 id="セットアップ"><a class="header" href="#セットアップ">セットアップ</a></h2>
-<p>デバイス間でコレクションの同期を開始するには、同期ボタン（<a href="studying.html#decks">メイン画面</a>の右上のボタン）をクリックするか、キーボードで<kbd>Y</kbd>を押します。
-登録時に作成したAnkiWeb IDとパスワードの入力を求められます。</p>
-<p>初めてコレクションを同期する際、Ankiはアップロードするかダウンロードするかを尋ねてきます。コンピュータにカードがあり、AnkiWebアカウントが空の場合は、<strong>アップロード</strong>を選択してデータをAnkiWebに送信します。別のデバイスからAnkiWebにカードがあり、コンピュータにカードがない場合は、<strong>ダウンロード</strong>を選択して、空のローカルコレクションをAnkiWeb上のカードで置き換えます。両方のデバイスに異なるカードがある場合は、データの損失を避けるために<a href="#%E3%83%9E%E3%83%BC%E3%82%B8%E3%81%AE%E7%AB%B6%E5%90%88">追加の作業</a>が必要です。</p>
-<p>初回の一方向同期が完了すると、Ankiはいくつかの例外を除いて複数の場所からの変更をマージできるようになります。</p>
-<p>一台のマシンで複数の人がAnkiを使用し、各ユーザー用にプロファイルを作成している場合、各ユーザーは同期するために独自のAnkiWebアカウントを作成する必要があります。単一のAnkiWebアカウントで複数のプロファイルを同期しようとすると、データが失われます。</p>
-<h2 id="自動同期"><a class="header" href="#自動同期">自動同期</a></h2>
-<p>同期が有効になると、Ankiはコレクションが閉じられたり開かれたりするたびに自動的に同期します。手動で同期したい場合は、Ankiの<a href="preferences.html#syncing">設定</a>で自動同期を無効にできます。</p>
-<h2 id="ボタンの色"><a class="header" href="#ボタンの色">ボタンの色</a></h2>
-<p>同期ボタンは通常の同期が必要な場合は青色に、フル同期が必要な場合は赤色に変わります。</p>
-<h2 id="メディア"><a class="header" href="#メディア">メディア</a></h2>
-<p>このトピックに関する<a href="https://www.youtube.com/watch?v=phP9GGG-PxY">関連動画</a>をご覧いただけます。</p>
-<p>Ankiはノートで使用される音声や画像を同期します。<a href="files.html#file-locations">メディアフォルダ</a>でメディアが追加、削除、置換されたときには検出しますが、既存のファイルに編集を加えた場合は検出しません。編集を同期させるには、ファイルの追加、削除、または置換も行う必要があります。</p>
-<p>一方向同期（アップロードまたはダウンロードを求められる場合）は、メディアの同期方法には影響しません - メディアの変更は常にマージされます。</p>
-<p>誤ったデータ損失を防ぐため、削除はメディアが完全に同期された後に行われた場合にのみ他のデバイスに同期されます。デバイスが完全に同期される前にファイルを削除し、削除されたファイルがすでにAnkiWebに存在する場合、次回の同期時にダウンロードされます。</p>
-<p>誤ってメディアファイルを削除してしまい、復元したい場合は、設定を開いてログアウトしてください。次回同期する際、AnkiWebにまだ利用可能であれば、削除されたファイルが復元されます。</p>
-<p><a href="files.html#running-from-a-flash-drive">USBフラッシュドライブ</a>からAnkiを実行している場合は、NTFSファイルシステムを使用する必要があります。AnkiはFAT32ファイルシステムでのメディアの変更を検出できない可能性があります。</p>
-<h2 id="競合"><a class="header" href="#競合">競合</a></h2>
-<p>このトピックに関する<a href="https://www.youtube.com/watch?v=UEAcpfMQnjo">関連動画</a>をご覧いただけます。</p>
-<p>通常の状況では、復習とノートの編集はマージできるため、同期前に2つの異なるデバイスで復習または編集を行っても、Ankiは両方の場所からの変更を保持します。同じカードが2つの異なる場所で復習された場合、両方の復習が復習履歴に記録され、カードは最後に回答されたときの状態に保持されます。</p>
-<p>Ankiがマージできない特定の変更があります。これらは主にノートの形式に関連するもので、新しいフィールドの追加やカードテンプレートの削除などです。マージできない操作を実行すると、Ankiは警告を表示し、操作を中止するオプションを提供します。続行を選択した場合、次回コレクションが同期されるときに、ローカルコピーまたはAnkiWeb上のコピーのどちらを保持するかを選択するよう求められます。</p>
-<p>同期中に特定の問題が検出された場合、一方向同期が強制されることもあります。これが一貫して発生する場合は、<a href="https://forums.ankiweb.net">サポートサイト</a>に投稿してください。</p>
-<p>一方向同期が必要な場合、ローカルデバイス上のコレクションを保持するか、AnkiWeb上のコレクションを保持するかを選択する必要があります。両端で変更が行われている場合、一方の端の変更のみを保持できます。</p>
-<p><strong>アップロード</strong>を選択すると、ローカルデバイス上のコンテンツがAnkiWebに送信されます。その後、他のデバイスを同期し、<strong>ダウンロード</strong>を選択してそのコンテンツのコピーを取得する必要があります。</p>
-<p><strong>ダウンロード</strong>を選択すると、ローカルで行った変更がAnkiWeb上のデータで置き換えられます。</p>
-<p>すべてのデバイスが同期されると、今後の同期は両端からの変更をマージする通常の動作に戻ります。</p>
-<p>フルアップロードまたはダウンロードを強制したい場合（例えば、誤って片側でデッキを削除してしまい、削除を同期させるのではなくデッキを復元したい場合）、
-<strong>ツール &gt; 設定 &gt; ネットワーク</strong>で「次回の同期時に一方向に変更を強制する」ボックスをチェックし、通常通り同期します。（どちら側を使用するかを選択するオプションが表示されます。）</p>
-<p>一方向同期の強制はカードの同期にのみ影響します - メディアは通常通り同期されます。AnkiWebから削除したいファイルがある場合は、まずクライアントが完全に同期されていることを確認してください。同期が最新の状態になった後、削除したファイル（例：<strong>メディアをチェック</strong>機能を使用）は、次回の同期でAnkiWebから削除されます。</p>
-<h2 id="マージの競合"><a class="header" href="#マージの競合">マージの競合</a></h2>
-<p><a href="#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97">最初の同期</a>は一方向にしか変更を同期できないため、同期を設定する前に異なるデバイスやプロファイルに異なるコンテンツを追加していた場合、一方のデバイスのコンテンツを他のデバイスのコンテンツで上書きすると、一方のデバイスのコンテンツが失われます。作業を行うことで、データを単一のコレクションに手動でマージすることが可能です。</p>
-<p>まず、何か問題が発生した場合に備えて、各デバイス/プロファイルでバックアップを取ります。コンピュータ版では、<strong>ファイル &gt; エクスポート</strong>を使用して、スケジュール情報とメディアファイルを含む「すべてのデッキ」をエクスポートし、ファイルを安全な場所に保存できます。AnkiMobileでは、デッキリスト画面の追加/エクスポートボタンで、メディアを含むすべてのデッキをエクスポートできます。</p>
-<p>次に、デバイスの1つがモバイルデバイスの場合は、最初にそれを同期します。競合がある場合は、<strong>アップロード</strong>を選択して、AnkiWeb上の既存のデータをモバイルデバイスのデータで上書きします。両方のデバイス/プロファイルがコンピュータ上にある場合は、デッキ数が最も多いデバイス/プロファイルを最初に同期します。</p>
-<p>次に、他のデバイス/プロファイルに戻ります。自動同期が有効になっている場合、アップロードまたはダウンロードするかを尋ねるメッセージがポップアップする場合があります。キャンセルボタンをクリックしてください - まだ同期したくありません。</p>
-<p>デッキリストが表示されたら、最初のデッキの横にある歯車アイコンをクリックし、<strong>エクスポート</strong>を選択します。スケジュール情報とメディアを含めてコンテンツをエクスポートし、<code>.apkg</code>ファイルをどこかに保存します。これを各トップレベルデッキに対して繰り返す必要があります。</p>
-<p>すべてのトップレベルデッキがエクスポートされたら、右上の同期ボタンをクリックして<strong>ダウンロード</strong>を選択します。これにより、ローカルコンテンツが他のデバイスから同期したコンテンツで上書きされます。</p>
-<p>これで<strong>ファイル &gt; インポート</strong>を使用して、先ほどエクスポートした<code>.apkg</code>ファイルをインポートできます。これにより、エクスポートされたコンテンツが既存のコンテンツとマージされ、すべてが1つの場所にまとまります。</p>
-<h2 id="ankiwebデータの削除"><a class="header" href="#ankiwebデータの削除">AnkiWebデータの削除</a></h2>
-<p>AnkiWebは無料サービスであるため、コストを抑えるために未使用のアカウントデータを定期的に削除する必要があります。過去6か月間アカウントにアクセスしたり同期したりしていない場合、アカウントのデータが削除される可能性があります。</p>
-<h3 id="削除されるもの"><a class="header" href="#削除されるもの">削除されるもの</a></h3>
-<p>AnkiWebに保存されているデータのみが削除されます。アカウント自体は残り、再度使用できます。</p>
-<p>コンピュータ、電話、タブレットに保存されているカードは、それらのデバイスに残ります。アカウントから共有されたアイテム（デッキやアドオンを含む）もAnkiWebに残ります。</p>
-<h3 id="ankiwebへの復帰"><a class="header" href="#ankiwebへの復帰">AnkiWebへの復帰</a></h3>
-<p>デッキデータの有効期限が切れた後は、AnkiWebからデータを回復することはできませんが、ローカルコピーまたは<a href="./backups.html">バックアップ</a>がある場合は回復できる可能性があります。</p>
-<h3 id="データ削除の回避"><a class="header" href="#データ削除の回避">データ削除の回避</a></h3>
-<p>ankiweb.netにアクセスしたり、Anki、AnkiMobile、またはAnkiDroidで同期機能を使用したりするたびに、アカウントは自動的にアクティブとマークされます。</p>
-<p>アカウントが6か月以上非アクティブで、サービスを1週間以上使用していた場合、削除が保留中であることを通知するメールが送信されます。アカウントをアクティブに保ちたい場合は、30日以内にankiweb.netにログインしてカードを学習するか、デバイスの1つを同期してください。</p>
-<h2 id="ファイアウォール"><a class="header" href="#ファイアウォール">ファイアウォール</a></h2>
-<p>Ankiは同期するために外向きのHTTPS接続を行う必要があります。ankiweb.net、sync.ankiweb.net、sync2.ankiweb.netなどに接続できる必要があります。これらのドメインは時間とともに変更される可能性があり、それらが指すIPアドレスも変更される可能性があるため、将来ファイアウォールルールを更新する必要性を減らすために、*.ankiweb.netへのワイルドカードアクセスを許可することをお勧めします。</p>
-<p>マシンにファイアウォールがある場合は、Ankiの例外を追加する必要があります。職場や学校のネットワークを使用している場合は、ネットワーク管理者に支援を求めてください - これは私たちがお手伝いできることではありません。</p>
-<h2 id="プロキシ"><a class="header" href="#プロキシ">プロキシ</a></h2>
-<p>インターネットにアクセスするためにプロキシが必要な場合、WindowsまたはmacOSを使用している場合、Ankiは自動的にシステムのプロキシ設定を取得します。他のプラットフォームを使用している場合は、HTTP_PROXY環境変数を尊重します。</p>
-<p>Ankiがシステム設定を取得できるのは、プロキシが手動で設定されており、パスワードを必要としない場合のみです。システムが自動プロキシ設定を使用している場合、またはユーザー名とパスワードが必要なプロキシを使用している場合は、Ankiにプロキシ設定を手動で伝える必要があります。</p>
-<p>Ankiにプロキシ設定を伝えるには、プロキシサーバーを指すHTTPS_PROXY環境変数を定義します。次のようになります：</p>
+<p>AnkiWeb is a service that allows you to keep your collection
+synchronized across multiple devices, and to study online. Please sign
+up for a <a href="https://ankiweb.net/">free account</a> before following the steps
+below.</p>
+<h2 id="intro-videos"><a class="header" href="#intro-videos">Intro Videos</a></h2>
+<p>For a quick introduction to syncing, please check out the
+<a href="https://www.youtube.com/watch?v=YkiM4DPzSVc&amp;list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&amp;yt:cc=on">syncing intro videos</a>.</p>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<p>To start syncing your collection across devices, click the sync button
+(the top right one on the <a href="studying.html#decks">main screen</a>, or press <kbd>Y</kbd> on your keyboard.
+You’ll be prompted for your AnkiWeb ID and password, which you created
+in the signup process.</p>
+<p>When you synchronize your collection for the first time, Anki will ask
+you if you want to upload or download. If you have cards on your
+computer and your AnkiWeb account is empty, choose <strong>Upload</strong> to send your
+data to AnkiWeb. If you have cards on AnkiWeb from another device, and
+no cards on your computer, choose <strong>Download</strong> to replace the empty local
+collection with the cards that are on AnkiWeb. If you have different
+cards on both devices, <a href="#merging-conflicts">more work is required</a> to
+avoid losing data.</p>
+<p>Once the initial one-way sync is completed, Anki will be able to merge
+changes from multiple locations with a few exceptions.</p>
+<p>If you have multiple people using Anki on one machine and have created a
+profile for each user, each user will need to create their own AnkiWeb
+account to sync with. If you attempt to synchronize multiple profiles
+with a single AnkiWeb account, you will lose data.</p>
+<h2 id="automatic-syncing"><a class="header" href="#automatic-syncing">Automatic Syncing</a></h2>
+<p>Once syncing is enabled, Anki will automatically sync each time your
+collection is closed or opened. If you would prefer to synchronize
+manually, you can disable automatic syncing in Anki’s <a href="preferences.html#syncing">preferences.</a></p>
+<h2 id="button-color"><a class="header" href="#button-color">Button Color</a></h2>
+<p>The sync button will change to blue when a normal sync is required,
+and red when a full sync is required.</p>
+<h2 id="media"><a class="header" href="#media">Media</a></h2>
+<p>You can watch a <a href="https://www.youtube.com/watch?v=phP9GGG-PxY">related video</a> on this topic.</p>
+<p>Anki will synchronize any sounds and images used by your notes. It will
+notice when media has been added, removed or replaced in your <a href="files.html#file-locations">media folder</a>, but
+will not notice if you have made edits to existing files. To get your edits synced, you
+need to add, remove or replace a file as well.</p>
+<p>One-way syncs (where you’re prompted to upload or download) have no influence over how media
+syncs - media changes are always merged.</p>
+<p>To prevent accidental data loss, deletions will only sync to other devices if they are made after
+media is fully in sync. If you delete files before your device is fully in sync, and the deleted
+files are already on AnkiWeb, they will be downloaded the next time you sync.</p>
+<p>If you have accidentally deleted media files, and want to restore them, open the preferences
+and log out. The next time you sync, Anki will restore any deleted files, if they are available
+on AnkiWeb still.</p>
+<p>If you’re running Anki off a <a href="files.html#running-from-a-flash-drive">USB flash drive</a>, you should use an NTFS
+file system, as Anki may not be able to detect media changes on a FAT32
+filesystem.</p>
+<h2 id="conflicts"><a class="header" href="#conflicts">Conflicts</a></h2>
+<p>You can watch a <a href="https://www.youtube.com/watch?v=UEAcpfMQnjo">related video</a> on this topic.</p>
+<p>Under normal circumstances, reviews and note edits can be merged, so if
+you review or edit on two different devices before syncing, Anki will
+preserve your changes from both locations. If the same card has been
+reviewed in two different locations, both reviews will be marked in the
+revision history, and the card will be kept in the state it was when it
+was most recently answered.</p>
+<p>There are certain changes that Anki is unable to merge. These mainly
+relate to the format of notes: things like adding a new field, or
+removing a card template. When you perform an operation that can’t be
+merged, Anki will warn you, and give you the option of aborting the
+operation. If you choose to continue, you’ll be asked to choose whether
+to keep the local copy or the copy on AnkiWeb when your collection is
+next synchronized.</p>
+<p>If certain problems are detected while syncing, it will also force a
+one-way sync. If you find this consistently happening, please post on our
+<a href="https://forums.ankiweb.net">support site</a>.</p>
+<p>When a one-way sync is required, you need to choose whether you wish to
+keep the collection on your local device, or the collection on AnkiWeb.
+If changes have been made on both ends, only changes on one end can be
+preserved.</p>
+<p>If you choose <strong>Upload</strong>, the content on your local device will be sent to
+AnkiWeb. You then need to sync your other devices, and choose <strong>Download</strong>
+to have them grab a copy of that content.</p>
+<p>If you choose <strong>Download</strong>, it will replace any local changes you’ve made
+with the data that is on AnkiWeb.</p>
+<p>Once all devices are in sync, future syncs will return to the normal
+behaviour of merging changes from both ends.</p>
+<p>If you wish to force a full upload or download (for example, because you
+accidentally deleted a deck on one side and want to restore the deck
+rather than having its deletion synchronized), you can check the “On
+next sync, force changes in one direction” box in
+<strong>Tools &gt; Preferences &gt; Network</strong>, then sync as usual. (You’ll be given
+the option to choose which side you want to use.)</p>
+<p>Forcing a one way sync only affects card syncing - media is synced as
+normal. If you have files that you want to remove from AnkiWeb, please
+ensure your client is fully in sync first. After syncing is up to date,
+any files you remove (e.g. via the <strong>Check Media</strong> function) will be removed
+from AnkiWeb on the following sync.</p>
+<h2 id="merging-conflicts"><a class="header" href="#merging-conflicts">Merging Conflicts</a></h2>
+<p>Because the <a href="#setup">first sync</a> can only sync changes in one
+direction, if you have added different content to different devices or
+profiles before setting syncing up, content on one device will be lost
+if you overwrite it with the content from the other device. With some
+work, it is possible to manually merge data into a single collection.</p>
+<p>Start by taking a backup on each device/profile, in case something goes
+wrong. With the computer version you can use <strong>File &gt; Export</strong> to export
+“all decks” with scheduling information and media files included, and
+save the file somewhere safe. In AnkiMobile, the Add/Export button on
+the decks list screen will let you export all decks with media.</p>
+<p>Next, if one of your devices is a mobile device, synchronize it first.
+If there’s a conflict, choose <strong>Upload</strong> to overwrite any existing data on
+AnkiWeb with the data from your mobile device. If both devices/profiles
+are on your computer, synchronize the device/profile with the most
+number of decks first.</p>
+<p>Now return to the other device/profile. If automatic syncing is enabled,
+a message may pop up asking if you want to upload or download. Click the
+cancel button - we don’t want to sync yet.</p>
+<p>Once you’re looking at the deck list, click the cog icon next to the
+first deck, and choose <strong>Export</strong>. Export the content with scheduling
+information and media included, and save the <code>.apkg</code> file somewhere. Now
+you’ll need to repeat this for each top-level deck.</p>
+<p>Once all top-level decks have been exported, click the sync button at
+the top right, and choose <strong>Download</strong>, which will overwrite the local
+content with the content you synced from your other device.</p>
+<p>You can now use <strong>File &gt; Import</strong> to import the <code>.apkg</code> files you exported
+earlier, which will merge the exported content with the existing
+content, so everything will be in one place.</p>
+<h2 id="ankiweb-data-deletion"><a class="header" href="#ankiweb-data-deletion">AnkiWeb Data Deletion</a></h2>
+<p>As AnkiWeb is a free service, we need to periodically delete unused account data
+to keep costs down. If you haven’t accessed your account or synced in the last 6 months,
+the data on your account might get deleted.</p>
+<h3 id="what-gets-deleted"><a class="header" href="#what-gets-deleted">What Gets Deleted</a></h3>
+<p>Only your data stored on AnkiWeb is deleted. Your account itself will remain and can be used again.</p>
+<p>Any cards you have stored on your computer, phone or tablet will remain on those devices. Items shared from your account, including decks and add-ons will also remain on AnkiWeb.</p>
+<h3 id="returning-to-ankiweb"><a class="header" href="#returning-to-ankiweb">Returning to AnkiWeb</a></h3>
+<p>Once your deck data has expired, it is not possible for us to recover your data from AnkiWeb,
+but you may be able to recover it if you have a local copy or a <a href="./backups.html">backup</a>.</p>
+<h3 id="avoiding-data-deletion"><a class="header" href="#avoiding-data-deletion">Avoiding Data Deletion</a></h3>
+<p>Each time you visit ankiweb.net, or use the synchronization feature in Anki, AnkiMobile or AnkiDroid,
+your account will automatically be marked as active.</p>
+<p>If your account has been inactive for 6 months or more, and you used the service for a week or longer,
+we will send you an email notifying you that deletion is pending.
+If you’d like to keep your account active, please log in to ankiweb.net
+and study a card, or sync one of your devices within 30 days.</p>
+<h2 id="firewalls"><a class="header" href="#firewalls">Firewalls</a></h2>
+<p>Anki needs to be able to make outbound HTTPS connections to sync. It must be
+able to connect to ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net, and so on.
+These domains may change over time, and the IP addresses they point to may also
+change, so we recommend you allow wildcard access to *.ankiweb.net to reduce
+the chance of the firewall rules needing to be updated in the future.</p>
+<p>If you have a firewall on your machine, you should add an exception for
+Anki. If you are on a work or school network, please contact your
+network administrator for assistance - it is not something we can help
+you with.</p>
+<h2 id="proxies"><a class="header" href="#proxies">Proxies</a></h2>
+<p>If you need a proxy to access the internet, Anki should automatically
+pick up your system proxy settings if you’re on Windows or macOS, and
+will honour the HTTP_PROXY environment variable if you’re on another
+platform.</p>
+<p>Anki will only be able to pick up your system settings if a proxy is
+manually configured, and does not require a password. If your system
+uses automatic proxy setup, or uses a proxy that requires a username and
+password, you will need to manually tell Anki the proxy configuration.</p>
+<p>To tell Anki your proxy settings, define a HTTPS_PROXY environmental
+variable that points to the proxy server. It will look like:</p>
 <pre><code>http://user:pass@proxy.company.com:8080
 </code></pre>
-<p>ユーザー名またはパスワードに@が含まれている場合（例：<code>user@workdomain.com</code>）、次のように%40に変更する必要があります：</p>
+<p>If your username or password contains an @ (e.g <code>user@workdomain.com</code>),
+you need to change it to %40, like so:</p>
 <pre><code>http://user%40workdomain.com:pass@proxy.company.com:8080
 </code></pre>
-<p>Anki 2.0は、HTTPS_PROXYではなくHTTP_PROXYを期待しています。</p>
-<p>Windowsで環境変数を設定するには、次を参照してください：
+<p>Anki 2.0 expects to find HTTP_PROXY instead of HTTPS_PROXY.</p>
+<p>To set environmental variables on Windows, please see
 <a href="https://www.google.com/search?q=windows+set+environmental+variable">https://www.google.com/search?q=windows+set+environmental+variable</a></p>
-<p>Macを使用している場合は、次を参照してください：
+<p>If you’re on a Mac, please see
 <a href="http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x">http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x</a></p>
-<p>セキュアな接続を傍受し、独自の証明書を提示する厳しくロックダウンされたネットワークでは、AnkiがSSLエラーを発生させる可能性があります。このような環境では、<a href="https://ankiweb.net/shared/info/1332261690">このアドオン</a>を使用してエラーを回避できる場合があります。</p>
-<p>別の解決策は、ローカルプロキシサーバーをインストールし、そのプロキシサーバーを通常使用するプロキシサーバーに向けることです。その後、Ankiにローカルプロキシを使用するように指示でき、通常使用するプロキシにリクエストがリダイレクトされます。</p>
+<p>Heavily locked down networks that intercept secure connections and
+present their own certificates may cause Anki to throw up SSL
+errors. In such environments, you may be able to work around the errors using <a href="https://ankiweb.net/shared/info/1332261690">this add-on</a>.</p>
+<p>An alternative solution is to install a local proxy server, and point
+that proxy server at your normal proxy server. You can then tell Anki to
+use the local proxy, which will redirect requests to the proxy you
+normally use.</p>
 
                     </main>
 

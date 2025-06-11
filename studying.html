@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>学習 - Ankiマニュアル</title>
+        <title>Studying - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,164 +172,235 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="学習"><a class="header" href="#学習">学習</a></h1>
+                        <h1 id="studying"><a class="header" href="#studying">Studying</a></h1>
 <ul>
-<li><a href="#%E3%83%87%E3%83%83%E3%82%AD">デッキ</a></li>
-<li><a href="#%E5%AD%A6%E7%BF%92%E6%A6%82%E8%A6%81">学習概要</a></li>
-<li><a href="#%E8%B3%AA%E5%95%8F">質問</a></li>
-<li><a href="#%E5%9B%9E%E7%AD%94%E3%83%9C%E3%82%BF%E3%83%B3">回答ボタン</a></li>
-<li><a href="#%E3%83%95%E3%82%A1%E3%82%BA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%BC">ファズファクター</a></li>
-<li><a href="#%E7%B7%A8%E9%9B%86%E3%81%A8%E3%81%9D%E3%81%AE%E4%BB%96">編集とその他</a></li>
-<li><a href="#%E8%A1%A8%E7%A4%BA%E9%A0%86%E5%BA%8F">表示順序</a></li>
-<li><a href="#%E5%85%84%E5%BC%9F%E3%82%AB%E3%83%BC%E3%83%89%E3%81%A8%E4%BF%9D%E7%95%99">兄弟カードと保留</a></li>
-<li><a href="#%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88">キーボードショートカット</a></li>
-<li><a href="#%E9%81%85%E3%82%8C%E3%82%92%E3%81%A8%E3%82%8B">遅れをとる</a></li>
+<li><a href="#decks">Decks</a></li>
+<li><a href="#study-overview">Study Overview</a></li>
+<li><a href="#questions">Questions</a></li>
+<li><a href="#answer-buttons">Answer Buttons</a></li>
+<li><a href="#fuzz-factor">Fuzz Factor</a></li>
+<li><a href="#editing-and-more">Editing and More</a></li>
+<li><a href="#display-order">Display Order</a></li>
+<li><a href="#siblings-and-burying">Siblings and Burying</a></li>
+<li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li><a href="#falling-behind">Falling Behind</a></li>
 </ul>
-<p>気に入ったデッキを見つけたり、ノートを入力したりしたら、学習を始める時間です。</p>
-<h2 id="デッキ"><a class="header" href="#デッキ">デッキ</a></h2>
-<p>Ankiでの学習は、現在選択されているデッキとそれに含まれるサブデッキに限定されます。</p>
-<p>デッキ画面では、デッキとサブデッキがリストで表示されます。その日の<a href="getting-started.html#card-states">新規、学習中、復習期限</a>カードもここに表示されます。</p>
-<p><img src="media/decks_screen.png" alt="デッキ画面" /></p>
-<p>デッキをクリックすると、それが「現在のデッキ」になり、Ankiは学習画面に切り替わります。
-メインウィンドウの上部にある「デッキ」をクリックすることで、いつでもデッキリストに戻ることができます。
-（メニューの「デッキを学習」アクションを使用してキーボードから新しいデッキを選択したり、<kbd>s</kbd>キーを押して現在選択されているデッキを学習したりすることもできます。）</p>
-<p>デッキの右側にある歯車ボタンをクリックして、デッキの名前を変更したり削除したり、<a href="deck-options.html">オプション</a>を変更したり、<a href="exporting.html">エクスポート</a>したりできます。</p>
-<h2 id="学習概要"><a class="header" href="#学習概要">学習概要</a></h2>
-<p>学習するデッキをクリックした後、今日復習期限のカードが何枚あるかを示す画面が表示されます。これは「デッキ概要」画面と呼ばれます：</p>
-<p><img src="media/study_overview.png" alt="学習概要" /></p>
-<p>カードは<a href="getting-started.html#card-states">3つのタイプ</a>に分かれています：新規、学習中、復習です。
-デッキオプションで<a href="#siblings-and-burying">兄弟カードを保留</a>を有効にしている場合、
-保留されるカードの数が灰色で表示されることがあります：</p>
-<p><img src="media/study_overview_buried_cards.png" alt="学習概要（保留カード）" /></p>
-<p>学習セッションを開始するには、<strong>今すぐ学習</strong>ボタンをクリックします。Ankiは、その日に表示すべきカードがなくなるまでカードを表示し続けます。</p>
-<p>学習中は、キーボードの<kbd>s</kbd>キーを押すことで概要に戻ることができます。</p>
-<h2 id="質問"><a class="header" href="#質問">質問</a></h2>
-<p>カードが表示されると、最初は質問のみが表示されます。答えを考えた後、<strong>答えを表示</strong>ボタンをクリックするか、スペースバーを押します。そうすると答えが表示されます。答えを思い出すのに少し時間がかかっても構いませんが、一般的なルールとして、約10秒以内に答えられない場合は、思い出そうと苦労し続けるよりも、先に進んで答えを表示する方が良いでしょう。</p>
-<h2 id="回答ボタン"><a class="header" href="#回答ボタン">回答ボタン</a></h2>
-<p>答えが表示された後、考えた答えと表示された答えを比較し、以下のボタンのいずれかを選択します。</p>
-<ul>
-<li>
-<p><strong>もう一度</strong>: 答えが間違っているか、答えを思い出せなかったときに選択します。答えが部分的に正しい場合でも、厳しく判断すべきです：Anki外の実生活で失敗とみなされる場合は、Ankiでも失敗とみなします。通常、このボタンは約5-20%の頻度で使用します。</p>
-<p>キーボードショートカット: <kbd>1</kbd></p>
-</li>
-<li>
-<p><strong>難しい</strong>: 答えは正しいが、疑いがあったり思い出すのに長い時間がかかったときに選択します。</p>
-<p>キーボードショートカット: <kbd>2</kbd></p>
-</li>
-<li>
-<p><strong>普通</strong>: 答えは正しいが、思い出すのに精神的な努力が必要だったときに選択します。Ankiを適切に使用している場合、これが最もよく使用されるボタンになるはずです。通常、このボタンは約80-95%の頻度で使用します。</p>
-<p>キーボードショートカット: <kbd>3</kbd>、<kbd>Space</kbd>、<kbd>Enter</kbd></p>
-</li>
-<li>
-<p><strong>簡単</strong>: 答えが正しく、思い出すのに精神的な努力が不要だった場合に選択します。</p>
-<p>キーボードショートカット: <kbd>4</kbd></p>
-</li>
-</ul>
-<p>4つの回答ボタンを使うのが難しい場合は、<strong>もう一度</strong>と<strong>普通</strong>のボタンのみを使用することもできます。間違った答えには<strong>もう一度</strong>を使用し、正しい答えには<strong>普通</strong>を使用します。</p>
-<p>各回答ボタンには、そのボタンを選択した場合に次にカードが再度復習される時期が表示されます。次の復習間隔を制御する設定について学ぶには、デッキオプションセクションの<a href="deck-options.html#learning-steps">学習ステップ</a>、<a href="deck-options.html#lapses">忘却</a>、<a href="deck-options.html#fsrs">FSRS</a>、<a href="deck-options.html#advanced">詳細設定</a>のトピックをご覧ください。</p>
-<h2 id="ファズファクター"><a class="header" href="#ファズファクター">ファズファクター</a></h2>
-<p>復習カードで回答ボタンを選択すると、Ankiは同時に導入され同じ評価を受けたカードが
-くっついて常に同じ日に復習に現れることを防ぐため、少量のランダムな「ファズ」も適用します。</p>
-<p>学習カードには、常に同じ順序で表示されないように最大5分の追加遅延も与えられますが、
-回答ボタンにはそれが反映されません。この機能をオフにすることはできません。</p>
-<h2 id="編集とその他"><a class="header" href="#編集とその他">編集とその他</a></h2>
-<p>左下の<strong>編集</strong>ボタンをクリックして、現在のノートを編集できます。編集が終わると、学習に戻ります。編集画面は<a href="editing.html">ノートの追加</a>画面と非常によく似た動作をします。</p>
-<p>復習画面の右下には<strong>その他</strong>というラベルの付いたボタンがあります。
-このボタンは、現在のカードまたはノートに対して実行できる他の操作を提供します：</p>
+<p>When you have found a deck you like or entered some notes in, it’s time
+to start studying.</p>
+<h2 id="decks"><a class="header" href="#decks">Decks</a></h2>
+<p>Study in Anki is limited to the currently selected deck as well as any
+subdecks it contains.</p>
+<p>On the decks screen, your decks and subdecks will be displayed in a list. <a href="getting-started.html#card-states">New, Learn, and Due (To Review)</a>
+cards for that day will be also displayed here.</p>
+<p><img src="media/decks_screen.png" alt="Decks screen" /></p>
+<p>When you click on a deck, it will become the “current deck”, and Anki
+will change to the study screen. You can return to the deck list at any time by clicking on “Decks” at
+the top of the main window. (You can also use the Study
+Deck action in the menu to select a new deck from the keyboard, or you
+can press the <kbd>s</kbd> key to study the currently selected deck.)</p>
+<p>You can click the gears button to the right of a deck to rename or
+delete the deck, change its <a href="deck-options.html">options</a>, or <a href="exporting.html">export</a> it.</p>
+<h2 id="study-overview"><a class="header" href="#study-overview">Study Overview</a></h2>
+<p>After clicking on a deck to study, you’ll see a screen that shows you
+how many cards are due today. This is called the “deck overview” screen:</p>
+<p><img src="media/study_overview.png" alt="Study overview" /></p>
+<p>The cards are split into <a href="getting-started.html#card-states">three types</a>: New, Learning, and To Review.
+If you have <a href="#siblings-and-burying">Bury siblings</a> activated in your deck options, you
+may see how many cards will be buried in grey:</p>
+<p><img src="media/study_overview_buried_cards.png" alt="Study overview (Buried Cards)" /></p>
+<p>To start a study session, click the <strong>Study Now</strong> button. Anki will
+proceed to show you cards until the cards to be shown for the day have
+run out.</p>
+<p>While studying, you can return to the overview by pressing the <kbd>s</kbd> key
+on your keyboard.</p>
+<h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
+<p>When a card is shown, only the question is shown at first. After
+thinking about the answer, either click the <strong>Show Answer</strong> button, or
+press the spacebar. The answer will then be shown. It’s okay if it takes
+you a little while to recall the answer, but as a general rule if you
+can’t answer within about 10 seconds, it’s probably better to move on
+and show the answer than keep struggling to remember.</p>
+<h2 id="answer-buttons"><a class="header" href="#answer-buttons">Answer Buttons</a></h2>
+<p>After the answer is shown, compare the answer you thought of
+with the answer that is shown and select any of the following buttons.</p>
 <ul>
 <li>
-<p><a href="editing.html#using-flags"><strong>カードにフラグを付ける</strong></a>: カードに色付きマーカーを追加したり、オフに切り替えたりします。フラグは学習中に表示され、ブラウザ画面でフラグ付きカードを検索できます。これは、家に帰ったときに単語を調べるなど、後でカードに対して何らかのアクションを取りたいときに便利です。Anki 2.1.45以降を使用している場合は、<a href="browsing.html">ブラウザ</a>からフラグの名前を変更することもできます。</p>
+<p><strong>Again</strong>: Select this when your answer is incorrect or when you couldn’t recall the answer. If your answer is partially correct, you should be strict with yourself: if it counts as a fail in a real-life context outside of Anki, then it counts as a fail in Anki as well. You’ll typically use this button about 5-20% of the time.</p>
+<p>Keyboard Shortcut: <kbd>1</kbd></p>
 </li>
 <li>
-<p><strong>カード/ノートを保留</strong>: カードまたはノートのすべてのカードを翌日まで復習から隠します。
-（それより前にカードの保留を解除したい場合は、<a href="studying.html#study-overview">デッキ概要</a>画面の「保留解除」ボタンをクリックできます。）これは、現時点でカードに答えられない場合や、別の時に戻ってきたい場合に便利です。保留は、同じノートのカードに対して<a href="studying.html#siblings-and-burying">自動的に発生</a>することもあります。</p>
+<p><strong>Hard</strong>: Select this button when your answer is correct, but you had doubts about it or it took a long time to recall.</p>
+<p>Keyboard Shortcut: <kbd>2</kbd></p>
 </li>
 <li>
-<p><strong>カードをリセット</strong>: 現在のカードを<a href="browsing.html#cards">新規キューの最後</a>に移動します。</p>
-<p>「元の位置を復元」オプションを使用すると、リセット時にカードを元の位置に戻すことができます。</p>
-<p>「反復回数と忘却回数をリセット」オプションを有効にすると、カードの復習回数と失敗回数が
-ゼロに戻ります。カード情報画面の下部に表示される復習履歴は削除されません。</p>
+<p><strong>Good</strong>: Select this when your answer is correct, but it took some mental effort to recall it. When Anki is used properly, this should be the most commonly used button. You’ll typically use this button about 80-95% of the time.</p>
+<p>Keyboard Shortcut: <kbd>3</kbd>, <kbd>Space</kbd>, <kbd>Enter</kbd></p>
 </li>
 <li>
-<p><strong>期限日を設定</strong>: カードを復習キューに入れ、<a href="browsing.html#cards">特定の日付に期限を設定します。</a></p>
-</li>
-<li>
-<p><strong>カード/ノートを保留停止</strong>: カードまたはノートのすべてのカードを、手動で保留停止が解除されるまで（ブラウザで保留停止ボタンをクリックすることで）復習から隠します。
-これは、しばらくの間ノートの復習を避けたいが、削除したくない場合に便利です。</p>
-</li>
-<li>
-<p><strong>オプション</strong>: 現在のデッキの<a href="deck-options.html">オプション</a>を編集します。</p>
-</li>
-<li>
-<p><strong>カード情報</strong>: カードに関する<a href="stats.html#card-info">統計情報</a>を表示します。</p>
-</li>
-<li>
-<p><strong>前のカード情報</strong>: 前のカードに関する<a href="stats.html#card-info">統計情報</a>を表示します。</p>
-</li>
-<li>
-<p><a href="editing.html#the-marked-tag"><strong>ノートにマークを付ける</strong></a>: 現在のノートに「marked」タグを追加し、ブラウザで簡単に見つけられるようにします。これは個々のカードにフラグを付けるのと似ていますが、代わりにタグで動作するため、ノートに複数のカードがある場合、マークされたタグの検索ですべてのカードが表示されます。ほとんどのユーザーは代わりにフラグを使用したいと思うでしょう。</p>
-</li>
-<li>
-<p><strong>コピーを作成</strong>: 現在のノートの<a href="browsing.html#finding-duplicates">複製</a>をエディターで開き、カードのバリエーションを簡単に取得するために少し変更できます。
-デフォルトでは、複製カードは元のカードと同じデッキに作成されます。</p>
-</li>
-<li>
-<p><strong>ノートを削除</strong>: ノートとそのすべてのカードを削除します。</p>
-</li>
-<li>
-<p><strong>音声を再生</strong>: カードの表または裏に音声がある場合、もう一度再生します。</p>
-</li>
-<li>
-<p><strong>音声を一時停止</strong>: 再生中の音声を一時停止します。</p>
-</li>
-<li>
-<p><strong>音声 -5秒 / +5秒</strong>: 現在再生中の音声で5秒後方/前方にジャンプします。</p>
-</li>
-<li>
-<p><strong>自分の声を録音</strong>: 発音をチェックする目的でマイクから録音します。この録音は一時的なもので、次のカードに移動すると消えます。カードに恒久的に音声を追加したい場合は、編集ウィンドウで行うことができます。</p>
-</li>
-<li>
-<p><strong>自分の声を再生</strong>: 前回の自分の声の録音を再生します（おそらく答えを表示した後）。</p>
+<p><strong>Easy</strong>: Select this if your answer is correct and it took no mental effort to recall it.</p>
+<p>Keyboard Shortcut: <kbd>4</kbd></p>
 </li>
 </ul>
-<h2 id="表示順序"><a class="header" href="#表示順序">表示順序</a></h2>
-<p>学習では、選択したデッキとそれに含まれるデッキからカードが表示されます。
-したがって、「フランス語」デッキを選択すると、サブデッキ「フランス語::語彙」と「フランス語::私の教科書::レッスン1」も表示されます。</p>
-<p>デフォルトでは、新しいカードの場合、Ankiはアルファベット順でデッキからカードを収集します。
-上記の例では、最初に「フランス語」、次に「私の教科書」、最後に「語彙」からカードを取得します。
-これを使用してカードが表示される順序を制御でき、優先度の高いカードをリストの上位に表示されるデッキに配置できます。
-コンピューターがテキストをアルファベット順にソートするとき、「-」文字はアルファベット文字の前に来て、「~」はその後に来ます。
-したがって、デッキを「-語彙」と呼んで最初に表示させたり、他のデッキを「~私の教科書」と呼んで他のすべての後に強制的に表示させたりできます。</p>
-<p>新しいカードと復習は別々に収集され、Ankiは両方のキューが空になるまで次のデッキに移動するのを待たないため、
-あるデッキから新しいカードを見ながら、別のデッキから復習を見ることがあります。その逆もあります。
-これを望まない場合は、親デッキの1つではなく、学習したいデッキを直接クリックしてください。</p>
-<p>学習中のカードはある程度時間に敏感なため、すべてのデッキから一度に取得され、期限順に表示されます。</p>
-<p>カードが表示される順序を制御するには、<a href="./deck-options.html#display-order">表示順序</a>を参照してください。新しいカードのより細かい順序については、<a href="browsing.html">ブラウザ</a>で順序を変更できます。</p>
-<h2 id="兄弟カードと保留"><a class="header" href="#兄弟カードと保留">兄弟カードと保留</a></h2>
-<p><a href="getting-started.html">基本</a>から、Ankiは入力した1つのものに対して複数のカードを作成できることを思い出してください。たとえば、表→裏カードと裏→表カード、または同じテキストからの2つの異なる穴埋め削除などです。
-これらの関連カードは「兄弟」と呼ばれます。</p>
-<p>兄弟を持つカードに答えると、Ankiは自動的に「保留」することで、カードの兄弟が同じセッションで表示されないようにできます。
-保留されたカードは、時計が新しい日に切り替わるか、<a href="studying.html#study-overview">デッキ概要</a>画面の下部に表示される「保留解除」ボタンを使用して手動で保留を解除するまで、復習から隠されます。
-Ankiは、兄弟が同じデッキにない場合でも（たとえば、<a href="templates/intro.html">デッキオーバーライド</a>機能を使用する場合）、兄弟を保留します。</p>
-<p><a href="deck-options.html">デッキオプション</a>画面から保留を有効にできます。新しいカードと復習用に個別の設定があります。</p>
-<p>Ankiは新規または復習カードである兄弟のみを保留します。学習中のカードは隠しません。それらのカードには時間が重要だからです。
-一方、学習カードを学習するとき、新規/復習の兄弟は保留されます。</p>
-<p>また、カードは同時に保留と保留停止することはできません。保留されたカードを保留停止すると、保留が解除されます。保留停止されたカードは保留できません。</p>
-<h2 id="キーボードショートカット"><a class="header" href="#キーボードショートカット">キーボードショートカット</a></h2>
-<p>Ankiの一般的な操作のほとんどにはキーボードショートカットがあります。それらのほとんどはインターフェースで発見できます：メニュー項目の横にショートカットが表示され、ボタンの上にマウスカーソルを置くと、通常はツールチップにショートカットが表示されます。</p>
-<p>学習中は、<kbd>Space</kbd>または<kbd>Enter</kbd>で答えを表示します。答えが表示されたら、<kbd>Space</kbd>または<kbd>Enter</kbd>を使用して「普通」ボタンを選択できます。
-<kbd>1</kbd>-<kbd>4</kbd>キーを使用して特定の難易度ボタンを選択できます。多くの人は、ほとんどのカードに<kbd>Space</kbd>で答え、忘れたときのために<kbd>1</kbd>に指を置いておくと便利だと感じています。</p>
-<p>ツールメニューの「デッキを学習」項目を使用すると、キーボードですばやくデッキに切り替えることができます。<kbd>/</kbd>キーでトリガーできます。
-開くと、すべてのデッキが表示され、上部にフィルター領域が表示されます。
-文字を入力すると、Ankiは入力した文字に一致するデッキのみを表示します。
-スペースを追加して複数の検索語を区切ることができ、Ankiはすべての語に一致するデッキのみを表示します。
-したがって、「ja 1」または「on1 ja」は両方とも「日本語::レッスン1」というデッキに一致します。</p>
-<h2 id="遅れをとる"><a class="header" href="#遅れをとる">遅れをとる</a></h2>
-<p>復習に遅れをとると、Ankiはデフォルトで最も長く待っているカードを優先します。
-この順序により、カードが無期限に待たされることはありませんが、新しいカードを導入すると、
-バックログを処理するまでその復習は表示されないことを意味します。</p>
-<p>しばらく待っていたカードに答えると、Ankiは次にカードを表示すべき時期を決定する際にその遅延を考慮します。
-これは、長い休憩の後にAnkiに戻る場合、最初からやり直す必要がなく、中断したところから始めることができることを意味します。</p>
+<p>If you find it hard to use four answer buttons, you can also use only <strong>Again</strong> and <strong>Good</strong> buttons. Use <strong>Again</strong> for incorrect answers and use <strong>Good</strong> for correct answers.</p>
+<p>Each answer button shows the next time a card will be reviewed again if you select that button. To learn about the settings that control the next review intervals, see the topics <a href="deck-options.html#learning-steps">Learning Steps</a>, <a href="deck-options.html#lapses">Lapses</a>, <a href="deck-options.html#fsrs">FSRS</a> and <a href="deck-options.html#advanced">Advanced</a> in the Deck Options section.</p>
+<h2 id="fuzz-factor"><a class="header" href="#fuzz-factor">Fuzz Factor</a></h2>
+<p>When you select an answer button on a review card, Anki also applies a small amount of random “fuzz”
+to prevent cards that were introduced at the same time and given the same ratings
+from sticking together and always coming up for review on the same day.</p>
+<p>Learning cards are also given up to 5 minutes of extra delay so that they
+don’t always appear in the same order, but answer buttons won’t reflect that. It
+is not possible to turn this feature off.</p>
+<h2 id="editing-and-more"><a class="header" href="#editing-and-more">Editing and More</a></h2>
+<p>You can click the <strong>Edit</strong> button in the bottom left to edit the current
+note. When you finish editing, you’ll be returned to study. The editing
+screen works very similarly to the <a href="editing.html">add notes</a> screen.</p>
+<p>At the bottom right of the review screen is a button labeled <strong>More</strong>.
+This button provides some other operations you can do on the current
+card or note:</p>
+<ul>
+<li>
+<p><a href="editing.html#using-flags"><strong>Flag Card</strong></a>: Adds a colored marker to the card, or toggles it off. Flags will appear during
+study, and you can search for flagged cards in the Browse screen. This is useful
+when you want to take some action on the card at a later date, such as looking
+up a word when you get home. If you’re using Anki 2.1.45+, you can also rename flags
+from the <a href="browsing.html">browser</a>.</p>
+</li>
+<li>
+<p><strong>Bury Card / Note</strong>: Hides a card or all of the note’s cards from review until the next day.
+(If you want to unbury cards before then, you can click the “unbury”
+button on the <a href="studying.html#study-overview">deck overview</a> screen.) This is useful if
+you cannot answer the card at the moment or you want to come back to it
+another time. Burying can also <a href="studying.html#siblings-and-burying">happen automatically</a> for
+cards of the same note.</p>
+</li>
+<li>
+<p><strong>Reset card</strong>: Moves the current card to <a href="browsing.html#cards">the end of the new queue</a>.</p>
+<p>The “Restore original position” option allows you to reset the card back to its original position when you reset it.</p>
+<p>The “Reset repetition and lapse count” option, if enabled, will set the review and failure counters
+for the card back to zero. It does not remove the review history that is shown at the bottom of the
+card info screen.</p>
+</li>
+<li>
+<p><strong>Set Due Date</strong>: Puts cards in the review queue, and <a href="browsing.html#cards">makes them due on a certain date.</a></p>
+</li>
+<li>
+<p><strong>Suspend Card / Note</strong>: Hides a card or all of the note’s cards from review until they are
+manually unsuspended (by clicking the suspend button in the browser).
+This is useful if you want to avoid reviewing the note for some time,
+but don’t want to delete it.</p>
+</li>
+<li>
+<p><strong>Options</strong>: Edit the <a href="deck-options.html">options</a> for the current deck.</p>
+</li>
+<li>
+<p><strong>Card Info</strong>: Displays <a href="stats.html#card-info">statistical information</a> about the card.</p>
+</li>
+<li>
+<p><strong>Previous Card Info</strong>: Displays <a href="stats.html#card-info">statistical information</a> about the previous card.</p>
+</li>
+<li>
+<p><a href="editing.html#the-marked-tag"><strong>Mark Note</strong></a>: Adds a “marked” tag to the current note, so it can be easily found in the
+browser. This is similar to flagging individual cards, but works with a tag
+instead, so if the note has multiple cards, all cards will appear in a search
+for the marked tag. Most users will want to use flags instead.</p>
+</li>
+<li>
+<p><strong>Create Copy</strong>: Opens a <a href="browsing.html#finding-duplicates">duplicate</a> of the current
+note in the editor, which can be slightly modified to easily obtain variations of your cards.
+By default, the duplicate card will be created in the same deck as the original.</p>
+</li>
+<li>
+<p><strong>Delete Note</strong>: Deletes the note and all of its cards.</p>
+</li>
+<li>
+<p><strong>Replay Audio</strong>: If the card has audio on the front or back, play it again.</p>
+</li>
+<li>
+<p><strong>Pause Audio</strong>: Pauses the audio if it is playing.</p>
+</li>
+<li>
+<p><strong>Audio -5s / +5s</strong>: Jump backwards / forward 5 seconds in the currently playing audio.</p>
+</li>
+<li>
+<p><strong>Record Own Voice</strong>: Record from your microphone for the purposes of checking your
+pronunciation. This recording is temporary and will go away when you
+move to the next card. If you want to add audio to a card permanently,
+you can do that in the edit window.</p>
+</li>
+<li>
+<p><strong>Replay Own Voice</strong>: Replay the previous recording of your voice (presumably after showing
+the answer).</p>
+</li>
+</ul>
+<h2 id="display-order"><a class="header" href="#display-order">Display Order</a></h2>
+<p>Studying will show cards from the selected deck and any decks it
+contains. Thus, if you select your “French” deck, the subdecks
+“French::Vocab” and “French::My Textbook::Lesson 1” will be shown as
+well.</p>
+<p>By default, for new cards, Anki gathers cards from the decks in
+alphabetical order. So in the above example, you would get cards first
+from “French”, then “My Textbook”, and finally “Vocab”. You can use this
+to control the order cards appear in, placing high priority cards in
+decks that appear higher in the list. When computers sort text
+alphabetically, the “-” character comes before alphabetical characters,
+and “~” comes after them. So you could call the deck “-Vocab” to make
+them appear first, and you could call the other deck “~My Textbook” to
+force it to appear after everything else.</p>
+<p>New cards and reviews are gathered separately, and Anki won’t wait until
+both queues are empty before moving on to the next deck, so it’s
+possible you’ll be exposed to new cards from one deck while seeing
+reviews from another deck, or vice versa. If you don’t want this, click
+directly on the deck you want to study instead of one of the parent
+decks.</p>
+<p>Since cards in learning are somewhat time-critical, they are fetched
+from all decks at once and shown in the order they are due.</p>
+<p>To control the order cards appear in, see <a href="./deck-options.html#display-order">Display Order</a>. For more fine-grained ordering of new cards, you
+can change the order in the <a href="browsing.html">browser</a>.</p>
+<h2 id="siblings-and-burying"><a class="header" href="#siblings-and-burying">Siblings and Burying</a></h2>
+<p>Recall from <a href="getting-started.html">the basics</a> that Anki can create more than one
+card for each thing you input, such as a front→back card and a
+back→front card, or two different cloze deletions from the same text.
+These related cards are called “siblings”.</p>
+<p>When you answer a card that has siblings, Anki can prevent the card’s
+siblings from being shown in the same session by automatically “burying”
+them. Buried cards are hidden from review until the clock rolls over to
+a new day or you manually unbury them using the “Unbury” button that’s
+visible at the bottom of the <a href="studying.html#study-overview">deck overview</a> screen. Anki
+will bury siblings even if the siblings are not in the same deck (for
+instance, if you use the <a href="templates/intro.html">deck override</a> feature).</p>
+<p>You can enable burying from the <a href="deck-options.html">deck options</a> screen -
+there are separate settings for new cards and reviews.</p>
+<p>Anki will only bury siblings that are new or review cards. It will not
+hide cards in learning, as time is of the essence for those cards. On
+the other hand, when you study a learning card, any new/review siblings
+will be buried.</p>
+<p>Also note that a card cannot be buried and suspended at the same time. Suspending a
+buried card will unbury it. Suspended cards can’t be buried.</p>
+<h2 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard Shortcuts</a></h2>
+<p>Most of the common operations in Anki have keyboard shortcuts. Most of
+them are discoverable in the interface: menu items list their shortcuts
+next to them, and hovering the mouse cursor over a button will generally
+show its shortcut in a tooltip.</p>
+<p>When studying, either <kbd>Space</kbd> or <kbd>Enter</kbd> will show the answer. When the
+answer is shown, you can use <kbd>Space</kbd> or <kbd>Enter</kbd> to select the Good button.
+You can use the <kbd>1</kbd>-<kbd>4</kbd> keys to select a specific ease button. Many people
+find it convenient to answer most cards with <kbd>Space</kbd> and keep one finger
+on <kbd>1</kbd> for when they forget.</p>
+<p>The “Study Deck” item in the Tools menu allows you to quickly switch to
+a deck with the keyboard. You can trigger it with the <kbd>/</kbd> key. When
+opened, it will display all of your decks and show a filter area at the
+top. As you type characters, Anki will display only decks matching the
+characters you type. You can add a space to separate multiple search
+terms, and Anki will show only decks that match all the terms. So “ja 1”
+or “on1 ja” would both match a deck called “Japanese::Lesson1”.</p>
+<h2 id="falling-behind"><a class="header" href="#falling-behind">Falling Behind</a></h2>
+<p>When you fall behind in your reviews, Anki by default prioritizes cards that have
+been waiting the longest. This ordering ensures that no cards will
+be left waiting indefinitely, but it means that if you introduce new
+cards, their reviews won’t appear until you’ve gotten through your
+backlog.</p>
+<p>When you answer cards that have been waiting for a while, Anki factors
+in that delay when determining the next time a card should be shown. This means if you are returning to Anki after a long break, you don’t have to start anew and can just start back from where you left.</p>
 
                     </main>
 

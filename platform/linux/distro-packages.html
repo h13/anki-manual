@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Linuxディストロパッケージ - Ankiマニュアル</title>
+        <title>Linux Distro Packages - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -172,14 +172,26 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="linuxディストリビューションによって配布されるパッケージ"><a class="header" href="#linuxディストリビューションによって配布されるパッケージ">Linuxディストリビューションによって配布されるパッケージ</a></h1>
-<p>Linuxディストリビューションによって配布されるカスタマイズされたバージョンのAnkiによって引き起こされる多くの問題を見てきました：</p>
+                        <h1 id="packages-distributed-by-linux-distributions"><a class="header" href="#packages-distributed-by-linux-distributions">Packages Distributed by Linux Distributions</a></h1>
+<p>We have seen a lot of issues caused by the customized versions of Anki
+distributed by Linux distributions:</p>
 <ul>
-<li>AnkiはQtなどのサードパーティライブラリに依存しており、Linuxディストリビューションは、これらの変更の影響をテストせずに、これらのライブラリの異なるバージョンに置き換えることがよくあります。</li>
-<li>配布されるAnkiのバージョンが何年も前のものであったり、安定したリリースを意図していないアルファ/ベータバージョンであることがあります。ディストリビューションは、新しいバージョンの通知を受けないように、組み込みの更新チェックを無効にすることもよくあります。</li>
+<li>Anki depends on third-party libraries like Qt, and Linux distributions often
+substitute different versions of those libraries, without testing the impact
+of those changes.</li>
+<li>Sometimes the version of Anki they distribute is years old, or is an
+alpha/beta version not intended for stable release. Distributions will often
+disable the built-in update check as well, to prevent you from being notified
+of newer versions.</li>
 </ul>
-<p>Ankiのコンパイル済みビルドは<a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a>で入手できます。必要なライブラリのほとんどが含まれており、Ankiはこれらのライブラリバージョンで動作するようにテストされています。ディストリビューションのバージョンで問題が発生している場合、最初に試すべきことは、私たちが提供する最新のパッケージバージョンに切り替えることです。</p>
-<p>お好みであれば、ディストリビューションのバージョンのAnkiを使い続けることは歓迎されますが、問題が発生した場合は、ディストリビューションのパッケージメンテナーに報告する必要があります。</p>
+<p>Compiled builds of Anki are available on <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a>. Most of the
+necessary libraries are included, and Anki has been tested to work with these
+library versions. If you’re experiencing issues with your distro’s version, the
+first thing you should try is switching to the latest packaged version we
+provide.</p>
+<p>You are welcome to continue using your distro’s version of Anki if you prefer,
+but if you run into any issues, you will need to report them to your
+distribution’s package maintainers.</p>
 
                     </main>
 
