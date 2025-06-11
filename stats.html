@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Statistics - Anki Manual</title>
+        <title>統計 - Ankiマニュアル</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Anki Manual</h1>
+                    <h1 class="menu-title">Ankiマニュアル</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,274 +172,165 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="card-info-graphs-and-statistics"><a class="header" href="#card-info-graphs-and-statistics">Card Info, Graphs and Statistics</a></h1>
+                        <h1 id="カード情報グラフ統計"><a class="header" href="#カード情報グラフ統計">カード情報、グラフ、統計</a></h1>
 <ul>
-<li><a href="#card-info">Card Info</a></li>
-<li><a href="#statistics">Statistics</a></li>
-<li><a href="#selecting-decks--collection">Selecting Decks / Collection</a>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E6%83%85%E5%A0%B1">カード情報</a></li>
+<li><a href="#%E7%B5%B1%E8%A8%88">統計</a></li>
+<li><a href="#%E3%83%87%E3%83%83%E3%82%AD%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E9%81%B8%E6%8A%9E">デッキ/コレクションの選択</a>
 <ul>
-<li><a href="#deck">Deck</a></li>
-<li><a href="#collection">Collection</a></li>
-<li><a href="#history">History</a></li>
-<li><a href="#more">More</a></li>
+<li><a href="#%E3%83%87%E3%83%83%E3%82%AD">デッキ</a></li>
+<li><a href="#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">コレクション</a></li>
+<li><a href="#%E5%B1%A5%E6%AD%B4">履歴</a></li>
+<li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96">その他</a></li>
 </ul>
 </li>
-<li><a href="#today">Today</a>
+<li><a href="#%E4%BB%8A%E6%97%A5">今日</a>
 <ul>
-<li><a href="#again-count">Again Count</a></li>
-<li><a href="#learn-review-relearn-filtered">Learn, Review, Relearn, Filtered</a></li>
+<li><a href="#%E3%82%82%E3%81%86%E4%B8%80%E5%BA%A6%E3%81%AE%E5%9B%9E%E6%95%B0">もう一度の回数</a></li>
+<li><a href="#%E5%AD%A6%E7%BF%92%E5%BE%A9%E7%BF%92%E5%86%8D%E5%AD%A6%E7%BF%92%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC">学習、復習、再学習、フィルター</a></li>
 </ul>
 </li>
-<li><a href="#the-graphs">The Graphs</a>
+<li><a href="#%E3%82%B0%E3%83%A9%E3%83%95">グラフ</a>
 <ul>
-<li><a href="#future-due">Future Due</a></li>
-<li><a href="#calendar">Calendar</a></li>
-<li><a href="#reviews">Reviews</a></li>
-<li><a href="#card-counts">Card Counts</a></li>
-<li><a href="#review-time">Review Time</a></li>
-<li><a href="#review-intervals">Review Intervals</a></li>
-<li><a href="#card-ease">Card Ease</a></li>
-<li><a href="#card-stability">Card Stability</a></li>
-<li><a href="#card-difficulty">Card Difficulty</a></li>
-<li><a href="#card-retrievability">Card Retrievability</a></li>
-<li><a href="#hourly-breakdown">Hourly Breakdown</a></li>
-<li><a href="#answer-buttons">Answer Buttons</a></li>
-<li><a href="#true-retention-table">True Retention Table</a></li>
+<li><a href="#%E5%B0%86%E6%9D%A5%E3%81%AE%E6%9C%9F%E9%99%90">将来の期限</a></li>
+<li><a href="#%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC">カレンダー</a></li>
+<li><a href="#%E5%BE%A9%E7%BF%92">復習</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E6%95%B0">カード数</a></li>
+<li><a href="#%E5%BE%A9%E7%BF%92%E6%99%82%E9%96%93">復習時間</a></li>
+<li><a href="#%E5%BE%A9%E7%BF%92%E9%96%93%E9%9A%94">復習間隔</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E6%98%93%E3%81%97%E3%81%95">カードの易しさ</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E5%AE%89%E5%AE%9A%E6%80%A7">カードの安定性</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E9%9B%A3%E6%98%93%E5%BA%A6">カードの難易度</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E6%A4%9C%E7%B4%A2%E5%8F%AF%E8%83%BD%E6%80%A7">カードの検索可能性</a></li>
+<li><a href="#%E6%99%82%E9%96%93%E5%88%A5%E5%86%85%E8%A8%B3">時間別内訳</a></li>
+<li><a href="#%E8%A7%A3%E7%AD%94%E3%83%9C%E3%82%BF%E3%83%B3">解答ボタン</a></li>
+<li><a href="#%E7%9C%9F%E3%81%AE%E4%BF%9D%E6%8C%81%E7%8E%87%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB">真の保持率テーブル</a></li>
 </ul>
 </li>
-<li><a href="#manual-analysis">Manual Analysis</a></li>
+<li><a href="#%E6%89%8B%E5%8B%95%E5%88%86%E6%9E%90">手動分析</a></li>
 </ul>
-<h2 id="card-info"><a class="header" href="#card-info">Card Info</a></h2>
-<p>You can display information about a card by using the Cards&gt;Info menu item,
-by right-clicking on the card and then selecting <strong>Info</strong>, or by pressing
-<kbd>I</kbd> on the review screen.</p>
-<p><img src="media/card_info.png" alt="Card Info" /></p>
-<p>A few notes:</p>
-<p><strong>Position</strong><br />
-It shows the order the card will appear
-in relative to other new cards. The position can be changed in the
-browser. Once a card has been studied, the position is not used, unless
-the card is manually reset to new again.</p>
-<p><strong>Interval</strong><br />
-The delay from one review to the next. Times are abbreviated; “0s, 1m,
-3h, 4d, 5mo, 6y” refers to seconds, minutes, hours, days, months and
-years respectively.</p>
-<p><strong>Ease</strong><br />
-The approximate amount the interval will grow when you answer a review
-card with the “Good” button.</p>
-<p>The bottom section shows the review history for the card. Rating denotes
-the button (1 = Again, 4 = Easy). When cards are manually rescheduled using
-the “reset” or “set due date” actions, the type will be listed as Manual
-and the rating as 0.</p>
-<h2 id="statistics"><a class="header" href="#statistics">Statistics</a></h2>
-<p>The statistics window is accessed by clicking on <strong>Stats</strong> button at the
-top of the main window, or by pressing <kbd>T</kbd>.</p>
-<p><img src="media/Statistics.png" alt="Statistics screen" /></p>
-<h2 id="selecting-decks--collection"><a class="header" href="#selecting-decks--collection">Selecting Decks / Collection</a></h2>
-<h3 id="deck"><a class="header" href="#deck">Deck</a></h3>
-<p>By default, the statistics window will show statistics from the currently selected deck and any
-subdecks it may contain, but you can select any deck from your collection by typing its name in the
-text box at the top of the screen or (from Anki 2.1.61), by using the deck selector at the bottom.</p>
-<h3 id="collection"><a class="header" href="#collection">Collection</a></h3>
-<p>If you select this checkbox, statistics will be shown for your entire collection. You can also display graphs
-for arbitrary searches by adding filters in the search box at the top (2.1.28+).</p>
-<h3 id="history"><a class="header" href="#history">History</a></h3>
-<p>By default, Anki shows you statistics for the last 12 months.
-You can change this to all history scope or deck life scope at the top. (The
-“today” section at the top remains of course unaffected by this selection.)</p>
-<h3 id="more"><a class="header" href="#more">More</a></h3>
+<h2 id="カード情報"><a class="header" href="#カード情報">カード情報</a></h2>
+<p>カード&gt;情報メニューアイテムを使用するか、カードを右クリックして<strong>情報</strong>を選択するか、復習画面で<kbd>I</kbd>を押すことで、カードに関する情報を表示できます。</p>
+<p><img src="media/card_info.png" alt="カード情報" /></p>
+<p>いくつかの注記：</p>
+<p><strong>位置</strong><br />
+他の新しいカードに対する相対的なカードの表示順を示します。位置はブラウザで変更できます。カードが学習されると、カードが手動で再び新しいカードにリセットされない限り、位置は使用されません。</p>
+<p><strong>間隔</strong><br />
+1つの復習から次の復習までの遅延。時間は短縮されています。「0s、1m、3h、4d、5mo、6y」は、それぞれ秒、分、時間、日、月、年を指します。</p>
+<p><strong>易しさ</strong><br />
+復習カードに「良い」ボタンで答えたときに間隔が成長するおおよその量。</p>
+<p>下部セクションは、カードの復習履歴を示します。評価はボタンを示します（1 = もう一度、4 = 簡単）。「リセット」または「期日を設定」アクションを使用してカードを手動で再スケジュールすると、タイプは手動としてリストされ、評価は0になります。</p>
+<h2 id="統計"><a class="header" href="#統計">統計</a></h2>
+<p>統計ウィンドウは、メインウィンドウの上部にある<strong>統計</strong>ボタンをクリックするか、<kbd>T</kbd>を押すことでアクセスできます。</p>
+<p><img src="media/Statistics.png" alt="統計画面" /></p>
+<h2 id="デッキコレクションの選択"><a class="header" href="#デッキコレクションの選択">デッキ/コレクションの選択</a></h2>
+<h3 id="デッキ"><a class="header" href="#デッキ">デッキ</a></h3>
+<p>デフォルトでは、統計ウィンドウは現在選択されているデッキとそれに含まれるサブデッキの統計を表示しますが、画面上部のテキストボックスに名前を入力するか（Anki 2.1.61以降）、下部のデッキセレクターを使用して、コレクションから任意のデッキを選択できます。</p>
+<h3 id="コレクション"><a class="header" href="#コレクション">コレクション</a></h3>
+<p>このチェックボックスを選択すると、コレクション全体の統計が表示されます。上部の検索ボックスにフィルターを追加することで、任意の検索のグラフを表示することもできます（2.1.28以降）。</p>
+<h3 id="履歴"><a class="header" href="#履歴">履歴</a></h3>
+<p>デフォルトでは、Ankiは過去12か月の統計を表示します。
+上部で、これをすべての履歴範囲またはデッキ寿命範囲に変更できます。（上部の「今日」セクションは、もちろんこの選択の影響を受けません。）</p>
+<h3 id="その他"><a class="header" href="#その他">その他</a></h3>
 <ul>
 <li>
-<p>Clicking on “Save PDF” at the bottom will save a PDF document of the statistics to a file
-on your desktop to make it easy to share your statistics with others.</p>
+<p>下部の「PDFを保存」をクリックすると、統計のPDFドキュメントがデスクトップ上のファイルに保存され、他の人と統計を共有しやすくなります。</p>
 </li>
 <li>
-<p>When you delete notes, their review history is maintained in Anki. It
-will not be included when looking at statistics for a specific deck (as
-Anki has no way of knowing which deck the deleted cards belonged to),
-but will be included when you look at statistics for the whole
-collection.</p>
+<p>ノートを削除しても、その復習履歴はAnkiに保持されます。特定のデッキの統計を見るときには含まれません（Ankiは削除されたカードがどのデッキに属していたかを知る方法がないため）が、コレクション全体の統計を見るときには含まれます。</p>
 </li>
 <li>
-<p>Anki 2.1.28+ introduced redesigned graphs. The old graphs are still
-accessible with a <kbd>Shift</kbd>-click on the Stats button.</p>
+<p>Anki 2.1.28以降では、再設計されたグラフが導入されました。古いグラフは、統計ボタンを<kbd>Shift</kbd>クリックすることでまだアクセスできます。</p>
 </li>
 </ul>
-<h2 id="today"><a class="header" href="#today">Today</a></h2>
-<p>At the top of the statistics window is a brief list of textual
-statistics about the reviews that you have completed today. A “review”
-in this context is “one answering of a card”, so a card might count as
-multiple reviews if it needed to be seen multiple times, and a learning
-card answered also counts as a “review.” A couple of the stats whose
-meaning may not be immediately obvious:</p>
-<h3 id="again-count"><a class="header" href="#again-count">Again Count</a></h3>
-<p>This is the number of reviews that you have failed (i.e., pressed Again
-on). The correct percentage listed afterwards is the number of cards you
-did “not” fail divided by the total number of cards you studied.</p>
-<h3 id="learn-review-relearn-filtered"><a class="header" href="#learn-review-relearn-filtered">Learn, Review, Relearn, Filtered</a></h3>
-<p>The number of reviews that were learning cards, review cards, relearning
-cards, or studied in a filtered deck when not due.</p>
-<p>The stats for the current day are not a good overall indicator of your
-learning progress; everyone has bad days and good days, and seeing that
-you got a lower percentage correct on a particular day should not be
-cause for concern. The remainder of the stats, which take longer periods
-of time into account, will give more useful information if you wish to
-try to change your study habits or scheduling settings based on your
-performance.</p>
-<p>The “today” statistics are unaffected by the time period selected at the
-bottom of the window.</p>
-<h2 id="the-graphs"><a class="header" href="#the-graphs">The Graphs</a></h2>
-<h3 id="future-due"><a class="header" href="#future-due">Future Due</a></h3>
-<p>This graph shows an estimated number of reviews that will be due on a
-given day in the future if you learn no new cards and fail no cards. The
-bars and the left axis show the number of cards due on each day if you
-study all cards each day, while the gray shaded region and the right axis show
-the number of cards due on that day if you don’t study at all until then.
-Note that the forecast graph does not count reviews that are currently
-overdue, so if you have a large backlog, the overdue cards will not be
-displayed.</p>
-<p>Daily load is an estimate of the average number of cards to be reviewed daily.
-If you don’t have a backlog, daily load should be approximately equal to
-your number of due cards.</p>
-<p>It is calculated as follows:</p>
+<h2 id="今日"><a class="header" href="#今日">今日</a></h2>
+<p>統計ウィンドウの上部には、今日完了した復習に関する簡単なテキスト統計のリストがあります。この文脈での「復習」は「カードの1回の回答」であるため、カードを複数回見る必要がある場合は複数の復習としてカウントされ、学習カードの回答も「復習」としてカウントされます。意味がすぐに明らかではない可能性があるいくつかの統計：</p>
+<h3 id="もう一度の回数"><a class="header" href="#もう一度の回数">もう一度の回数</a></h3>
+<p>これは失敗した復習の数です（つまり、もう一度を押した）。その後にリストされる正解率は、失敗「しなかった」カードの数を学習したカードの総数で割ったものです。</p>
+<h3 id="学習復習再学習フィルター"><a class="header" href="#学習復習再学習フィルター">学習、復習、再学習、フィルター</a></h3>
+<p>学習カード、復習カード、再学習カード、または期限でないときにフィルターデッキで学習されたカードの復習数。</p>
+<p>現在の日の統計は、学習の進歩の良い全体的な指標ではありません。誰もが悪い日と良い日があり、特定の日に正解率が低くなったことは心配の原因ではありません。より長い期間を考慮に入れる残りの統計は、パフォーマンスに基づいて学習習慣やスケジュール設定を変更しようとする場合に、より有用な情報を提供します。</p>
+<p>「今日」の統計は、ウィンドウの下部で選択された期間の影響を受けません。</p>
+<h2 id="グラフ"><a class="header" href="#グラフ">グラフ</a></h2>
+<h3 id="将来の期限"><a class="header" href="#将来の期限">将来の期限</a></h3>
+<p>このグラフは、新しいカードを学習せず、カードを失敗しない場合に、将来の特定の日に期限となる推定復習数を示します。バーと左軸は、毎日すべてのカードを学習する場合の各日の期限カード数を示し、灰色の陰影領域と右軸は、それまでまったく学習しない場合のその日の期限カード数を示します。予測グラフは現在期限超過の復習をカウントしないため、大きなバックログがある場合、期限超過のカードは表示されません。</p>
+<p>日次負荷は、毎日復習されるカードの平均数の推定値です。
+バックログがない場合、日次負荷は期限カードの数とほぼ等しくなるはずです。</p>
+<p>次のように計算されます：</p>
 <p>$$
 \frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n}
 $$</p>
-<p>Here, \(I_n\) is the interval of
-the n-th card. If the interval is less than one day, the summation term is 1. This
-prevents cards with short intervals from unrealistically skewing the value of daily load.</p>
-<p>Example: you have a card with an interval of 10 days and a card with an interval of 50 days.
-Daily load = \(\frac{1}{10} + \frac{1}{50} = 0.12\), meaning that, <em>on average</em>, you will have 0.12 due cards per day.</p>
-<h3 id="calendar"><a class="header" href="#calendar">Calendar</a></h3>
-<p>This graph shows past card review activity. Hovering the mouse over a specific item
-allows you to view the number of revisions made that day. Click on a day of the
-week to make that the starting day.</p>
-<h3 id="reviews"><a class="header" href="#reviews">Reviews</a></h3>
-<p>This graph counts the number of card reviews you have done. The bars may
-correspond to days, weeks, or months, depending on the time period
-you’ve selected at the bottom of the screen. The differently colored
-blocks show how many of the cards you answered on each day were
-<a href="getting-started.html#card-states">mature</a>, young, relearning, or learning cards.
-There is also a separate group for cards answered in a filtered/cram
-deck while they were not due. The gray shaded region and the right axis shows
-the cumulative total for each type of review as time progresses across the
-graph (so at 0 days, it would display the number for the entire time
-period displayed on the graph).</p>
-<h3 id="card-counts"><a class="header" href="#card-counts">Card Counts</a></h3>
-<p>This pie chart shows what percentage of your deck or collection consists
-of mature, unseen, young/learn, and suspended cards. If you wish to
-calculate a more precise percentage, the key shows the exact number of
-cards in each section, and the total number of cards is displayed to the
-side.</p>
-<h3 id="review-time"><a class="header" href="#review-time">Review Time</a></h3>
-<p>This graph works exactly like Review Count, except that it deals with
-the amount of time you spent on each card rather than the number of
-cards answered.</p>
-<h3 id="review-intervals"><a class="header" href="#review-intervals">Review Intervals</a></h3>
-<p>This graph displays the number of cards that have a given interval (the
-delay between two reviews). The gray shaded region and the right axis tell you
-what percentage of your cards have an interval of less than or equal to the
-time below that point. The time scope has a different effect on this
-graph than other graphs: rather than changing which cards or period of
-studying is included, it limits how far out the intervals are displayed
-to (so 14-month intervals are not displayed at all on a 1-year graph).</p>
-<h3 id="card-ease"><a class="header" href="#card-ease">Card Ease</a></h3>
-<p>This graph shows the number of cards that have a specific ease factor.
-Average ease of the selected deck / collection is also displayed here.</p>
-<h3 id="card-stability"><a class="header" href="#card-stability">Card Stability</a></h3>
-<p>Only shown if FSRS is enabled. Stability is defined as the amount of time required
-for the probability of recall to decrease from 100% to 90%.</p>
-<h3 id="card-difficulty"><a class="header" href="#card-difficulty">Card Difficulty</a></h3>
-<p>Only shown if FSRS is enabled. Difficulty determines how quickly a card’s interval grows
-after each review.</p>
-<h3 id="card-retrievability"><a class="header" href="#card-retrievability">Card Retrievability</a></h3>
-<p>Only shown if FSRS is enabled. “Retrievability” is synonymous with “probability of recall”.</p>
-<p>Estimated total knowledge is the total number of cards you are likely to currently remember,
-calculated by multiplying average retrievability by the number of cards that have been
-reviewed at least once.</p>
-<h3 id="hourly-breakdown"><a class="header" href="#hourly-breakdown">Hourly Breakdown</a></h3>
-<p>This graph shows the percentage of total reviews you have passed during given
-hours.</p>
+<p>ここで、\(I_n\)はn番目のカードの間隔です。間隔が1日未満の場合、合計項は1です。これにより、短い間隔のカードが日次負荷の値を非現実的に歪めるのを防ぎます。</p>
+<p>例：間隔が10日のカードと間隔が50日のカードがあります。
+日次負荷 = \(\frac{1}{10} + \frac{1}{50} = 0.12\)、つまり_平均して_1日あたり0.12枚の期限カードがあります。</p>
+<h3 id="カレンダー"><a class="header" href="#カレンダー">カレンダー</a></h3>
+<p>このグラフは、過去のカード復習活動を示します。特定のアイテムにマウスを合わせると、その日に行われた改訂の数を表示できます。曜日をクリックして、それを開始日にします。</p>
+<h3 id="復習"><a class="header" href="#復習">復習</a></h3>
+<p>このグラフは、実行したカード復習の数をカウントします。バーは、画面下部で選択した期間に応じて、日、週、または月に対応する場合があります。異なる色のブロックは、各日に答えたカードのうち何枚が<a href="getting-started.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E7%8A%B6%E6%85%8B">成熟</a>、若い、再学習、または学習カードだったかを示します。期限でないときにフィルター/詰め込みデッキで答えられたカード用の別のグループもあります。灰色の陰影領域と右軸は、グラフ全体で時間が進むにつれて各タイプの復習の累積合計を示します（0日では、グラフに表示される全期間の数が表示されます）。</p>
+<h3 id="カード数"><a class="header" href="#カード数">カード数</a></h3>
+<p>この円グラフは、デッキまたはコレクションの何パーセントが成熟、未見、若い/学習、および保留カードで構成されているかを示します。より正確なパーセンテージを計算したい場合、キーは各セクションの正確なカード数を示し、カードの総数が横に表示されます。</p>
+<h3 id="復習時間"><a class="header" href="#復習時間">復習時間</a></h3>
+<p>このグラフは復習回数とまったく同じように機能しますが、答えたカードの数ではなく、各カードに費やした時間を扱います。</p>
+<h3 id="復習間隔"><a class="header" href="#復習間隔">復習間隔</a></h3>
+<p>このグラフは、特定の間隔（2つの復習間の遅延）を持つカードの数を表示します。灰色の陰影領域と右軸は、その時点以下の間隔を持つカードの割合を示します。時間範囲は、他のグラフとは異なる効果をこのグラフに与えます：どのカードまたは学習期間が含まれるかを変更するのではなく、間隔がどこまで表示されるかを制限します（たとえば、14か月の間隔は1年のグラフにはまったく表示されません）。</p>
+<h3 id="カードの易しさ"><a class="header" href="#カードの易しさ">カードの易しさ</a></h3>
+<p>このグラフは、特定の易しさ係数を持つカードの数を示します。
+選択したデッキ/コレクションの平均易しさもここに表示されます。</p>
+<h3 id="カードの安定性"><a class="header" href="#カードの安定性">カードの安定性</a></h3>
+<p>FSRSが有効な場合のみ表示されます。安定性は、想起の確率が100％から90％に減少するのに必要な時間の量として定義されます。</p>
+<h3 id="カードの難易度"><a class="header" href="#カードの難易度">カードの難易度</a></h3>
+<p>FSRSが有効な場合のみ表示されます。難易度は、各復習後にカードの間隔がどれだけ速く成長するかを決定します。</p>
+<h3 id="カードの検索可能性"><a class="header" href="#カードの検索可能性">カードの検索可能性</a></h3>
+<p>FSRSが有効な場合のみ表示されます。「検索可能性」は「想起の確率」と同義です。</p>
+<p>推定総知識は、現在覚えている可能性が高いカードの総数で、平均検索可能性に少なくとも1回復習されたカードの数を掛けて計算されます。</p>
+<h3 id="時間別内訳"><a class="header" href="#時間別内訳">時間別内訳</a></h3>
+<p>このグラフは、特定の時間に合格した総復習の割合を示します。</p>
 <ol>
-<li>x-axis (bottom): Time of day (at given hour).</li>
-<li>y-axis (right): Amount of cards studied.</li>
-<li>secondary y-axis (left): Success rate in percent.</li>
+<li>x軸（下）：時刻（特定の時間）。</li>
+<li>y軸（右）：学習したカードの量。</li>
+<li>副y軸（左）：成功率（パーセント）。</li>
 </ol>
-<p>The blue bars thus show you the number of reviews you’ve made at that hour (so
-that you know how significant the results are). The gray shaded region shows
-the percentage of the total reviews you have passed (i.e., not pressed <em>Again</em>
-on) at that hour.</p>
-<h3 id="answer-buttons"><a class="header" href="#answer-buttons">Answer Buttons</a></h3>
-<p>This graph shows how many times you’ve chosen the Again, Hard, Good, or
-Easy button while studying learning/new, young, and
-<a href="getting-started.html#card-states">mature</a> cards. Anki also displays the percentage
-of correct reviews for each type of card.</p>
-<h3 id="true-retention-table"><a class="header" href="#true-retention-table">True Retention Table</a></h3>
-<p>This table shows your retention across different cards and different time frames.
-A card is defined as “mature” if its interval is ≥21 days. Only one review per day - the first one - counts.
-Again counts as “Fail”; Hard, Good, and Easy count as “Pass”.
-This table can be used to check how well <a href="https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html">Anki’s spaced repetition algorithm</a> is working for you.</p>
-<p>If you are using FSRS, your true retention is expected to be close to your <a href="deck-options.html#desired-retention">desired retention</a>.
-Please keep in mind that data for a single day is noisy, so it’s better to look at monthly data. If your true retention doesn’t match your desired retention very well, here are some general recommendations:</p>
+<p>青いバーは、その時間に行った復習の数を示します（結果がどれほど重要かがわかるように）。灰色の陰影領域は、その時間に合格した（つまり、_もう一度_を押さなかった）総復習の割合を示します。</p>
+<h3 id="解答ボタン"><a class="header" href="#解答ボタン">解答ボタン</a></h3>
+<p>このグラフは、学習/新規、若い、<a href="getting-started.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E7%8A%B6%E6%85%8B">成熟</a>カードを学習している間に、もう一度、難しい、良い、または簡単ボタンを何回選択したかを示します。Ankiは、各タイプのカードの正解復習の割合も表示します。</p>
+<h3 id="真の保持率テーブル"><a class="header" href="#真の保持率テーブル">真の保持率テーブル</a></h3>
+<p>このテーブルは、異なるカードと異なる時間枠での保持率を示します。
+カードは、間隔が21日以上の場合「成熟」と定義されます。1日に1回の復習（最初のもの）のみがカウントされます。
+もう一度は「失敗」としてカウントされ、難しい、良い、簡単は「合格」としてカウントされます。
+このテーブルは、<a href="https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html">Ankiの間隔反復アルゴリズム</a>がどれだけうまく機能しているかを確認するために使用できます。</p>
+<p>FSRSを使用している場合、真の保持率は<a href="deck-options.html#%E6%9C%9B%E3%81%BE%E3%81%97%E3%81%84%E4%BF%9D%E6%8C%81%E7%8E%87">望ましい保持率</a>に近いことが期待されます。
+1日のデータはノイズが多いため、月次データを見る方が良いことに留意してください。真の保持率が望ましい保持率とうまく一致しない場合、一般的な推奨事項は次のとおりです：</p>
 <ol>
-<li>Optimize your FSRS parameters.</li>
-<li>Use different presets with their own parameters for different material.</li>
-<li>Suspend/reformulate <a href="leeches.html">leeches</a>.</li>
-<li>Make sure you are <a href="studying.html#answer-buttons">using the answer buttons as intended</a>.</li>
+<li>FSRSパラメータを最適化する。</li>
+<li>異なる素材に対して独自のパラメータを持つ異なるプリセットを使用する。</li>
+<li><a href="leeches.html">リーチ</a>を保留/再定式化する。</li>
+<li><a href="studying.html#%E8%A7%A3%E7%AD%94%E3%83%9C%E3%82%BF%E3%83%B3">意図したとおりに解答ボタンを使用している</a>ことを確認する。</li>
 </ol>
-<h2 id="manual-analysis"><a class="header" href="#manual-analysis">Manual Analysis</a></h2>
-<p>If you’re interested in getting information from your statistics other
-than what Anki provides, it is possible to access the data directly.
-Because of the complexity involved, this is not something we can provide
-any support for.</p>
-<p>One option is to <a href="addons.html">write an add-on</a> that adds another graph or
-more details to the statistics window. There are several add-ons of this
-sort on AnkiWeb already, which you can look at to get an idea of how it
-works.</p>
-<p>A more powerful and more complex option is to extract the review log
-information directly from Anki’s database and analyze it in an external
-program. Anki uses a database format called SQLite. There are many tools
-available for working with SQLite databases; one of the easiest to start
-with is called <a href="http://sqlitebrowser.org/">SQLite Browser</a>, which will
-allow you to look around the database as well as export a CSV version of
-tables for import into another program.</p>
-<p>The most important table for statistics is the “revlog” table, which
-stores an entry for each review that you conduct. The columns are as
-follows:</p>
+<h2 id="手動分析"><a class="header" href="#手動分析">手動分析</a></h2>
+<p>Ankiが提供するもの以外の統計から情報を取得することに興味がある場合は、データに直接アクセスすることが可能です。
+関連する複雑さのため、これは私たちがサポートを提供できるものではありません。</p>
+<p>1つのオプションは、統計ウィンドウに別のグラフまたは詳細を追加する<a href="addons.html">アドオンを作成する</a>ことです。AnkiWebにはすでにこの種のアドオンがいくつかあり、それがどのように機能するかのアイデアを得るために見ることができます。</p>
+<p>より強力でより複雑なオプションは、Ankiのデータベースから復習ログ情報を直接抽出し、外部プログラムで分析することです。AnkiはSQLiteと呼ばれるデータベース形式を使用しています。SQLiteデータベースを操作するための多くのツールが利用可能です。最も簡単に始められるものの1つは<a href="http://sqlitebrowser.org/">SQLite Browser</a>と呼ばれ、データベースを見回したり、別のプログラムにインポートするためのテーブルのCSVバージョンをエクスポートしたりできます。</p>
+<p>統計にとって最も重要なテーブルは「revlog」テーブルで、実行した各復習のエントリを保存します。列は次のとおりです：</p>
 <p><strong>id</strong><br />
-The time at which the review was conducted, as the number of
-milliseconds that had passed since midnight UTC on January 1, 1970.
-(This is sometimes known as “Unix epoch time”, especially when in
-straight seconds instead of milliseconds.)</p>
+復習が実施された時刻。1970年1月1日の午前0時UTCから経過したミリ秒数として。
+（これは、ミリ秒ではなく秒単位の場合、「Unix エポック時間」として知られることがあります。）</p>
 <p><strong>cid</strong><br />
-The ID of the card that was reviewed. You can look up this value in the
-id field of the “cards” table to get more information about the card,
-although note that the card could have changed between when the revlog
-entry was recorded and when you are looking it up. It is also the
-millisecond timestamp of the card’s creation time.</p>
+復習されたカードのID。この値を「cards」テーブルのidフィールドで検索して、カードに関する詳細情報を取得できますが、revlogエントリが記録されたときと検索しているときの間でカードが変更されている可能性があることに注意してください。これは、カードの作成時刻のミリ秒タイムスタンプでもあります。</p>
 <p><strong>usn</strong><br />
-This column is used to keep track of the sync state of reviews and
-provides no useful information for analysis.</p>
+この列は、復習の同期状態を追跡するために使用され、分析に有用な情報を提供しません。</p>
 <p><strong>ease</strong><br />
-Which button you pressed at the end of the review (1 for Again, 4 for
-Easy).</p>
+復習の最後に押したボタン（1はもう一度、4は簡単）。</p>
 <p><strong>ivl</strong><br />
-The new interval that the card was pushed to after the review. Positive
-values are in days; negative values are in seconds (for learning cards).</p>
+復習後にカードがプッシュされた新しい間隔。正の値は日単位です。負の値は秒単位です（学習カードの場合）。</p>
 <p><strong>lastIvl</strong><br />
-The interval the card had before the review. Cards introduced for the
-first time have a last interval equal to the Again delay.</p>
+復習前のカードの間隔。初めて導入されたカードは、もう一度の遅延に等しい最後の間隔を持ちます。</p>
 <p><strong>factor</strong><br />
-The new ease factor of the card in permille (parts per thousand). If the
-ease factor is 2500, the card’s interval will be multiplied by 2.5 the
-next time you press Good.</p>
+カードの新しい易しさ係数（パーミル（千分率））。易しさ係数が2500の場合、次に良いを押すとカードの間隔は2.5倍になります。</p>
 <p><strong>time</strong><br />
-The amount of time (in milliseconds) you spent on the question and
-answer sides of the card before selecting an ease button.</p>
+易しさボタンを選択する前に、カードの質問側と解答側に費やした時間（ミリ秒単位）。</p>
 <p><strong>type</strong><br />
-This is 0 for learning cards, 1 for review cards, 2 for relearning cards,
-and 3 for early “cram” cards (cards being studied in a filtered deck when they
-are not due).</p>
+これは学習カードの場合は0、復習カードの場合は1、再学習カードの場合は2、早期の「詰め込み」カード（期限でないときにフィルターデッキで学習されているカード）の場合は3です。</p>
 
                     </main>
 

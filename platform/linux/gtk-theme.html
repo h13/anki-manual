@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Incorrect GTK Theme - Anki Manual</title>
+        <title>GTKテーマの問題 - Ankiマニュアル</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Anki Manual</h1>
+                    <h1 class="menu-title">Ankiマニュアル</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -172,13 +172,13 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="anki-not-picking-up-gtk-theme-on-gnomelinux"><a class="header" href="#anki-not-picking-up-gtk-theme-on-gnomelinux">Anki not picking up GTK theme on Gnome/Linux</a></h1>
-<p>You can work around this issue by explicitly telling Anki what the GTK theme is. Run the following commands in a terminal:</p>
+                        <h1 id="ankiがgnomelinuxでgtkテーマを認識しない"><a class="header" href="#ankiがgnomelinuxでgtkテーマを認識しない">AnkiがGnome/LinuxでGTKテーマを認識しない</a></h1>
+<p>この問題は、AnkiにGTKテーマが何であるかを明示的に伝えることで回避できます。ターミナルで次のコマンドを実行してください：</p>
 <pre><code class="language-shell">theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
 echo "gtk-theme-name=$theme" &gt;&gt; ~/.gtkrc-2.0
 echo "export GTK2_RC_FILES=$HOME/.gtkrc-2.0" &gt;&gt; ~/.profile
 </code></pre>
-<p>Then log out and log back into your computer, and Anki should pick up the GTK theme.</p>
+<p>その後、コンピュータからログアウトして再度ログインすると、AnkiはGTKテーマを認識するはずです。</p>
 
                     </main>
 

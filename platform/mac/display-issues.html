@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Display Issues - Anki Manual</title>
+        <title>表示の問題 - Ankiマニュアル</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Anki Manual</h1>
+                    <h1 class="menu-title">Ankiマニュアル</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -172,35 +172,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="display-issues-on-macos"><a class="header" href="#display-issues-on-macos">Display Issues on macOS</a></h1>
+                        <h1 id="macosでの表示の問題"><a class="header" href="#macosでの表示の問題">macOSでの表示の問題</a></h1>
 <ul>
-<li><a href="#change-the-video-driver">Change the Video Driver</a>
+<li><a href="#%E3%83%93%E3%83%87%E3%82%AA%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC%E3%81%AE%E5%A4%89%E6%9B%B4">ビデオドライバーの変更</a>
 <ul>
-<li><a href="#changing-the-driver-from-the-preferences-screen">Changing the Driver From the Preferences Screen</a></li>
-<li><a href="#changing-the-driver-from-terminalapp">Changing the Driver From Terminal.app</a></li>
+<li><a href="#%E8%A8%AD%E5%AE%9A%E7%94%BB%E9%9D%A2%E3%81%8B%E3%82%89%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B">設定画面からドライバーを変更する</a></li>
+<li><a href="#terminalapp%E3%81%8B%E3%82%89%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B">Terminal.appからドライバーを変更する</a></li>
 </ul>
 </li>
-<li><a href="#egpus">eGPUs</a></li>
-<li><a href="#monitors-with-different-resolutions">Monitors with Different Resolutions</a></li>
+<li><a href="#egpu">eGPU</a></li>
+<li><a href="#%E7%95%B0%E3%81%AA%E3%82%8B%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%81%AE%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC">異なる解像度のモニター</a></li>
 </ul>
-<h2 id="change-the-video-driver"><a class="header" href="#change-the-video-driver">Change the Video Driver</a></h2>
-<h3 id="changing-the-driver-from-the-preferences-screen"><a class="header" href="#changing-the-driver-from-the-preferences-screen">Changing the Driver From the Preferences Screen</a></h3>
-<p>If you’re experiencing display issues or crashes in Anki 23.10+, you can try
-changing the video driver in the preferences screen by navigating to <strong>Anki →
-Preferences</strong> and then selecting the driver from the dropdown menu. After that it
-is necessary to restart Anki.</p>
-<h3 id="changing-the-driver-from-terminalapp"><a class="header" href="#changing-the-driver-from-terminalapp">Changing the Driver From Terminal.app</a></h3>
-<p>Older Anki versions did not provide an option in the preferences, but allowed
-you to adjust the driver by opening Terminal.app, then pasting the following and hit enter:</p>
+<h2 id="ビデオドライバーの変更"><a class="header" href="#ビデオドライバーの変更">ビデオドライバーの変更</a></h2>
+<h3 id="設定画面からドライバーを変更する"><a class="header" href="#設定画面からドライバーを変更する">設定画面からドライバーを変更する</a></h3>
+<p>Anki 23.10以降で表示の問題やクラッシュが発生している場合は、<strong>Anki → 設定</strong>に移動してドロップダウンメニューからドライバーを選択することで、設定画面でビデオドライバーを変更してみてください。その後、Ankiを再起動する必要があります。</p>
+<h3 id="terminalappからドライバーを変更する"><a class="header" href="#terminalappからドライバーを変更する">Terminal.appからドライバーを変更する</a></h3>
+<p>古いAnkiバージョンでは設定でオプションを提供していませんでしたが、Terminal.appを開いて次を貼り付けてEnterキーを押すことで、ドライバーを調整できました：</p>
 <pre><code>echo software &gt; ~/Library/Application\ Support/Anki2/gldriver6
 </code></pre>
-<p>It will not print anything. You can then start Anki again.</p>
-<p>If you wish to switch back to the default, change <code>software</code> to <code>auto</code>, or
-remove that file.</p>
-<h2 id="egpus"><a class="header" href="#egpus">eGPUs</a></h2>
-<p>If you experience blank screens when using an external graphics card on a Mac, you can ctrl+click on the Anki app, click “Get Info”, and enable the “prefer eGPU” option.</p>
-<h2 id="monitors-with-different-resolutions"><a class="header" href="#monitors-with-different-resolutions">Monitors with Different Resolutions</a></h2>
-<p>Please see <a href="https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331">this forum post</a>.</p>
+<p>何も出力されません。その後、Ankiを再度起動できます。</p>
+<p>デフォルトに戻したい場合は、<code>software</code>を<code>auto</code>に変更するか、そのファイルを削除してください。</p>
+<h2 id="egpu"><a class="header" href="#egpu">eGPU</a></h2>
+<p>Macで外部グラフィックスカードを使用する際に空白の画面が表示される場合は、Ankiアプリをctrl+クリックし、「情報を見る」をクリックして、「eGPUを優先」オプションを有効にできます。</p>
+<h2 id="異なる解像度のモニター"><a class="header" href="#異なる解像度のモニター">異なる解像度のモニター</a></h2>
+<p><a href="https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331">このフォーラム投稿</a>を参照してください。</p>
 
                     </main>
 

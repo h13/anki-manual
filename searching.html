@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Searching - Anki Manual</title>
+        <title>検索 - Ankiマニュアル</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Anki Manual</h1>
+                    <h1 class="menu-title">Ankiマニュアル</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,400 +172,342 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="searching"><a class="header" href="#searching">Searching</a></h1>
+                        <h1 id="検索"><a class="header" href="#検索">検索</a></h1>
 <ul>
-<li><a href="#simple-searches">Simple searches</a></li>
-<li><a href="#limiting-to-a-field">Limiting to a field</a></li>
-<li><a href="#tags-decks-cards-and-notes">Tags, decks, cards and notes</a></li>
-<li><a href="#ignoring-accentscombining-characters">Ignoring accents/combining characters</a></li>
-<li><a href="#regular-expressions">Regular expressions</a></li>
-<li><a href="#card-state">Card state</a></li>
-<li><a href="#flags">Flags</a></li>
-<li><a href="#card-properties">Card properties</a></li>
-<li><a href="#recent-events">Recent Events</a>
+<li><a href="#%E7%B0%A1%E5%8D%98%E3%81%AA%E6%A4%9C%E7%B4%A2">簡単な検索</a></li>
+<li><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AB%E9%99%90%E5%AE%9A">フィールドに限定</a></li>
+<li><a href="#%E3%82%BF%E3%82%B0%E3%83%87%E3%83%83%E3%82%AD%E3%82%AB%E3%83%BC%E3%83%89%E3%81%8A%E3%82%88%E3%81%B3%E3%83%8E%E3%83%BC%E3%83%88">タグ、デッキ、カードおよびノート</a></li>
+<li><a href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%88%E7%B5%90%E5%90%88%E6%96%87%E5%AD%97%E3%81%AE%E7%84%A1%E8%A6%96">アクセント/結合文字の無視</a></li>
+<li><a href="#%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E7%8A%B6%E6%85%8B">カードの状態</a></li>
+<li><a href="#%E3%83%95%E3%83%A9%E3%82%B0">フラグ</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">カードのプロパティ</a></li>
+<li><a href="#%E6%9C%80%E8%BF%91%E3%81%AE%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">最近のイベント</a>
 <ul>
-<li><a href="#added">Added</a></li>
-<li><a href="#edited">Edited</a></li>
-<li><a href="#answered">Answered</a></li>
-<li><a href="#first-answered">First Answered</a></li>
+<li><a href="#%E8%BF%BD%E5%8A%A0">追加</a></li>
+<li><a href="#%E7%B7%A8%E9%9B%86">編集</a></li>
+<li><a href="#%E5%9B%9E%E7%AD%94">回答</a></li>
+<li><a href="#%E5%88%9D%E5%9B%9E%E5%9B%9E%E7%AD%94">初回回答</a></li>
 </ul>
 </li>
-<li><a href="#matching-special-characters">Matching special characters</a>
+<li><a href="#%E7%89%B9%E6%AE%8A%E6%96%87%E5%AD%97%E3%81%AE%E4%B8%80%E8%87%B4">特殊文字の一致</a>
 <ul>
-<li><a href="#raw-input">Raw input</a></li>
+<li><a href="#%E7%94%9F%E3%81%AE%E5%85%A5%E5%8A%9B">生の入力</a></li>
 </ul>
 </li>
-<li><a href="#object-ids">Object IDs</a></li>
-<li><a href="#custom-data">Custom Data</a></li>
-<li><a href="#other-searches">Other Searches</a></li>
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88id">オブジェクトID</a></li>
+<li><a href="#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%83%87%E3%83%BC%E3%82%BF">カスタムデータ</a></li>
+<li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%A4%9C%E7%B4%A2">その他の検索</a></li>
 </ul>
-<p>Anki’s Browse screen and the Filtered Deck feature use a common method
-of searching for specific cards/notes. This method can also be used to adjust the scope of FSRS optimization.</p>
-<h2 id="simple-searches"><a class="header" href="#simple-searches">Simple searches</a></h2>
-<p>When you type some text into the search box, Anki finds matching notes
-and displays their cards. Anki searches in all fields of the notes, but
-does not search for tags (see <a href="#tags-decks-cards-and-notes">later in this section</a> to search for tags). Some examples:</p>
+<p>Ankiのブラウザ画面とフィルターデッキ機能は、特定のカード/ノートを検索する共通の方法を使用します。この方法は、FSRS最適化の範囲を調整するためにも使用できます。</p>
+<h2 id="簡単な検索"><a class="header" href="#簡単な検索">簡単な検索</a></h2>
+<p>検索ボックスにテキストを入力すると、Ankiは一致するノートを見つけ、それらのカードを表示します。Ankiはノートのすべてのフィールドを検索しますが、タグは検索しません（タグを検索するには、<a href="#%E3%82%BF%E3%82%B0%E3%83%87%E3%83%83%E3%82%AD%E3%82%AB%E3%83%BC%E3%83%89%E3%81%8A%E3%82%88%E3%81%B3%E3%83%8E%E3%83%BC%E3%83%88">このセクションの後半</a>を参照してください）。いくつかの例：</p>
 <p><code>dog</code><br />
-searches for “dog” - will match words like “doggy” and “underdog” too.</p>
+“dog“を検索 - “doggy“や“underdog“などの単語にも一致します。</p>
 <p><code>dog cat</code><br />
-finds notes that have both “dog” and “cat” on them, such as “raining
-cats and dogs”.</p>
+“dog“と“cat“の両方を含むノートを検索します。例：“raining cats and dogs”。</p>
 <p><code>dog or cat</code><br />
-finds notes with either “dog” or “cat”.</p>
+“dog“または“cat“のいずれかを含むノートを検索します。</p>
 <p><code>dog (cat or mouse)</code><br />
-finds notes with “dog” and “cat”, or “dog” and “mouse”.</p>
+“dog“と“cat”、または“dog“と“mouse“を含むノートを検索します。</p>
 <p><code>-cat</code><br />
-finds notes without “cat”.</p>
+“cat“を含まないノートを検索します。</p>
 <p><code>-cat -mouse</code><br />
-finds notes with neither “cat” nor “mouse”.</p>
+“cat“も“mouse“も含まないノートを検索します。</p>
 <p><code>-(cat or mouse)</code><br />
-same as the above.</p>
+上記と同じです。</p>
 <p><code>"a dog"</code><br />
-finds notes with the exact sequence of characters “a dog” in them, such
-as “atta dog”, but not “dog a” or “adog”.</p>
+“a dog“という正確な文字列を含むノートを検索します。例：“atta dog“は一致しますが、“dog a“や“adog“は一致しません。</p>
 <p><code>-"a dog"</code><br />
-finds notes without the exact sequence of characters “a dog” in them.</p>
+“a dog“という正確な文字列を含まないノートを検索します。</p>
 <p><code>d_g</code><br />
-finds notes with d, &lt;one character&gt;, g, like dog, dig, dug, and so on.</p>
+d、&lt;1文字&gt;、gを含むノートを検索します。例：dog、dig、dugなど。</p>
 <p><code>d*g</code><br />
-finds notes with d, &lt;zero or more characters&gt;, g, like dg, dog, dung,
-etc.</p>
+d、&lt;0文字以上&gt;、gを含むノートを検索します。例：dg、dog、dungなど。</p>
 <p><code>w:dog</code><br />
-searches for the word “dog” as opposed to a sequence of characters - will match “dog”, but not “doggy”
-or “underdog”. Requires Anki 2.1.24+, AnkiMobile 2.1.61+, or AnkiDroid 2.17+. Note that
-formatting changes may be interpreted as word boundaries, e.g. searching
-for <code>w:exam</code> will match <strong>exam</strong>ple, as the “exam” part of example is in bold format.</p>
+文字列ではなく単語“dog“を検索 - “dog“には一致しますが、“doggy“や“underdog“には一致しません。Anki 2.1.24以降、AnkiMobile 2.1.61以降、またはAnkiDroid 2.17以降が必要です。フォーマットの変更は単語境界として解釈される可能性があることに注意してください。例：<code>w:exam</code>を検索すると、<strong>exam</strong>pleに一致します。なぜなら、exampleの“exam“部分が太字形式になっているからです。</p>
 <p><code>w:dog*</code><br />
-will match “dog” and “doggy”, but not “underdog”.</p>
+“dog“と“doggy“に一致しますが、“underdog“には一致しません。</p>
 <p><code>w:*dog</code><br />
-will match “dog” and “underdog”, but not “doggy”.</p>
-<p>Things to note from the above:</p>
+“dog“と“underdog“に一致しますが、“doggy“には一致しません。</p>
+<p>上記から注意すべき点：</p>
 <ul>
 <li>
-<p>Search terms are separated by spaces.</p>
+<p>検索語はスペースで区切られます。</p>
 </li>
 <li>
-<p>When multiple search terms are provided, Anki looks for notes that
-match all of the terms - an implicit <code>and</code> is inserted between each
-term. On Anki 2.1.24+, AnkiMobile 2.0.60+, and AnkiDroid 2.17+ you can be explicit
-if you like (<code>dog and cat</code> is the same as <code>dog cat</code>), but older
-Anki versions will treat <code>and</code> as just another word to search for.</p>
+<p>複数の検索語が提供された場合、Ankiはすべての語に一致するノートを探します - 各語の間に暗黙の<code>and</code>が挿入されます。Anki 2.1.24以降、AnkiMobile 2.0.60以降、AnkiDroid 2.17以降では、必要に応じて明示的にすることができます（<code>dog and cat</code>は<code>dog cat</code>と同じです）。しかし、古いAnkiバージョンでは<code>and</code>を検索する別の単語として扱います。</p>
 </li>
 <li>
-<p>You can use <code>or</code> if you only need one of the terms to match.</p>
+<p>語の1つだけが一致する必要がある場合は、<code>or</code>を使用できます。</p>
 </li>
 <li>
-<p>You can prepend a minus sign (<code>-</code>) to a term to find notes that don’t
-match the term.</p>
+<p>語の前にマイナス記号（<code>-</code>）を付けると、その語に一致しないノートを見つけることができます。</p>
 </li>
 <li>
-<p>You can group search terms by placing them in parentheses, as in the
-<code>dog (cat or mouse)</code> example. This becomes important when
-combining OR and AND searches — in the example, with the
-parentheses, it matches either “dog cat” or “dog mouse”, whereas
-without them it would match either “dog and cat” or “mouse”.</p>
+<p><code>dog (cat or mouse)</code>の例のように、検索語を括弧で囲むことでグループ化できます。これは、ORとAND検索を組み合わせるときに重要になります — 例では、括弧があると“dog cat“または“dog mouse“のいずれかに一致しますが、括弧がない場合は“dog and cat“または“mouse“のいずれかに一致します。</p>
 </li>
 <li>
-<p>Anki is only able to search within formatting in the <a href="editing.html#customizing-fields">sort field</a> you’ve configured. For example, if you add
-“<strong>exa</strong>mple” to one of your fields, with the “exa” part in bold, this will not be matched when
-searching for <code>example</code> unless that field is the sort field. If a
-word is not formatted, or the formatting does not change in the
-middle of the word, then Anki will be able to find it in any field.</p>
+<p>Ankiは、設定した<a href="editing.html#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">ソートフィールド</a>内のフォーマットのみを検索できます。例えば、フィールドの1つに“<strong>exa</strong>mple“を追加し、“exa“部分を太字にした場合、そのフィールドがソートフィールドでない限り、<code>example</code>を検索しても一致しません。単語がフォーマットされていない場合、または単語の途中でフォーマットが変更されない場合、Ankiは任意のフィールドでそれを見つけることができます。</p>
 </li>
 <li>
-<p>Standard searches are case insensitive for Latin characters - a-z will
-match A-Z, and vice versa. Other characters such as Cyrillic are case sensitive
-in a standard search, but can be made case insensitive by searching on a word
-boundary or regular expression (<code>w:</code>, <code>re:</code>).</p>
+<p>標準的な検索では、ラテン文字は大文字小文字を区別しません - a-zはA-Zに一致し、その逆も同様です。キリル文字などの他の文字は標準検索では大文字小文字を区別しますが、単語境界または正規表現で検索することで大文字小文字を区別しないようにできます（<code>w:</code>、<code>re:</code>）。</p>
 </li>
 </ul>
-<h2 id="limiting-to-a-field"><a class="header" href="#limiting-to-a-field">Limiting to a field</a></h2>
-<p>You can also ask Anki to match only if a particular field contains some
-text. Unlike the previous search examples, searching in fields requires an exact
-match by default.</p>
+<h2 id="フィールドに限定"><a class="header" href="#フィールドに限定">フィールドに限定</a></h2>
+<p>特定のフィールドにテキストが含まれている場合のみ一致するようにAnkiに要求することもできます。前の検索例とは異なり、フィールドでの検索はデフォルトで完全一致が必要です。</p>
 <p><code>front:dog</code><br />
-finds notes with a Front field of exactly “dog”. A field that says “a
-dog” will not match.</p>
+Frontフィールドが正確に“dog“であるノートを検索します。“a dog“というフィールドは一致しません。</p>
 <p><code>"animal front:a dog"</code><br />
-finds notes where the “Animal Front” field is exactly “a dog”. The double quotes are
-mandatory: see <a href="#matching-special-characters">later in this section</a>.</p>
+“Animal Front“フィールドが正確に“a dog“であるノートを検索します。二重引用符は必須です：<a href="#%E7%89%B9%E6%AE%8A%E6%96%87%E5%AD%97%E3%81%AE%E4%B8%80%E8%87%B4">このセクションの後半</a>を参照してください。</p>
 <p><code>front:*dog*</code><br />
-finds notes where the Front field contains dog somewhere.</p>
+Frontフィールドのどこかにdogが含まれているノートを検索します。</p>
 <p><code>front:</code><br />
-finds notes that have an empty Front field.</p>
+空のFrontフィールドを持つノートを検索します。</p>
 <p><code>front:_*</code><br />
-finds notes that have a non-empty Front field.</p>
+空でないFrontフィールドを持つノートを検索します。</p>
 <p><code>front:*</code><br />
-finds notes that have a Front field, empty or not.</p>
+Frontフィールドを持つノートを検索します（空かどうかは問いません）。</p>
 <p><code>fr*:text</code><br />
-finds notes in a field starting with “fr”. Requires Anki 2.1.24+, AnkiMobile 2.1.60+, or AnkiDroid 2.17+.</p>
-<h2 id="tags-decks-cards-and-notes"><a class="header" href="#tags-decks-cards-and-notes">Tags, decks, cards and notes</a></h2>
+“fr“で始まるフィールドのノートを検索します。Anki 2.1.24以降、AnkiMobile 2.1.60以降、またはAnkiDroid 2.17以降が必要です。</p>
+<h2 id="タグデッキカードおよびノート"><a class="header" href="#タグデッキカードおよびノート">タグ、デッキ、カードおよびノート</a></h2>
 <p><code>tag:animal</code><br />
-finds notes with the tag “animal”, or subtags like “animal::mammal”.</p>
+“animal“タグ、または“animal::mammal“のようなサブタグを持つノートを検索します。</p>
 <p><code>tag:none</code><br />
-finds notes with no tags.</p>
+タグがないノートを検索します。</p>
 <p><code>tag:ani*</code><br />
-finds notes with tags starting with “ani”.</p>
+“ani“で始まるタグを持つノートを検索します。</p>
 <p><code>deck:french</code><br />
-find cards in a top-level deck called “French”, or its subdecks like “French::Words”. It will not match subdecks with that name, such as “Languages::French”.</p>
+“French“というトップレベルデッキ、または“French::Words“のようなサブデッキのカードを検索します。“Languages::French“のような名前のサブデッキには一致しません。</p>
 <p><code>deck:french::words</code><br />
-find cards in the “French::Words” subdeck.</p>
+“French::Words“サブデッキのカードを検索します。</p>
 <p><code>deck:french -deck:french::*</code><br />
-finds cards in “French”, but not its subdecks.</p>
+“French“のカードを検索しますが、そのサブデッキは除外します。</p>
 <p><code>deck:"french words"</code><br />
-searching when the deck name has a space.</p>
+デッキ名にスペースがある場合の検索。</p>
 <p><code>"deck:french words"</code><br />
-same as earlier.</p>
+前と同じです。</p>
 <p><code>deck:filtered</code><br />
-filtered decks only.</p>
+フィルターデッキのみ。</p>
 <p><code>-deck:filtered</code><br />
-normal decks only.</p>
+通常のデッキのみ。</p>
 <p><code>preset:"Default"</code><br />
-cards in all decks that use the “Default” deck options preset.
-Requires Anki 23.10+, AnkiMobile 23.10+ or AnkiDroid 2.17+.</p>
+“Default“デッキオプションプリセットを使用するすべてのデッキのカード。
+Anki 23.10以降、AnkiMobile 23.10以降、またはAnkiDroid 2.17以降が必要です。</p>
 <p><code>card:forward</code><br />
-finds cards created by a card type named “Forward”.</p>
+“Forward“という名前のカードタイプによって作成されたカードを検索します。</p>
 <p><code>card:1</code><br />
-searches for cards by card type number, e.g. to find the second cloze
-deletion for a note, you’d use <code>card:2</code></p>
+カードタイプ番号でカードを検索します。例：ノートの2番目のクローズ削除を見つけるには、<code>card:2</code>を使用します。</p>
 <p><code>note:basic</code><br />
-searches for cards created with a note type named “Basic”.</p>
-<h2 id="ignoring-accentscombining-characters"><a class="header" href="#ignoring-accentscombining-characters">Ignoring accents/combining characters</a></h2>
-<p>Requires Anki 2.1.24+, AnkiMobile 2.0.60+ or AnkiDroid 2.17+.</p>
-<p>You can use <code>nc:</code> (nc stands for “no combining”) to make Anki ignore combining characters. For example:</p>
+“Basic“という名前のノートタイプで作成されたカードを検索します。</p>
+<h2 id="アクセント結合文字の無視"><a class="header" href="#アクセント結合文字の無視">アクセント/結合文字の無視</a></h2>
+<p>Anki 2.1.24以降、AnkiMobile 2.0.60以降、またはAnkiDroid 2.17以降が必要です。</p>
+<p><code>nc:</code>（ncは“no combining“の略）を使用して、Ankiに結合文字を無視させることができます。例：</p>
 <p><code>nc:uber</code><br />
-matches notes with “uber”, “über”, “Über” and so on.</p>
+“uber”、“über”、“Über“などを持つノートに一致します。</p>
 <p><code>nc:は</code><br />
-matches “は”, “ば”, and “ぱ”.</p>
-<p>Searches that ignore combining characters are slower than regular searches.</p>
-<h2 id="regular-expressions"><a class="header" href="#regular-expressions">Regular expressions</a></h2>
-<p>Anki 2.1.24+, AnkiMobile 2.0.60+ and AnkiDroid 2.17+ support searching in notes with “regular expressions”,
-a standard and powerful way of searching in text.</p>
-<p>Start a search with <code>re:</code> to search using regular expressions. To make things easier, Anki will
-treat the following as <a href="#raw-input">raw input</a>, so bear in mind the rules listed there.</p>
-<p>Some examples:</p>
+“は”、“ば”、“ぱ“に一致します。</p>
+<p>結合文字を無視する検索は、通常の検索よりも遅くなります。</p>
+<h2 id="正規表現"><a class="header" href="#正規表現">正規表現</a></h2>
+<p>Anki 2.1.24以降、AnkiMobile 2.0.60以降、AnkiDroid 2.17以降は、標準的で強力なテキスト検索方法である「正規表現」を使用したノートの検索をサポートしています。</p>
+<p>正規表現を使用して検索するには、<code>re:</code>で検索を開始します。物事を簡単にするため、Ankiは以下を<a href="#%E7%94%9F%E3%81%AE%E5%85%A5%E5%8A%9B">生の入力</a>として扱うので、そこにリストされているルールに留意してください。</p>
+<p>いくつかの例：</p>
 <p><code>"re:(some|another).*thing"</code><br />
-finds notes that have “some” or “another” on them, followed by 0 or more characters, and then “thing”.</p>
+“some“または“another“を持ち、その後に0個以上の文字、そして“thing“が続くノートを検索します。</p>
 <p><code>re:\d{3}</code><br />
-finds notes that have 3 digits in a row.</p>
-<p>Regular expressions can also be limited to a specific field. Please note that unlike the normal searches
-in a specific field, regular expressions in fields don’t require an exact match:</p>
+3桁の数字が連続しているノートを検索します。</p>
+<p>正規表現は特定のフィールドに限定することもできます。特定のフィールドでの通常の検索とは異なり、フィールドの正規表現は完全一致を必要としないことに注意してください：</p>
 <p><code>front:re:[a-c]1</code><br />
-matches uppercase or lowercase a1, B1 or c1 that occurs anywhere in the “Front” field.</p>
+“Front“フィールドのどこかに現れる大文字または小文字のa1、B1、c1に一致します。</p>
 <p><code>front:re:^[a-c]1$</code><br />
-same as the previous example, but will not match if any other text falls before or after a1/b1/c1.</p>
-<p>Anki 2.1.50+ supports regular expressions for tags:</p>
+前の例と同じですが、a1/b1/c1の前後に他のテキストがある場合は一致しません。</p>
+<p>Anki 2.1.50以降はタグの正規表現をサポートしています：</p>
 <p><code>tag:re:^parent$</code><br />
-finds notes with the exact tag “parent”, disregarding any child tags like “parent::child”.</p>
+“parent::child“のような子タグを無視して、正確なタグ“parent“を持つノートを検索します。</p>
 <p><code>"tag:re:lesson-(1[7-9]|2[0-5])"</code><br />
-finds notes with tags “lesson-17” through “lesson-25”.</p>
-<p>For more information on regular expressions, see <a href="https://regexone.com/lesson/introduction_abcs">this website</a>.</p>
-<p>Some things to be aware of:</p>
+“lesson-17“から“lesson-25“までのタグを持つノートを検索します。</p>
+<p>正規表現の詳細については、<a href="https://regexone.com/lesson/introduction_abcs">このウェブサイト</a>を参照してください。</p>
+<p>注意すべきこと：</p>
 <ul>
-<li>The search is case-insensitive by default; use <code>(?-i)</code> at the start to turn on case sensitivity.</li>
-<li>Some text like spaces and newlines may be represented differently in HTML - you can
-use the HTML editor in the editing screen to see the underlying HTML contents.</li>
-<li>For the specifics of Anki’s regex support, see the <a href="https://docs.rs/regex/1.3.9/regex/#syntax">regex crate documentation</a>.</li>
+<li>検索はデフォルトで大文字小文字を区別しません。大文字小文字を区別するには、最初に<code>(?-i)</code>を使用します。</li>
+<li>スペースや改行などのテキストは、HTMLで異なって表現される場合があります - 編集画面のHTMLエディタを使用して、基礎となるHTMLの内容を確認できます。</li>
+<li>Ankiの正規表現サポートの詳細については、<a href="https://docs.rs/regex/1.3.9/regex/#syntax">regex crateドキュメント</a>を参照してください。</li>
 </ul>
-<h2 id="card-state"><a class="header" href="#card-state">Card state</a></h2>
+<h2 id="カードの状態"><a class="header" href="#カードの状態">カードの状態</a></h2>
 <p><code>is:due</code><br />
-review cards and learning cards waiting to be studied.</p>
+学習待ちの復習カードと学習カード。</p>
 <p><code>is:new</code><br />
-new cards.</p>
+新しいカード。</p>
 <p><code>is:learn</code><br />
-cards in learning.</p>
+学習中のカード。</p>
 <p><code>is:review</code><br />
-reviews (both due and not due) and lapsed cards.</p>
+復習（期限かどうかに関わらず）と忘却カード。</p>
 <p><code>is:suspended</code><br />
-cards that have been <a href="leeches.html">automatically</a> or manually suspended.</p>
+<a href="leeches.html">自動的に</a>または手動で保留されたカード。</p>
 <p><code>is:buried</code><br />
-cards that have been either <a href="studying.html#siblings-and-burying">automatically</a> or
-manually buried.</p>
+<a href="studying.html#%E5%85%84%E5%BC%9F%E3%82%AB%E3%83%BC%E3%83%89%E3%81%A8%E5%BB%B6%E6%9C%9F">自動的に</a>または手動で延期されたカード。</p>
 <p><code>is:buried-sibling</code><br />
-cards that have been buried automatically.</p>
+自動的に延期されたカード。</p>
 <p><code>is:buried-manually</code><br />
-cards that have been manually buried.</p>
-<p>Cards that have <a href="deck-options.html#lapses">lapsed</a> fall into several of the previous categories, so it may
-be useful to combine different search terms to get more precise results:</p>
+手動で延期されたカード。</p>
+<p><a href="deck-options.html#%E5%BF%98%E5%8D%B4">忘却</a>したカードは前述のカテゴリーのいくつかに該当するため、より正確な結果を得るために異なる検索語を組み合わせることが有用かもしれません：</p>
 <p><code>is:learn is:review</code><br />
-cards that have lapsed and are awaiting relearning.</p>
+忘却し、再学習を待っているカード。</p>
 <p><code>-is:learn is:review</code><br />
-review cards, not including lapsed cards.</p>
+忘却カードを含まない復習カード。</p>
 <p><code>is:learn -is:review</code><br />
-cards that are in learning for the first time.</p>
-<h2 id="flags"><a class="header" href="#flags">Flags</a></h2>
+初めて学習中のカード。</p>
+<h2 id="フラグ"><a class="header" href="#フラグ">フラグ</a></h2>
 <p><code>flag:1</code><br />
-cards with a red flag.</p>
+赤いフラグが付いたカード。</p>
 <p><code>flag:2</code><br />
-cards with an orange flag.</p>
+オレンジのフラグが付いたカード。</p>
 <p><code>flag:3</code><br />
-cards with a green flag.</p>
+緑のフラグが付いたカード。</p>
 <p><code>flag:4</code><br />
-cards with a blue flag.</p>
+青いフラグが付いたカード。</p>
 <p><code>flag:5</code><br />
-cards with a pink flag.</p>
+ピンクのフラグが付いたカード。</p>
 <p><code>flag:6</code><br />
-cards with a turquoise flag.</p>
+ターコイズのフラグが付いたカード。</p>
 <p><code>flag:7</code><br />
-cards with a purple flag.</p>
-<h2 id="card-properties"><a class="header" href="#card-properties">Card properties</a></h2>
+紫のフラグが付いたカード。</p>
+<h2 id="カードのプロパティ"><a class="header" href="#カードのプロパティ">カードのプロパティ</a></h2>
 <p><code>prop:ivl&gt;=10</code><br />
-cards with interval of 10 days or more.</p>
+間隔が10日以上のカード。</p>
 <p><code>prop:due=1</code><br />
-cards due tomorrow.</p>
+明日期限のカード。</p>
 <p><code>prop:due=-1</code><br />
-cards due yesterday that haven’t been answered yet.</p>
+昨日期限でまだ答えていないカード。</p>
 <p><code>prop:due&gt;=1</code><br />
-all cards due in the future, including tomorrow.</p>
+明日を含む、将来期限のすべてのカード。</p>
 <p><code>prop:due&lt;=-1</code><br />
-all  overdue cards.</p>
+すべての期限超過カード。</p>
 <p><code>prop:due&gt;=-1 prop:due&lt;=1</code><br />
-cards due yesterday, today and tomorrow.</p>
+昨日、今日、明日期限のカード。</p>
 <p><code>prop:reps&lt;10</code><br />
-cards that have been answered less than 10 times.</p>
+10回未満で答えられたカード。</p>
 <p><code>prop:lapses&gt;3</code><br />
-cards that been lapsed more than 3 times.</p>
+3回以上忘却したカード。</p>
 <p><code>prop:ease!=2.5</code><br />
-cards easier or harder than default ease.</p>
-<p>The following searches require Anki 23.10+ and FSRS enabled:</p>
+デフォルトの易しさより簡単または難しいカード。</p>
+<p>以下の検索にはAnki 23.10以降とFSRSの有効化が必要です：</p>
 <p><code>prop:s&gt;21</code><br />
-cards with stability greater than 21 days.</p>
+安定性が21日より大きいカード。</p>
 <p><code>prop:d&gt;0.3</code><br />
-cards with difficulty greater than 0.3.</p>
+難易度が0.3より大きいカード。</p>
 <p><code>prop:r&lt;0.9</code><br />
-cards with retrievability less than 0.9.</p>
-<h2 id="recent-events"><a class="header" href="#recent-events">Recent Events</a></h2>
-<h3 id="added"><a class="header" href="#added">Added</a></h3>
+検索可能性が0.9未満のカード。</p>
+<h2 id="最近のイベント"><a class="header" href="#最近のイベント">最近のイベント</a></h2>
+<h3 id="追加"><a class="header" href="#追加">追加</a></h3>
 <p><code>added:1</code><br />
-cards added today.</p>
+今日追加されたカード。</p>
 <p><code>added:7</code><br />
-cards added in the last 7 days.</p>
-<p>The check is made against card creation time rather than note creation
-time, so cards that were generated within the time frame will be
-included even if their notes were added a long time ago.</p>
-<h3 id="edited"><a class="header" href="#edited">Edited</a></h3>
+過去7日間に追加されたカード。</p>
+<p>チェックはノート作成時間ではなくカード作成時間に対して行われるため、ノートがずっと前に追加されていても、時間枠内に生成されたカードは含まれます。</p>
+<h3 id="編集"><a class="header" href="#編集">編集</a></h3>
 <p><code>edited:n</code><br />
-cards where the note text was added/edited in the last n days.</p>
-<p>This requires Anki 2.1.28+ or AnkiMobile 2.0.64+.</p>
-<h3 id="answered"><a class="header" href="#answered">Answered</a></h3>
+過去n日間にノートテキストが追加/編集されたカード。</p>
+<p>これにはAnki 2.1.28以降またはAnkiMobile 2.0.64以降が必要です。</p>
+<h3 id="回答"><a class="header" href="#回答">回答</a></h3>
 <p><code>rated:1</code><br />
-cards answered today.</p>
+今日回答されたカード。</p>
 <p><code>rated:1:2</code><br />
-cards answered Hard (2) today.</p>
+今日難しい（2）と回答されたカード。</p>
 <p><code>rated:7:1</code><br />
-cards answered Again (1) in the last 7 days.</p>
+過去7日間にもう一度（1）と回答されたカード。</p>
 <p><code>rated:31:4</code><br />
-cards answered Easy (4) in the last 31 days.</p>
-<p>Anki 2.1.39+ supports rating searches over 31 days.</p>
-<p>Note that, to search for cards answered at a particular day, <code>rated:n -rated:(n-1)</code> might not work every time. Use the following instead:</p>
+過去31日間に簡単（4）と回答されたカード。</p>
+<p>Anki 2.1.39以降は31日を超える評価検索をサポートしています。</p>
+<p>特定の日に回答されたカードを検索するには、<code>rated:n -rated:(n-1)</code>が常に機能するとは限らないことに注意してください。代わりに次を使用してください：</p>
 <p><code>prop:rated=0</code><br />
-cards answered today.</p>
+今日回答されたカード。</p>
 <p><code>prop:rated=-1</code><br />
-cards answered one day ago.</p>
+1日前に回答されたカード。</p>
 <p><code>prop:rated=-7</code><br />
-cards answered 7 days ago.</p>
-<h3 id="first-answered"><a class="header" href="#first-answered">First Answered</a></h3>
-<p>Requires Anki 2.1.45+.</p>
+7日前に回答されたカード。</p>
+<h3 id="初回回答"><a class="header" href="#初回回答">初回回答</a></h3>
+<p>Anki 2.1.45以降が必要です。</p>
 <p><code>introduced:1</code><br />
-cards answered for the first time today.</p>
+今日初めて回答されたカード。</p>
 <p><code>introduced:365</code><br />
-cards answered for the first time within the last 365 days.</p>
-<h2 id="matching-special-characters"><a class="header" href="#matching-special-characters">Matching special characters</a></h2>
-<p>If you’re using a version earlier than Anki 2.1.36 the following searches may not work.</p>
-<p>As shown in the previous section, some characters like <code>*</code>, <code>_</code> and <code>"</code> have a
-special meaning in search. If you need to locate those characters in a search,
-you need to tell Anki not to treat them specially. This is called “escaping a character” and is primarily done by using double quotes and backslashes.</p>
+過去365日以内に初めて回答されたカード。</p>
+<h2 id="特殊文字の一致"><a class="header" href="#特殊文字の一致">特殊文字の一致</a></h2>
+<p>Anki 2.1.36より前のバージョンを使用している場合、以下の検索は機能しない可能性があります。</p>
+<p>前のセクションで示したように、<code>*</code>、<code>_</code>、<code>"</code>などの一部の文字は検索で特別な意味を持ちます。検索でこれらの文字を見つける必要がある場合は、Ankiにそれらを特別に扱わないように指示する必要があります。これは「文字のエスケープ」と呼ばれ、主に二重引用符とバックスラッシュを使用して行われます。</p>
 <ul>
 <li>
-<p><em>Space</em><br />
-To match something that includes spaces, enclose the <code>"entire term"</code> in double
-quotes. If it is a colon search, you also have the option to only quote the
-<code>part:"after the colon"</code>.</p>
+<p><em>スペース</em><br />
+スペースを含むものに一致させるには、<code>"entire term"</code>全体を二重引用符で囲みます。コロン検索の場合は、<code>part:"after the colon"</code>のようにコロンの後の部分だけを引用するオプションもあります。</p>
 </li>
 <li>
 <p><code>And</code>/<code>Or</code><br />
-To search for these words, wrap them with double quotes. For example, <code>dog "and" cat</code> searches for “dog”, “cat” and the word “and”.
-If you wrap the entire search term with quotes like in the previous example, you do not need to escape <code>and</code> or <code>or</code>.</p>
+これらの単語を検索するには、二重引用符で囲みます。例：<code>dog "and" cat</code>は“dog“、“cat”、および単語“and“を検索します。
+前の例のように検索語全体を引用符で囲む場合、<code>and</code>や<code>or</code>をエスケープする必要はありません。</p>
 </li>
 <li>
-<p><code>"</code>, <code>*</code> and <code>_</code><br />
-Add a backslash before these characters to treat them literally. For example,
-<code>_</code> will match any single character, but <code>\_</code> matches only an actual underscore.</p>
+<p><code>"</code>、<code>*</code>、<code>_</code><br />
+これらの文字をリテラルとして扱うには、前にバックスラッシュを追加します。例えば、
+<code>_</code>は任意の1文字に一致しますが、<code>\_</code>は実際のアンダースコアのみに一致します。</p>
 </li>
 <li>
 <p><code>\</code><br />
-Because a backlash is used to remove the special meaning from other characters,
-it too is treated specially. If you need to search for an actual backslash,
-use <code>\\</code> instead of <code>\</code>.</p>
+バックスラッシュは他の文字から特別な意味を取り除くために使用されるため、それ自体も特別に扱われます。実際のバックスラッシュを検索する必要がある場合は、<code>\</code>の代わりに<code>\\</code>を使用してください。</p>
 </li>
 <li>
-<p><code>(</code> and <code>)</code><br />
-You can search for parentheses by enclosing the entire term in quotes,
-by using a backslash, or both at the same time. For example, <code>"(text)"</code>, <code>\(text\)</code> and
-<code>"\(text\)"</code> are all equivalent searches, and search for <code>(text)</code>.</p>
+<p><code>(</code>と<code>)</code><br />
+括弧を検索するには、全体を引用符で囲むか、バックスラッシュを使用するか、または両方を同時に使用できます。例：<code>"(text)"</code>、<code>\(text\)</code>、<code>"\(text\)"</code>はすべて同等の検索で、<code>(text)</code>を検索します。</p>
 </li>
 <li>
 <p><code>-</code><br />
-Starting a search term with <code>-</code> usually inverts it: <code>-dog</code> matches everything
-except dog for example. If you instead wish to include an actual hyphen,
-you can either use a backslash, or include the text in quotes. For example,
-<code>\-free</code> or <code>"-free"</code> will match “guilt-free” and “cruelty-free”.</p>
+検索語を<code>-</code>で始めると通常は反転します：例えば<code>-dog</code>は犬以外のすべてに一致します。代わりに実際のハイフンを含めたい場合は、バックスラッシュを使用するか、テキストを引用符で囲むことができます。例：<code>\-free</code>または<code>"-free"</code>は“guilt-free“や“cruelty-free“に一致します。</p>
 </li>
 <li>
 <p><code>:</code><br />
-Colons have to be escaped using backslashes unless they are preceded by another, unescaped colon.
-For example, <code>w:3:30</code> searches for “3:30” on word boundary and doesn’t require you to use a backslash.
-However, if you don’t use a colon search, the colons need to be escaped like this: <code>3\:30</code>.</p>
+コロンは、エスケープされていない別のコロンが前にある場合を除き、バックスラッシュを使用してエスケープする必要があります。
+例：<code>w:3:30</code>は単語境界で“3:30“を検索し、バックスラッシュを使用する必要はありません。
+ただし、コロン検索を使用しない場合、コロンは次のようにエスケープする必要があります：<code>3\:30</code>。</p>
 </li>
 <li>
-<p><code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code><br />
-<code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code> are treated as HTML when searching in Anki, and as such, searches
-containing them don’t work as expected. However, you can search for them by using their
-corresponding HTML entity names (<code>&amp;amp;</code> for <code>&amp;</code>, <code>&amp;lt;</code> for <code>&lt;</code>, and <code>&amp;gt;</code> for <code>&gt;</code>).
-For example, searching <code>&amp;amp;text</code> searches for a note with <code>&amp;text</code> in a field.</p>
+<p><code>&amp;</code>、<code>&lt;</code>、<code>&gt;</code><br />
+<code>&amp;</code>、<code>&lt;</code>、<code>&gt;</code>はAnkiで検索するときHTMLとして扱われるため、それらを含む検索は期待どおりに機能しません。ただし、対応するHTMLエンティティ名（<code>&amp;</code>には<code>&amp;amp;</code>、<code>&lt;</code>には<code>&amp;lt;</code>、<code>&gt;</code>には<code>&amp;gt;</code>）を使用して検索できます。
+例：<code>&amp;amp;text</code>を検索すると、フィールドに<code>&amp;text</code>を含むノートが検索されます。</p>
 </li>
 </ul>
-<h3 id="raw-input"><a class="header" href="#raw-input">Raw input</a></h3>
-<p>Text preceded by certain keywords (like <code>re:</code>) will be treated as raw input. That is,
-the characters listed above largely lose their special meaning. In such a context, only
-a minimum of escaping is required to prevent ambiguity:</p>
+<h3 id="生の入力"><a class="header" href="#生の入力">生の入力</a></h3>
+<p>特定のキーワード（<code>re:</code>など）が前に付いたテキストは、生の入力として扱われます。つまり、上記の文字は特別な意味を大部分失います。そのような文脈では、曖昧さを防ぐために最小限のエスケープのみが必要です：</p>
 <ul>
 <li>
-<p>Double quotes (<code>"</code>) must be escaped.</p>
+<p>二重引用符（<code>"</code>）はエスケープする必要があります。</p>
 </li>
 <li>
-<p>Spaces and unescaped parentheses require the search term to be quoted.</p>
+<p>スペースとエスケープされていない括弧は、検索語を引用符で囲む必要があります。</p>
 </li>
 <li>
-<p>The search term must not end in an odd number of backslashes.</p>
+<p>検索語は奇数個のバックスラッシュで終わってはいけません。</p>
 </li>
 </ul>
-<h2 id="object-ids"><a class="header" href="#object-ids">Object IDs</a></h2>
+<h2 id="オブジェクトid"><a class="header" href="#オブジェクトid">オブジェクトID</a></h2>
 <p><code>nid:123</code><br />
-the note with note id 123.</p>
+ノートID 123のノート。</p>
 <p><code>cid:123,456,789</code><br />
-all cards with card ids 123, 456, or 789.</p>
-<p>Note and card IDs can be found in the <a href="stats.html">card info</a> dialog in the
-browser. These searches may also be helpful when doing add-on
-development or otherwise working closely with the database.</p>
-<h2 id="custom-data"><a class="header" href="#custom-data">Custom Data</a></h2>
-<p>Anki allows small amounts of custom data to be stored on cards, enabling
-advanced use cases such as custom schedulers. One of the notable applications
-of this feature was in earlier implementations of FSRS. In Anki 23.10+, there
-are some ways to search it:</p>
+カードID 123、456、または789のすべてのカード。</p>
+<p>ノートとカードのIDは、ブラウザの<a href="stats.html">カード情報</a>ダイアログで見つけることができます。これらの検索は、アドオン開発やデータベースと密接に作業する場合にも役立つかもしれません。</p>
+<h2 id="カスタムデータ"><a class="header" href="#カスタムデータ">カスタムデータ</a></h2>
+<p>Ankiは、カードに少量のカスタムデータを保存できるようにし、カスタムスケジューラーなどの高度な使用例を可能にします。この機能の注目すべき応用の1つは、FSRSの初期実装でした。Anki 23.10以降では、いくつかの方法で検索できます：</p>
 <p><code>has-cd:v</code><br />
-cards having the property <code>v</code> in custom data.</p>
+カスタムデータにプロパティ<code>v</code>を持つカード。</p>
 <p><code>prop:cdn:d&gt;5</code><br />
-cards with the value of <code>d</code> in custom data (usually refers to difficulty in FSRS) greater than 5.</p>
+カスタムデータの<code>d</code>の値（通常FSRSの難易度を指す）が5より大きいカード。</p>
 <p><code>prop:cds:v=reschedule</code><br />
-cards with the string <code>v</code> in custom data equal to <code>reschedule</code>.</p>
-<h2 id="other-searches"><a class="header" href="#other-searches">Other Searches</a></h2>
+カスタムデータの文字列<code>v</code>が<code>reschedule</code>に等しいカード。</p>
+<h2 id="その他の検索"><a class="header" href="#その他の検索">その他の検索</a></h2>
 <p><code>prop:due=1 is:learn</code><br />
-interday learning cards due for tomorrow.</p>
+明日期限の日間学習カード。</p>
 <p><code>prop:due=0 is:learn -introduced:1</code><br />
-interday learning cards due today.</p>
+今日期限の日間学習カード。</p>
 <p><code>prop:resched=0</code><br />
-cards rescheduled today, either using <strong>Set due date</strong> or <strong>Reschedule cards on change</strong>.</p>
+<strong>期日を設定</strong>または<strong>変更時にカードを再スケジュール</strong>を使用して今日再スケジュールされたカード。</p>
 
                     </main>
 

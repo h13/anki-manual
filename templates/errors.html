@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Checks and Errors - Anki Manual</title>
+        <title>チェックとエラー - Ankiマニュアル</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Anki Manual</h1>
+                    <h1 class="menu-title">Ankiマニュアル</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -172,134 +172,117 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="checks-and-errors"><a class="header" href="#checks-and-errors">Checks and Errors</a></h1>
+                        <h1 id="チェックとエラー"><a class="header" href="#チェックとエラー">チェックとエラー</a></h1>
 <ul>
-<li><a href="#basics">Basics</a></li>
-<li><a href="#specific-issues">Specific Issues</a>
+<li><a href="#%E5%9F%BA%E6%9C%AC">基本</a></li>
+<li><a href="#%E7%89%B9%E5%AE%9A%E3%81%AE%E5%95%8F%E9%A1%8C">特定の問題</a>
 <ul>
-<li><a href="#template-syntax-error">Template Syntax Error</a></li>
-<li><a href="#identical-front-sides">Identical Front Sides</a></li>
-<li><a href="#front-of-card-is-blank">Front of Card is Blank</a></li>
-<li><a href="#no-cloze-filter-on-cloze-note-type">No Cloze Filter on Cloze Note Type</a>
+<li><a href="#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E6%A7%8B%E6%96%87%E3%82%A8%E3%83%A9%E3%83%BC">テンプレート構文エラー</a></li>
+<li><a href="#%E5%90%8C%E4%B8%80%E3%81%AE%E8%A1%A8%E9%9D%A2">同一の表面</a></li>
+<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E8%A1%A8%E9%9D%A2%E3%81%8C%E7%A9%BA%E7%99%BD">カードの表面が空白</a></li>
+<li><a href="#%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AB%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC%E3%81%8C%E3%81%AA%E3%81%84">クローズノートタイプにクローズフィルターがない</a>
 <ul>
-<li><a href="#single-empty-cards">Single empty cards</a></li>
-<li><a href="#all-cloze-cards-empty">All cloze cards empty</a></li>
+<li><a href="#%E5%8D%98%E4%B8%80%E3%81%AE%E7%A9%BA%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%89">単一の空のカード</a></li>
+<li><a href="#%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E3%82%AB%E3%83%BC%E3%83%89%E3%81%8C%E7%A9%BA">すべてのクローズカードが空</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>When you save changes to a note type or export a deck, Anki 2.1.45+ checks
-for some common errors. These errors will cause issues later on when anyone studies
-the affected cards, so Anki won’t let you proceed before you have fixed them.</p>
-<h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
-<p>Please see <a href="../getting-started.html#key-concepts">Key Concepts</a> before reading further.</p>
-<p>Most of the errors below will require you to modify your note type/card template. To do so:</p>
+<p>ノートタイプへの変更を保存したり、デッキをエクスポートしたりすると、Anki 2.1.45以降は一般的なエラーをチェックします。これらのエラーは、影響を受けるカードを誰かが学習する際に後で問題を引き起こすため、Ankiはそれらを修正する前に進むことを許可しません。</p>
+<h2 id="基本"><a class="header" href="#基本">基本</a></h2>
+<p>続きを読む前に<a href="../getting-started.html#%E4%B8%BB%E8%A6%81%E6%A6%82%E5%BF%B5">主要概念</a>を参照してください。</p>
+<p>以下のエラーのほとんどは、ノートタイプ/カードテンプレートを変更する必要があります。そうするには：</p>
 <ul>
-<li>Open the Browse screen, and look at the items on the left.</li>
-<li>Locate the note type mentioned in error message. You can use the search bar at the top left
-if necessary.</li>
-<li>Click on the note type, to show its cards/notes on the right.</li>
-<li>Click the Cards… button at the top of the editing area to open the <a href="./intro.html#the-templates-screen">templates screen</a>.</li>
+<li>ブラウザ画面を開き、左側のアイテムを見てください。</li>
+<li>エラーメッセージに記載されているノートタイプを見つけます。必要に応じて左上の検索バーを使用できます。</li>
+<li>ノートタイプをクリックして、右側にそのカード/ノートを表示します。</li>
+<li>編集エリアの上部にあるカード…ボタンをクリックして、<a href="./intro.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2">テンプレート画面</a>を開きます。</li>
 </ul>
-<h2 id="specific-issues"><a class="header" href="#specific-issues">Specific Issues</a></h2>
-<h3 id="template-syntax-error"><a class="header" href="#template-syntax-error">Template Syntax Error</a></h3>
-<p>This kind of error indicates an incorrect usage of the <a href="./fields.html">field replacement</a>
-syntax.</p>
-<p>You can correct mistakes on the template by opening the card templates screen:</p>
+<h2 id="特定の問題"><a class="header" href="#特定の問題">特定の問題</a></h2>
+<h3 id="テンプレート構文エラー"><a class="header" href="#テンプレート構文エラー">テンプレート構文エラー</a></h3>
+<p>この種のエラーは、<a href="./fields.html">フィールド置換</a>構文の誤った使用を示します。</p>
+<p>カードテンプレート画面を開いてテンプレートの間違いを修正できます：</p>
 <ul>
-<li>On the computer version, edit a problem card, and then click on the Cards… button</li>
-<li>On AnkiMobile, while viewing a problem card in the review screen, tap the cog/gear, then Card Template.</li>
+<li>コンピュータ版では、問題のあるカードを編集し、カード…ボタンをクリックします</li>
+<li>AnkiMobileでは、復習画面で問題のあるカードを表示しているときに、歯車をタップし、カードテンプレートを選択します。</li>
 </ul>
-<p>When you correct a mistake, it will update all cards of that type - you do not need to make the same change for every card that uses the template.</p>
-<p>What needs changing will depend on the message you are getting.</p>
-<p><strong>Found ‘{{Field}}’, but there is no field called ‘Field’</strong></p>
-<p>This indicates your template includes the name of a field that doesn’t exist. To fix the problem, locate the
-{{Field}} inside the card template, and remove it.</p>
-<p><strong>Missing }} in {{Field</strong></p>
-<p>This message is shown when {{ is found in the template without a matching }}. For example, if you have</p>
+<p>間違いを修正すると、そのタイプのすべてのカードが更新されます - テンプレートを使用するすべてのカードに対して同じ変更を行う必要はありません。</p>
+<p>何を変更する必要があるかは、受け取っているメッセージによって異なります。</p>
+<p><strong>’{{Field}}’が見つかりましたが、’Field’というフィールドはありません</strong></p>
+<p>これは、テンプレートに存在しないフィールドの名前が含まれていることを示します。問題を修正するには、カードテンプレート内の{{Field}}を見つけて削除します。</p>
+<p><strong>{{Fieldに}}がありません</strong></p>
+<p>このメッセージは、テンプレートに{{が見つかったが、対応する}}がない場合に表示されます。例えば、次のような場合：</p>
 <pre><code>{{Field
 </code></pre>
-<p>then this needs to be changed to</p>
+<p>これは次のように変更する必要があります：</p>
 <pre><code>{{Field}}
 </code></pre>
-<p><strong>Missing {{/Field}}</strong></p>
-<p>This means Anki found <code>{{#Field}}</code> or <code>{{^Field}}</code> in your card template, without a matching <code>{{/Field}}</code>. Removing <code>{{#Field}}</code> or <code>{{^Field}}</code> from the template will fix the error.</p>
-<p><strong>Found {{/One}}, but expected {{/Two}}</strong></p>
-<p>Conditional replacements need to be closed in the same order they are opened. For example, the following template is incorrect:</p>
+<p><strong>{{/Field}}がありません</strong></p>
+<p>これは、Ankiがカードテンプレートに<code>{{#Field}}</code>または<code>{{^Field}}</code>を見つけたが、対応する<code>{{/Field}}</code>がないことを意味します。テンプレートから<code>{{#Field}}</code>または<code>{{^Field}}</code>を削除すると、エラーが修正されます。</p>
+<p><strong>{{/One}}が見つかりましたが、{{/Two}}が期待されていました</strong></p>
+<p>条件付き置換は、開かれた順序と同じ順序で閉じる必要があります。例えば、次のテンプレートは不正です：</p>
 <pre><code>{{#One}}
   {{#Two}}
     {{Three}}
   {{/One}}
 {{/Two}}
 </code></pre>
-<p>To fix the problem, the template should be changed like so:</p>
+<p>問題を修正するには、テンプレートを次のように変更する必要があります：</p>
 <pre><code>{{#One}}
   {{#Two}}
     {{Three}}
   {{/Two}}
 {{/One}}
 </code></pre>
-<p><strong>Found {{/Field}}, but missing ‘{{#Field}}’ or ‘{{^Field}}’</strong></p>
-<p>Closing tags must be matched by opening tags. For example, the following is invalid, because there is no <code>{{#Two}}</code> or <code>{{^Two}}</code> at the start:</p>
+<p><strong>{{/Field}}が見つかりましたが、’{{#Field}}‘または’{{^Field}}’がありません</strong></p>
+<p>閉じタグは開きタグと一致する必要があります。例えば、次は無効です。最初に<code>{{#Two}}</code>または<code>{{^Two}}</code>がないためです：</p>
 <pre><code>  {{Field}}
 {{/Two}}
 </code></pre>
-<p>It can be fixed by removing the closing tag:</p>
+<p>閉じタグを削除することで修正できます：</p>
 <pre><code>{{Field}}
 </code></pre>
-<h3 id="identical-front-sides"><a class="header" href="#identical-front-sides">Identical Front Sides</a></h3>
-<p>You have Anki configured to create two identical questions for each input. This can
-happen if you add a new card type without making any adjustments to it. Identical
-cards double your workload, and make Anki’s scheduling less effective.</p>
-<p>To fix this, open the <a href="./intro.html#the-templates-screen">templates screen</a>, and
-select one of the duplicates at the top. Then use the button on the top right to
-remove the selected card type. This will delete all the duplicate cards/notes that
-were using the card type as well.</p>
-<h3 id="front-of-card-is-blank"><a class="header" href="#front-of-card-is-blank">Front of Card is Blank</a></h3>
+<h3 id="同一の表面"><a class="header" href="#同一の表面">同一の表面</a></h3>
+<p>各入力に対して2つの同一の質問を作成するようにAnkiが設定されています。これは、新しいカードタイプを追加して調整を行わない場合に発生する可能性があります。同一のカードは作業量を倍増させ、Ankiのスケジューリングの効果を低下させます。</p>
+<p>これを修正するには、<a href="./intro.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2">テンプレート画面</a>を開き、上部で重複の1つを選択します。次に、右上のボタンを使用して、選択したカードタイプを削除します。これにより、カードタイプを使用していたすべての重複カード/ノートも削除されます。</p>
+<h3 id="カードの表面が空白"><a class="header" href="#カードの表面が空白">カードの表面が空白</a></h3>
 <div id="no-field-replacement-on-front-side" />
-<p>Anki displays cards by combining the fields you’ve entered with a
-template that says which fields should appear on the front and back of your cards. If you receive a
-message that a card has a blank front, it means either none of the fields included on your front template have any text in them, or you have fields that have text,
-but none are included on the front template.
-You can fix this problem by editing the card on the computer version, clicking on <strong>Cards…</strong>,
-and checking to make sure at least one field with some text on it is included on the front template.
-You can add extra fields with the Add Field button.</p>
-<p>If you are using the Cloze note type,
-please make sure you’ve included one or more cloze deletions in the Text field, e.g. {{c1::some cloze-deleted text}}.</p>
-<p>If you’re using the type-in-the-answer functionality, please make sure you’ve included another field on the front side as well.</p>
-<h3 id="no-cloze-filter-on-cloze-note-type"><a class="header" href="#no-cloze-filter-on-cloze-note-type">No Cloze Filter on Cloze Note Type</a></h3>
+<p>Ankiは、入力したフィールドを、カードの表面と裏面にどのフィールドが表示されるべきかを示すテンプレートと組み合わせてカードを表示します。カードの表面が空白であるというメッセージを受け取った場合、表面テンプレートに含まれているフィールドのいずれにもテキストがないか、テキストを持つフィールドがあるが、表面テンプレートには含まれていないことを意味します。
+この問題を修正するには、コンピュータ版でカードを編集し、**カード…**をクリックして、少なくとも1つのテキストを含むフィールドが表面テンプレートに含まれていることを確認します。
+フィールドを追加ボタンで追加フィールドを追加できます。</p>
+<p>クローズノートタイプを使用している場合は、テキストフィールドに1つ以上のクローズ削除が含まれていることを確認してください。例：{{c1::いくつかのクローズ削除されたテキスト}}。</p>
+<p>答えを入力する機能を使用している場合は、表面にも別のフィールドが含まれていることを確認してください。</p>
+<h3 id="クローズノートタイプにクローズフィルターがない"><a class="header" href="#クローズノートタイプにクローズフィルターがない">クローズノートタイプにクローズフィルターがない</a></h3>
 <div id="no-cloze-filter-on-cloze-notetype" />
-<p>A Cloze note type’s front and back templates should have a <a href="../editing.html#cloze-deletion">cloze</a>
-filter. If one is missing, you will need to add it back so that Anki can create cloze cards
-correctly.</p>
-<h4 id="single-empty-cards"><a class="header" href="#single-empty-cards">Single empty cards</a></h4>
-<p>When making clozes, each cloze number is turned into a separate card. For example, the following will create three cards:</p>
-<pre><code>{{c1::This}} is a {{c2::sample}} {{c3::sentence}}.
+<p>クローズノートタイプの表面と裏面のテンプレートには<a href="../editing.html#%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E5%89%8A%E9%99%A4">クローズ</a>フィルターが必要です。欠落している場合は、Ankiがクローズカードを正しく作成できるように追加する必要があります。</p>
+<h4 id="単一の空のカード"><a class="header" href="#単一の空のカード">単一の空のカード</a></h4>
+<p>クローズを作成する際、各クローズ番号は別々のカードになります。例えば、次のようにすると3枚のカードが作成されます：</p>
+<pre><code>{{c1::これ}}は{{c2::サンプル}}{{c3::文}}です。
 </code></pre>
-<p>If you you later edit the text, and either remove or change a cloze number, the previously created card may become blank. For example:</p>
-<pre><code>{{c1::This}} is a {{c2::sample}}
+<p>後でテキストを編集し、クローズ番号を削除または変更すると、以前に作成されたカードが空白になる可能性があります。例えば：</p>
+<pre><code>{{c1::これ}}は{{c2::サンプル}}
 </code></pre>
-<p>and</p>
-<pre><code>{{c1::This}} is a {{c2::sample}} {{c1::sentence}}.
+<p>および</p>
+<pre><code>{{c1::これ}}は{{c2::サンプル}}{{c1::文}}です。
 </code></pre>
-<p>are both changes that would make card 3 blank. When you view card 3, you’ll see a message indicating that the card is blank, and can be cleaned up with the Empty Cards function. You can access that function via the Tools menu of the computer version’s main window, and use it to remove blank cards. Please check the reported empty cards first, and if in doubt, create a backup with the File&gt;Export menu item before proceeding.</p>
-<h4 id="all-cloze-cards-empty"><a class="header" href="#all-cloze-cards-empty">All cloze cards empty</a></h4>
-<p>If you accidentally modify your card template, it may prevent any cloze deletions from appearing. If that has happened, please edit one such problem card, and note down the name of the first field - it is usually called “Text”. Then, please:</p>
+<p>は両方ともカード3を空白にする変更です。カード3を表示すると、カードが空白であることを示すメッセージが表示され、空のカード機能でクリーンアップできます。その機能は、コンピュータ版のメインウィンドウのツールメニューからアクセスでき、空白のカードを削除するために使用できます。報告された空のカードを最初に確認し、疑問がある場合は、続行する前にファイル&gt;エクスポートメニュー項目でバックアップを作成してください。</p>
+<h4 id="すべてのクローズカードが空"><a class="header" href="#すべてのクローズカードが空">すべてのクローズカードが空</a></h4>
+<p>カードテンプレートを誤って変更すると、クローズ削除が表示されなくなる可能性があります。それが起こった場合は、そのような問題のあるカードを1つ編集し、最初のフィールドの名前をメモしてください - 通常は「テキスト」と呼ばれます。その後、次の手順を実行してください：</p>
 <ul>
 <li>
-<p>Click on the Cards… button</p>
+<p>カード…ボタンをクリックします</p>
 </li>
 <li>
-<p>Replace the front text with</p>
-<pre><code>{{cloze:Text}}
+<p>表面のテキストを次に置き換えます</p>
+<pre><code>{{cloze:テキスト}}
 </code></pre>
 </li>
 <li>
-<p>Replace the back text with the same.</p>
+<p>裏面のテキストも同じに置き換えます。</p>
 </li>
 </ul>
-<p>If your field was called something other than Text, replace Text with the name of the field.</p>
+<p>フィールドがテキスト以外の名前だった場合は、テキストをフィールドの名前に置き換えてください。</p>
 
                     </main>
 

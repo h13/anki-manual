@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Sync Server - Anki Manual</title>
+        <title>同期サーバー - Ankiマニュアル</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Anki Manual</h1>
+                    <h1 class="menu-title">Ankiマニュアル</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,128 +172,85 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="self-hosted-sync-server"><a class="header" href="#self-hosted-sync-server">Self-Hosted Sync Server</a></h1>
-<p>Advanced users who cannot or do not wish to use AnkiWeb can use a self-hosted
-sync server instead.</p>
-<p>Things to be aware of:</p>
+                        <h1 id="セルフホスト同期サーバー"><a class="header" href="#セルフホスト同期サーバー">セルフホスト同期サーバー</a></h1>
+<p>AnkiWebを使用できない、または使用したくない上級ユーザーは、代わりにセルフホスト同期サーバーを使用できます。</p>
+<p>注意すべき点：</p>
 <ul>
-<li>This is an advanced feature, targeted at users who are comfortable with
-networking and the command line. If you use this, the expectation is you
-can resolve any setup/network/firewall issues you run into yourself, and
-use of this is entirely at your own risk.</li>
-<li>Newer clients may depend on changes to the sync protocol, so syncing may
-stop working if you update your Anki clients without also updating the server.</li>
-<li>Third-party sync servers also exist. No testing is done against them, and
-they tend to take time to catch up when the sync protocol changes, so they
-are not recommended.</li>
-<li>The messages inside Anki will use the term “AnkiWeb” even if a custom server
-has been configured, (e.g “Cannot connect to AnkiWeb” when your server is down).</li>
+<li>これは上級機能であり、ネットワーキングとコマンドラインに慣れているユーザーを対象としています。これを使用する場合、発生する可能性のあるセットアップ/ネットワーク/ファイアウォールの問題を自分で解決できることが期待され、使用は完全に自己責任となります。</li>
+<li>新しいクライアントは同期プロトコルの変更に依存する可能性があるため、サーバーも更新せずにAnkiクライアントを更新すると、同期が機能しなくなる可能性があります。</li>
+<li>サードパーティの同期サーバーも存在します。それらに対してテストは行われておらず、同期プロトコルが変更されたときに追いつくのに時間がかかる傾向があるため、推奨されません。</li>
+<li>カスタムサーバーが設定されていても、Anki内のメッセージでは「AnkiWeb」という用語が使用されます（例：サーバーがダウンしているときの「AnkiWebに接続できません」）。</li>
 </ul>
-<h2 id="installingrunning"><a class="header" href="#installingrunning">Installing/Running</a></h2>
-<p>There are various ways you can install and run the server. You can use either:</p>
+<h2 id="インストール実行"><a class="header" href="#インストール実行">インストール/実行</a></h2>
+<p>サーバーをインストールして実行する方法はいくつかあります。次のいずれかを使用できます：</p>
 <ul>
-<li>the sync server bundled with the desktop version of Anki</li>
-<li>a separate minimal sync server that doesn’t include Anki’s GUI dependencies. Python and Rust implementations are available.</li>
+<li>デスクトップ版のAnkiにバンドルされている同期サーバー</li>
+<li>AnkiのGUI依存関係を含まない別の最小限の同期サーバー。PythonとRustの実装が利用可能です。</li>
 </ul>
-<h3 id="from-a-packaged-build"><a class="header" href="#from-a-packaged-build">From a Packaged Build</a></h3>
-<p>This uses the sync server built into the desktop version of Anki as of version 2.1.57+.</p>
-<p>On Windows in a cmd.exe session:</p>
+<h3 id="パッケージビルドから"><a class="header" href="#パッケージビルドから">パッケージビルドから</a></h3>
+<p>これは、バージョン2.1.57以降のデスクトップ版のAnkiに組み込まれている同期サーバーを使用します。</p>
+<p>Windowsのcmd.exeセッションで：</p>
 <pre><code>set SYNC_USER1=user:pass
 "\Program Files\anki\anki.exe" --syncserver
 </code></pre>
-<p>Or MacOS, in Terminal.app:</p>
+<p>macOSのTerminal.appで：</p>
 <pre><code>SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/anki --syncserver
 </code></pre>
-<p>Or Linux:</p>
+<p>Linuxで：</p>
 <pre><code>SYNC_USER1=user:pass anki --syncserver
 </code></pre>
-<h3 id="with-pip"><a class="header" href="#with-pip">With Pip</a></h3>
-<p>To avoid downloading desktop Anki’s GUI dependencies, you can run a standalone Anki sync server using a Python package downloaded from PyPI instead.
-Make sure you have Python 3.9+ installed.</p>
+<h3 id="pipを使用"><a class="header" href="#pipを使用">Pipを使用</a></h3>
+<p>デスクトップAnkiのGUI依存関係のダウンロードを避けるため、代わりにPyPIからダウンロードしたPythonパッケージを使用してスタンドアロンのAnki同期サーバーを実行できます。
+Python 3.9以降がインストールされていることを確認してください。</p>
 <pre><code>python3 -m venv ~/syncserver
 ~/syncserver/bin/pip install anki
 SYNC_USER1=user:pass ~/syncserver/bin/python -m anki.syncserver
 </code></pre>
-<h3 id="with-cargo"><a class="header" href="#with-cargo">With Cargo</a></h3>
-<p>From Anki 2.1.66+, you can alternatively build a Rust implementation of the standalone sync server using the below command.
-Make sure you have Rustup installed.</p>
+<h3 id="cargoを使用"><a class="header" href="#cargoを使用">Cargoを使用</a></h3>
+<p>Anki 2.1.66以降では、以下のコマンドを使用してスタンドアロン同期サーバーのRust実装を代わりに構築できます。
+Rustupがインストールされていることを確認してください。</p>
 <pre><code>cargo install --locked --git https://github.com/ankitects/anki.git --tag 25.02.5 anki-sync-server
 </code></pre>
-<p>Replace 25.02.5 with whatever the latest Anki version is.</p>
-<p>Protobuf (protoc) will need to be installed.</p>
-<p>After building, you can run it with:</p>
+<p>25.02.5を最新のAnkiバージョンに置き換えてください。</p>
+<p>Protobuf（protoc）をインストールする必要があります。</p>
+<p>ビルド後、次のコマンドで実行できます：</p>
 <pre><code>SYNC_USER1=user:pass anki-sync-server
 </code></pre>
-<h3 id="from-a-source-checkout"><a class="header" href="#from-a-source-checkout">From a source checkout</a></h3>
-<p>If you’ve cloned the Anki repo from GitHub, you can install from there:</p>
+<h3 id="ソースチェックアウトから"><a class="header" href="#ソースチェックアウトから">ソースチェックアウトから</a></h3>
+<p>GitHubからAnkiリポジトリをクローンした場合、そこからインストールできます：</p>
 <pre><code>./ninja extract:protoc
 cargo install --path rslib/sync
 </code></pre>
-<h3 id="with-docker"><a class="header" href="#with-docker">With Docker</a></h3>
-<p>You can find a user-contributed Dockerfile and some instructions
-<a href="https://github.com/ankitects/anki/tree/main/docs/syncserver">here</a>.</p>
-<h2 id="multiple-users"><a class="header" href="#multiple-users">Multiple Users</a></h2>
-<p><code>SYNC_USER1</code> declares the first user and password, and must be set.
-You can optionally declare <code>SYNC_USER2</code>, <code>SYNC_USER3</code> and so on, if you
-wish to set up multiple accounts.</p>
-<h2 id="hashed-passwords"><a class="header" href="#hashed-passwords">Hashed Passwords</a></h2>
-<p>Advanced users may wish to use hashed passwords instead of plain text
-passwords. If you wish to do this, you’ll need to use a separate tool (such as
-<a href="https://git.sr.ht/~laalsaas/pbkdf2-password-hash">this one</a>) to generate a
-password hash.  You can then tell the server to expect hashed passwords by
-setting the env var PASSWORDS_HASHED to 1 (or any other value).</p>
-<p>When hashed passwords are used, SYNC_USER variables are expected to be in
-username:password_hash format, where password_hash is a hash of the password in
-the PHC Format.</p>
-<h2 id="storage-location"><a class="header" href="#storage-location">Storage Location</a></h2>
-<p>The server needs to store a copy of your collection and media in a folder.
-By default it is ~/.syncserver; you can change this by defining
-a <code>SYNC_BASE</code> environmental variable.</p>
+<h3 id="dockerを使用"><a class="header" href="#dockerを使用">Dockerを使用</a></h3>
+<p>ユーザー提供のDockerfileといくつかの手順は<a href="https://github.com/ankitects/anki/tree/main/docs/syncserver">こちら</a>にあります。</p>
+<h2 id="複数ユーザー"><a class="header" href="#複数ユーザー">複数ユーザー</a></h2>
+<p><code>SYNC_USER1</code>は最初のユーザーとパスワードを宣言し、設定する必要があります。
+複数のアカウントを設定したい場合は、オプションで<code>SYNC_USER2</code>、<code>SYNC_USER3</code>などを宣言できます。</p>
+<h2 id="ハッシュ化されたパスワード"><a class="header" href="#ハッシュ化されたパスワード">ハッシュ化されたパスワード</a></h2>
+<p>上級ユーザーは、プレーンテキストのパスワードの代わりにハッシュ化されたパスワードを使用したい場合があります。これを行う場合は、別のツール（<a href="https://git.sr.ht/~laalsaas/pbkdf2-password-hash">このツール</a>など）を使用してパスワードハッシュを生成する必要があります。その後、環境変数PASSWORDS_HASHEDを1（または他の値）に設定することで、サーバーにハッシュ化されたパスワードを期待するように指示できます。</p>
+<p>ハッシュ化されたパスワードを使用する場合、SYNC_USER変数はusername:password_hash形式であることが期待されます。ここで、password_hashはPHC形式のパスワードのハッシュです。</p>
+<h2 id="保存場所"><a class="header" href="#保存場所">保存場所</a></h2>
+<p>サーバーは、コレクションとメディアのコピーをフォルダに保存する必要があります。
+デフォルトでは~/.syncserverです。<code>SYNC_BASE</code>環境変数を定義することでこれを変更できます。</p>
 <ul>
-<li>This must not be the same location as your normal Anki data folder, as the
-server and client must store separate copies.</li>
-<li>You must sync your data to the server, not manually copy files into the
-server folder.</li>
+<li>これは、サーバーとクライアントが別々のコピーを保存する必要があるため、通常のAnkiデータフォルダと同じ場所であってはなりません。</li>
+<li>データをサーバーに同期する必要があり、サーバーフォルダにファイルを手動でコピーしてはいけません。</li>
 </ul>
-<h2 id="public-access"><a class="header" href="#public-access">Public Access</a></h2>
-<p>The server listens on an unencrypted HTTP connection, so it’s not a good
-idea to expose it directly to the internet. You’ll want to either restrict
-usage to your local network, or place some form of encryption in front of
-the server, such as a VPN (Tailscale is apparently easy), or a HTTPS
-reverse proxy.</p>
-<p>You can define <code>SYNC_HOST</code> and <code>SYNC_PORT</code> to change the host and port
-that the server binds to.</p>
-<h2 id="client-setup"><a class="header" href="#client-setup">Client Setup</a></h2>
-<p>You’ll need to determine your computer’s network IP address, and then
-point each of your Anki clients to the address, e.g something like
-<code>http://192.168.1.200:8080/</code>. The URL can be configured in the preferences.</p>
-<p>If you’re using AnkiMobile and are unable to connect to a server on your local
-network, please go into the iOS settings, locate Anki near the bottom, and
-toggle “Allow Anki to access local network” off and then on again.</p>
-<p>Older desktop clients required you to define <code>SYNC_ENDPOINT</code> and
-<code>SYNC_ENDPOINT_MEDIA</code>.  If using an older client, you’d put it as e.g.
-<code>http://192.168.1.200:8080/sync/</code> and <code>http://192.168.1.200:8080/msync/</code>
-respectively. AnkiDroid clients before 2.16 require separate configuration for
-the two endpoints.</p>
-<h2 id="reverse-proxies"><a class="header" href="#reverse-proxies">Reverse Proxies</a></h2>
-<p>If using a reverse proxy to provide HTTPS access (e.g. nginx), and binding to a subpath
-(e.g. <code>http://example.com/custom/</code> -&gt; <code>http://localhost:8080/</code>), you must make sure to
-including a trailing slash when configuring Anki. If you put <code>http://example.com/custom</code>
-instead, it will not work.</p>
-<p>On iOS, TLS 1.3 is not supported, so your reverse proxy will need to have TLS 1.2
-enabled, or you’ll get an “error code -9836”.</p>
-<h2 id="large-requests"><a class="header" href="#large-requests">Large Requests</a></h2>
-<p>The standard AnkiWeb limit on uploads is applied by default. You can optionally
-set <code>MAX_SYNC_PAYLOAD_MEGS</code> to something greater than 100 if you wish to
-increase the limit. Bear in mind that if you’re using a reverse proxy, you may
-need to adjust the limit there as well.</p>
-<h2 id="contributing-changes"><a class="header" href="#contributing-changes">Contributing Changes</a></h2>
-<p>Because this server is bundled with Anki, simplicity is a design goal - it is
-targeted at individual/family use, and PRs that add things like a REST API or
-external databases are unlikely to be accepted at this time. If in doubt, please
-reach out before starting work on a PR.</p>
-<p>If you’re looking for an existing API solution, the AnkiConnect add-on may
-meet your needs.</p>
+<h2 id="パブリックアクセス"><a class="header" href="#パブリックアクセス">パブリックアクセス</a></h2>
+<p>サーバーは暗号化されていないHTTP接続でリッスンするため、インターネットに直接公開することは良いアイデアではありません。使用をローカルネットワークに制限するか、VPN（Tailscaleは簡単らしい）やHTTPSリバースプロキシなど、何らかの形式の暗号化をサーバーの前に配置する必要があります。</p>
+<p><code>SYNC_HOST</code>と<code>SYNC_PORT</code>を定義して、サーバーがバインドするホストとポートを変更できます。</p>
+<h2 id="クライアントの設定"><a class="header" href="#クライアントの設定">クライアントの設定</a></h2>
+<p>コンピュータのネットワークIPアドレスを決定し、各Ankiクライアントをそのアドレスに向ける必要があります。例：<code>http://192.168.1.200:8080/</code>のようなものです。URLは設定で構成できます。</p>
+<p>AnkiMobileを使用していて、ローカルネットワーク上のサーバーに接続できない場合は、iOSの設定に移動し、下部近くにあるAnkiを見つけて、「Ankiがローカルネットワークにアクセスすることを許可」をオフにしてから再度オンにしてください。</p>
+<p>古いデスクトップクライアントでは、<code>SYNC_ENDPOINT</code>と<code>SYNC_ENDPOINT_MEDIA</code>を定義する必要がありました。古いクライアントを使用している場合は、それぞれ<code>http://192.168.1.200:8080/sync/</code>と<code>http://192.168.1.200:8080/msync/</code>のように設定します。2.16より前のAnkiDroidクライアントでは、2つのエンドポイントに対して個別の構成が必要です。</p>
+<h2 id="リバースプロキシ"><a class="header" href="#リバースプロキシ">リバースプロキシ</a></h2>
+<p>HTTPSアクセスを提供するためにリバースプロキシ（例：nginx）を使用し、サブパスにバインドする場合（例：<code>http://example.com/custom/</code> -&gt; <code>http://localhost:8080/</code>）、Ankiを構成する際に末尾のスラッシュを含めることを確認する必要があります。代わりに<code>http://example.com/custom</code>を入力すると、機能しません。</p>
+<p>iOSでは、TLS 1.3はサポートされていないため、リバースプロキシでTLS 1.2を有効にする必要があります。そうしないと、「エラーコード-9836」が表示されます。</p>
+<h2 id="大きなリクエスト"><a class="header" href="#大きなリクエスト">大きなリクエスト</a></h2>
+<p>標準のAnkiWebのアップロード制限がデフォルトで適用されます。制限を増やしたい場合は、オプションで<code>MAX_SYNC_PAYLOAD_MEGS</code>を100より大きい値に設定できます。リバースプロキシを使用している場合は、そこでも制限を調整する必要があるかもしれないことに注意してください。</p>
+<h2 id="変更の貢献"><a class="header" href="#変更の貢献">変更の貢献</a></h2>
+<p>このサーバーはAnkiにバンドルされているため、シンプルさが設計目標です - 個人/家族での使用を対象としており、REST APIや外部データベースなどを追加するPRは現時点では受け入れられる可能性が低いです。疑問がある場合は、PRの作業を開始する前にご連絡ください。</p>
+<p>既存のAPIソリューションを探している場合は、AnkiConnectアドオンがニーズを満たすかもしれません。</p>
 
                     </main>
 
