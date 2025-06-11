@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - Anki Manual</title>
+        <title>ja/SUMMARY.md - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
@@ -12,36 +12,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="../css/misc.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "";
+            const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="../toc.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -105,7 +105,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -140,7 +140,7 @@
                     <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
@@ -172,47 +172,93 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<h2 id="mobile-clients"><a class="header" href="#mobile-clients">Mobile Clients</a></h2>
-<p>This is the manual for the computer version of Anki. Separate manuals are available for the mobile clients:</p>
+                        <h1 id="概要"><a class="header" href="#概要">概要</a></h1>
+<p><a href="intro.html">はじめに</a></p>
 <ul>
-<li><a href="https://docs.ankidroid.org/">AnkiDroid Manual</a> (Android)</li>
-<li><a href="https://docs.ankimobile.net/">AnkiMobile Manual</a> (iPhone/iPad)</li>
-</ul>
-<h2 id="quickstart"><a class="header" href="#quickstart">Quickstart</a></h2>
-<p>In a hurry? Jump straight to <a href="getting-started.html">Getting Started</a>.</p>
-<h2 id="getting-help"><a class="header" href="#getting-help">Getting Help</a></h2>
-<p>Looking for help? Please see <a href="./getting-help.html">Getting Help</a>.</p>
-<h2 id="translations"><a class="header" href="#translations">Translations</a></h2>
-<p>Volunteers have contributed translations of this manual. The
-translations may not always be up to date.</p>
+<li><a href="background.html">背景</a></li>
+<li><a href="platform/intro.html">プラットフォーム固有の注意事項</a>
 <ul>
-<li><a href="https://web.archive.org/web/20250228144632/https://apps.ankiweb.net/docs/manual.id.html">Bahasa Indonesia</a></li>
-<li><a href="https://web.archive.org/web/20240413080739/https://www.dennisproksch.de/anki">Deutsch</a></li>
-<li><a href="https://web.archive.org/web/20250130154657/https://apps.ankiweb.net/docs/manual.es.html">Español</a></li>
-<li><a href="https://web.archive.org/web/20250209100830/https://apps.ankiweb.net/docs/manual.fr.html">Français</a></li>
-<li><a href="https://web.archive.org/web/20160423223801/http://192.167.9.6/Anki_ITA/Manual_ITA.htm">Italiano</a></li>
-<li><a href="https://platynowy.github.io/anki-manual/">Polski</a></li>
-<li><a href="https://mizerablebr.github.io/anki-manual/">Português Brasileiro</a></li>
-<li><a href="https://alexeygorelov.github.io/anki-manual-ru/">русский язык</a></li>
-<li><a href="https://astropsy999.github.io/anki-manual/">Українська</a></li>
-<li><a href="https://abdnh.github.io/anki-manual/">العربية</a></li>
-<li><a href="https://web.archive.org/web/20250328102629/http://ankidroid.ir/anki.pdf">فارسى</a></li>
-<li><a href="http://wikiwiki.jp/rage2050/">日本語</a></li>
-<li><a href="https://open-spaced-repetition.github.io/anki-manual-zh-CN/">简体中文</a></li>
+<li><a href="platform/windows/intro.html">Windows</a>
+<ul>
+<li><a href="platform/windows/installing.html">インストール＆アップグレード</a></li>
+<li><a href="platform/windows/installation-issues.html">インストールの問題</a></li>
+<li><a href="platform/windows/startup-issues.html">起動時の問題</a></li>
+<li><a href="platform/windows/display-issues.html">表示の問題</a></li>
+<li><a href="platform/windows/copy-and-paste.html">コピー＆ペーストの問題</a></li>
+<li><a href="platform/windows/text-size.html">テキストサイズ</a></li>
+<li><a href="platform/windows/permission-problems.html">権限の問題</a></li>
 </ul>
-<p>If you would like to help translate the manual into a different language,
-please see the <a href="https://translating.ankiweb.net/anki/manual.html">translation docs</a>.</p>
-<h2 id="legacy-documentation"><a class="header" href="#legacy-documentation">Legacy Documentation</a></h2>
-<p>Not on the latest version of Anki? Find archives of this manual at the <a href="https://web.archive.org/web/20240829022941/https://docs.ankiweb.net/">Internet Archive</a>.</p>
-<p>For information on old scheduler versions, see <a href="https://faqs.ankiweb.net/the-anki-2.1-scheduler.html">this FAQ</a>.</p>
+</li>
+<li><a href="platform/mac/intro.html">macOS</a>
+<ul>
+<li><a href="platform/mac/installing.html">インストール＆アップグレード</a></li>
+<li><a href="platform/mac/display-issues.html">表示の問題</a></li>
+</ul>
+</li>
+<li><a href="platform/linux/intro.html">Linux</a>
+<ul>
+<li><a href="platform/linux/installing.html">インストール＆アップグレード</a></li>
+<li><a href="platform/linux/missing-libraries.html">ライブラリ不足</a></li>
+<li><a href="platform/linux/display-issues.html">表示の問題</a></li>
+<li><a href="platform/linux/blank-window.html">メインウィンドウが空白</a></li>
+<li><a href="platform/linux/distro-packages.html">Linuxディストロパッケージ</a></li>
+<li><a href="platform/linux/gtk-theme.html">GTKテーマの問題</a></li>
+<li><a href="platform/linux/wayland.html">Wayland</a></li>
+<li><a href="platform/linux/input-methods.html">入力メソッド</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="getting-started.html">はじめかた</a></li>
+<li><a href="getting-help.html">ヘルプを得る</a></li>
+<li><a href="studying.html">学習</a></li>
+<li><a href="editing.html">追加/編集</a></li>
+<li><a href="templates/intro.html">カードテンプレート</a>
+<ul>
+<li><a href="templates/fields.html">フィールド置換</a></li>
+<li><a href="templates/generation.html">カード生成</a></li>
+<li><a href="templates/styling.html">スタイリング＆HTML</a></li>
+<li><a href="templates/errors.html">チェックとエラー</a></li>
+</ul>
+</li>
+<li><a href="preferences.html">設定</a></li>
+<li><a href="deck-options.html">デッキオプション</a></li>
+<li><a href="syncing.html">AnkiWebと同期</a></li>
+<li><a href="profiles.html">プロファイル</a></li>
+<li><a href="browsing.html">ブラウザー</a></li>
+<li><a href="filtered-decks.html">フィルターデッキ</a></li>
+<li><a href="searching.html">検索</a></li>
+<li><a href="importing/intro.html">インポート</a>
+<ul>
+<li><a href="importing/text-files.html">テキストファイル</a></li>
+<li><a href="importing/packaged-decks.html">パッケージ化されたデッキ</a></li>
+</ul>
+</li>
+<li><a href="exporting.html">エクスポート</a></li>
+<li><a href="backups.html">バックアップ</a></li>
+<li><a href="files.html">ファイル管理</a></li>
+<li><a href="stats.html">統計</a></li>
+<li><a href="media.html">メディア</a></li>
+<li><a href="math.html">数式＆記号</a></li>
+<li><a href="leeches.html">ヒル（難しいカード）</a></li>
+<li><a href="addons.html">アドオン</a></li>
+<li><a href="troubleshooting.html">トラブルシューティング</a></li>
+<li><a href="sync-server.html">同期サーバー</a></li>
+<li><a href="misc.html">その他</a></li>
+</ul>
+<p><a href="contrib.html">貢献</a>
+<a href="faqs.html">よくある質問</a>
+<a href="resources.html">リソース</a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="ja/SUMMARY.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../background.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -222,8 +268,11 @@ please see the <a href="https://translating.ankiweb.net/anki/manual.html">transl
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="ja/SUMMARY.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../background.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -238,13 +287,13 @@ please see the <a href="https://translating.ankiweb.net/anki/manual.html">transl
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
