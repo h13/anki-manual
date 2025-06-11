@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>カード生成 - Ankiマニュアル</title>
+        <title>Card Generation - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../css/misc.css">
+        <link rel="stylesheet" href="../css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -172,47 +173,81 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="カード生成"><a class="header" href="#カード生成">カード生成</a></h1>
+                        <h1 id="card-generation"><a class="header" href="#card-generation">Card Generation</a></h1>
 <ul>
-<li><a href="#%E5%8F%8D%E8%BB%A2%E3%82%AB%E3%83%BC%E3%83%89">反転カード</a></li>
-<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E7%94%9F%E6%88%90%E3%81%A8%E5%89%8A%E9%99%A4">カードの生成と削除</a></li>
-<li><a href="#%E9%81%B8%E6%8A%9E%E7%9A%84%E3%82%AB%E3%83%BC%E3%83%89%E7%94%9F%E6%88%90">選択的カード生成</a></li>
-<li><a href="#%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E7%BD%AE%E6%8F%9B">条件付き置換</a></li>
-<li><a href="#%E7%A9%BA%E7%99%BD%E3%81%AE%E8%A3%8F%E9%9D%A2">空白の裏面</a></li>
-<li><a href="#%E7%A9%BA%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">空のノートの追加</a></li>
-<li><a href="#%E7%A9%B4%E5%9F%8B%E3%82%81%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88">穴埋めテンプレート</a></li>
+<li><a href="#reverse-cards">Reverse Cards</a></li>
+<li><a href="#card-generation--deletion">Card Generation &amp; Deletion</a></li>
+<li><a href="#selective-card-generation">Selective Card Generation</a></li>
+<li><a href="#conditional-replacement">Conditional Replacement</a></li>
+<li><a href="#blank-back-sides">Blank Back Sides</a></li>
+<li><a href="#adding-empty-notes">Adding Empty Notes</a></li>
+<li><a href="#cloze-templates">Cloze Templates</a></li>
 </ul>
-<h2 id="反転カード"><a class="header" href="#反転カード">反転カード</a></h2>
-<p><a href="http://www.youtube.com/watch?v=DnbKwHEQ1mA&amp;yt:cc=on">カードの反転に関する動画</a>をYouTubeでご覧いただけます。</p>
-<p>両方向のカードを作成したい場合（例：「ookii」→「big」と「big」→「ookii」の両方）、いくつかの選択肢があります。最も簡単なのは、「基本 (反転カードあり)」組み込みノートタイプを選択することです。これにより、各方向に1枚ずつ、2枚のカードが生成されます。</p>
-<p>教材の一部だけに反転カードを生成したい場合（おそらく最も重要な教材だけに反転カードの学習時間を費やしたい、または一部のカードは反転しても意味がない場合）、「基本 (オプション反転カード)」ノートタイプを選択できます。このノートタイプは、最初の2つのフィールドだけを入力すると順方向のみのカードを生成します。「反転を追加」フィールドに何か（「y」など）を追加で入力すると、Ankiは反転カードも生成します。このフィールドの内容はカードに表示されることはありません。</p>
-<h2 id="カードの生成と削除"><a class="header" href="#カードの生成と削除">カードの生成と削除</a></h2>
-<p>Ankiは表面が空のカードを作成しません。したがって、「My Field」が空で、あるカードの表テンプレートにそのフィールドだけが含まれていた場合、カードは作成されません。</p>
-<p>以前に追加したノートを編集すると、以前は空白だったが空白でなくなった場合、Ankiは自動的に追加カードを作成します。ただし、編集により以前は空白でなかったカードが空白になった場合、Ankiはそれらをすぐに削除しません。これは偶発的なデータ損失につながる可能性があるためです。空のカードを削除するには、メインウィンドウでツール → 空のカードに移動します。空のカードのリストが表示され、削除するオプションが与えられます。</p>
-<p>カード生成の仕組みのため、個々のカードを手動で削除することはできません。次回ノートが編集されたときに再作成されてしまうからです。代わりに、関連する条件付き置換フィールドを空にしてから、空のカードオプションを使用する必要があります。</p>
-<p>Ankiはカード生成の目的で特殊フィールドや非フィールドテキストを考慮しません。したがって、表テンプレートが次のようになっていて、Countryが空の場合、カードは生成されません：</p>
-<pre><code>{{Country}}は地図上のどこですか？
+<h2 id="reverse-cards"><a class="header" href="#reverse-cards">Reverse Cards</a></h2>
+<p>You can watch <a href="http://www.youtube.com/watch?v=DnbKwHEQ1mA&amp;yt:cc=on">a video about reversing cards</a> on YouTube.</p>
+<p>If you want to create cards that go in both directions (e.g., both
+“ookii”→“big” and “big”→“ookii”), you have several options. The simplest
+is to select the “Basic (and reversed card)” built-in note type. This
+will generate two cards, one in each direction.</p>
+<p>If you want to generate reverse cards for only some of your material
+(perhaps you only want to take the time to study reverses for the most
+important material, or some of your cards don’t make sense reversed),
+you can select the “Basic (optional reversed card)” note type. This note
+type generates a forward-only card when you fill in only the first two
+fields; if you additionally enter something in the “Add Reverse” field
+(like a “y”), Anki will generate a reverse card as well. The contents of
+this field will never be displayed on a card.</p>
+<h2 id="card-generation--deletion"><a class="header" href="#card-generation--deletion">Card Generation &amp; Deletion</a></h2>
+<p>Anki will not create cards with empty front sides. Thus if “My Field”
+was empty, and one card’s front template included only that field, the
+card would not be created.</p>
+<p>When you edit a previously added note, Anki will automatically create
+extra cards if they were previously blank but no longer are. If your
+edits have made some cards blank when they previously were not, however,
+Anki will not delete them immediately, as that could lead to accidental
+data loss. To remove the empty cards, go to Tools → Empty Cards in the
+main window. You will be shown a list of empty cards and be given the
+option to delete them.</p>
+<p>Because of the way that card generation works, it is not possible to
+manually delete individual cards, as they would just end up being recreated
+the next time the note was edited. Instead, you should make the
+relevant conditional replacement fields empty and then use the Empty
+Cards option.</p>
+<p>Anki does not consider special fields or non-field text for the purposes
+of card generation. Thus if your front template looked like the
+following, no card would be generated if Country was empty:</p>
+<pre><code>Where is {{Country}} on the map?
 </code></pre>
-<h2 id="選択的カード生成"><a class="header" href="#選択的カード生成">選択的カード生成</a></h2>
-<p>時には、セットの最も重要な単語を思い出す能力をテストするなど、教材の一部だけに追加カードを生成したい場合があります。これは、ノートに追加フィールドを追加し、追加カードが必要なノートにテキスト（「1」など）を入力することで実現できます。その後、カードテンプレートで、そのフィールドが空でないことをカードの作成条件にできます。詳細については、以下の条件付き置換のセクションをご覧ください。</p>
-<h2 id="条件付き置換"><a class="header" href="#条件付き置換">条件付き置換</a></h2>
-<p>フィールドが空または空でない場合にのみ、特定のテキスト、フィールド、またはHTMLをカードに含めることが可能です。例：</p>
-<pre><code>このテキストは常に表示されます。
+<h2 id="selective-card-generation"><a class="header" href="#selective-card-generation">Selective Card Generation</a></h2>
+<p>Sometimes you may want to generate extra cards for only some of your
+material, such as testing your ability to recall the most important
+words of a set. You can accomplish this by adding an extra field to your
+note, and adding some text into it (such as “1”) on the notes you want
+the extra card. Then in the card template, you can make the card’s
+creation depend on that field being non-empty. For more information on
+this, please see the conditional replacement section below.</p>
+<h2 id="conditional-replacement"><a class="header" href="#conditional-replacement">Conditional Replacement</a></h2>
+<p>It is possible to include certain text, fields, or HTML on your cards
+only if a field is empty or not empty. An example:</p>
+<pre><code>This text is always shown.
 
 {{#FieldName}}
-    このテキストはFieldNameにテキストがある場合のみ表示されます
+    This text is only shown if FieldName has text in it
 {{/FieldName}}
 
 {{^FieldName}}
-    このテキストはFieldNameが空の場合のみ表示されます
+    This text is only shown if FieldName is empty
 {{/FieldName}}
 </code></pre>
-<p>実際の例として、フィールドが空でない場合のみラベルを表示する場合：</p>
+<p>A real life example is only showing a label if the field is not empty:</p>
 <pre><code>{{#Tags}}
-    タグ: {{Tags}}
+    Tags: {{Tags}}
 {{/Tags}}
 </code></pre>
-<p>または、裏面に追加のメモがある場合に、カードの表面で特定のフィールドを青色で表示したい場合（メモがあるという事実が、答えについてより時間をかけて考えるべきだというリマインダーとして機能する場合）。次のようにフィールドをスタイリングできます：</p>
+<p>Or say you want to display a specific field in blue on the front of your
+card if there are extra notes on the back (perhaps the fact that there
+are notes serves as a reminder that you should spend more time thinking
+about the answer). You can style the field as follows:</p>
 <pre><code>{{#Notes}}
     &lt;span style="color:blue;"&gt;
 {{/Notes}}
@@ -223,17 +258,23 @@
     &lt;/span&gt;
 {{/Notes}}
 </code></pre>
-<p>条件付き置換を使用して、どのカードが生成されるかを制御することもできます。これは、Ankiが表面が空白になるカードを生成しないために機能します。例えば、表面に2つのフィールドがあるカードを考えてみましょう：</p>
+<p>You can also use conditional replacement to control which cards are
+generated. This works since Anki will not generate
+cards which would have a blank front side. For
+example, consider a card with two fields on the front:</p>
 <pre><code>{{Expression}}
 {{Notes}}
 </code></pre>
-<p>通常、expressionまたはnotesフィールドのいずれかにテキストがある場合、カードが生成されます。expressionが空でない場合のみカードを生成したい場合は、テンプレートを次のように変更できます：</p>
+<p>Normally a card would be generated if either the expression or notes
+field had text in it. If you only wanted a card generated if expression
+was not empty, then you could change the template to this:</p>
 <pre><code>{{#Expression}}
     {{Expression}}
     {{Notes}}
 {{/Expression}}
 </code></pre>
-<p>両方のフィールドを必要とする場合は、2つの条件付き置換を使用できます：</p>
+<p>And if you wanted to require both fields, you could use two conditional
+replacements:</p>
 <pre><code>{{#Expression}}
     {{#Notes}}
         {{Expression}}
@@ -241,45 +282,69 @@
     {{/Notes}}
 {{/Expression}}
 </code></pre>
-<p>条件付き置換コードをカードの_表面_に配置する場合のみ機能することに注意してください。裏面でこれを行うと、単に裏面が空白のカードになってしまいます。同様に、これは表面フィールドが空かどうかをチェックすることで機能するため、条件付き置換で表面「全体」をラップすることが重要です。例えば、次のような場合は期待どおりに機能しません：</p>
+<p>Keep in mind that this only works when you place the
+conditional replacement code on the <em>front</em> of the card; if you do this
+on the back, you will simply end up with cards with a blank back side.
+Similarly, since this works by checking if the front field would be
+empty, it is important to make sure you wrap the “entire” front side in
+the conditional replacement; for instance, the following would not work
+as expected:</p>
 <pre><code>{{#Expression}}
     {{Expression}}
 {{/Expression}}
 {{Notes}}
 </code></pre>
-<h2 id="空白の裏面"><a class="header" href="#空白の裏面">空白の裏面</a></h2>
-<p>カード生成はカードの表面のみを見ます。例えば、表テンプレートが：</p>
+<h2 id="blank-back-sides"><a class="header" href="#blank-back-sides">Blank Back Sides</a></h2>
+<p>Card generation only looks at the front side of the card. For example, if you have a
+front template:</p>
 <pre><code>{{Field 1}}
 </code></pre>
-<p>裏テンプレートが：</p>
+<p>and a back template:</p>
 <pre><code>{{Field 2}}
 </code></pre>
-<p>の場合、Field 1が空でなければカードが生成されます。Field 2が空でも、カードは生成され、裏面が空白になります。</p>
-<p>空白の裏面を避けたい場合は、表テンプレートに必須フィールドを条件として配置する必要があります：</p>
+<p>Then a card will be generated if Field 1 is non-empty. If Field 2 is empty, the card
+will still be generated, and you will get a blank back side.</p>
+<p>If you wish to avoid a blank back side, you will need to place a required field
+on the front template as a conditional, like so:</p>
 <pre><code>{{#Field 2}}
     {{Field 1}}
 {{/Field 2}}
 </code></pre>
-<p>これにより、Field 2とField 1の両方が空でない場合のみカードが生成されます。</p>
-<h2 id="空のノートの追加"><a class="header" href="#空のノートの追加">空のノートの追加</a></h2>
-<p>Ankiで新しいノートを追加するとき、カードテンプレートとノートフィールドが組み合わさってカードが生成されない場合、最初のテンプレートを使用して空白のカードが作成されます。これにより、不完全な教材でも追加でき、後でそれまたはテンプレートを変更して有効にできます。空のノートを保持したくない場合は、空のカード機能で削除できます。</p>
-<h2 id="穴埋めテンプレート"><a class="header" href="#穴埋めテンプレート">穴埋めテンプレート</a></h2>
-<p>背景情報については、<a href="../editing.html#cloze-deletion">穴埋め削除</a>セクションをご覧ください。</p>
-<p>穴埋めノートタイプは通常のノートタイプとは異なる動作をします。カスタマイズ可能な数のカードタイプの代わりに、ノート上のすべての穴埋め削除で共有される単一のタイプがあります。</p>
-<p>上記のカード生成セクションで述べたように、通常のカードの生成は質問の1つ以上のフィールドが空でないことに依存します。穴埋め削除ノートタイプは異なる方法で生成されます：</p>
+<p>This will ensure the card is generated only if both Field 2 and Field 1 are non-empty.</p>
+<h2 id="adding-empty-notes"><a class="header" href="#adding-empty-notes">Adding Empty Notes</a></h2>
+<p>When you add a new note in Anki, if the card
+templates and note fields combine to produce no cards, a blank card will be
+created using the first template. This allows you to add material even if it’s
+incomplete, and modify it or the template later to make it valid. If you don’t
+wish to keep an empty note, you can remove it with the Empty Cards function.</p>
+<h2 id="cloze-templates"><a class="header" href="#cloze-templates">Cloze Templates</a></h2>
+<p>Please see the <a href="../editing.html#cloze-deletion">cloze deletion</a> section for background info.</p>
+<p>The cloze note type functions differently from regular note types.
+Instead of a customizable number of card types, it has a single type
+which is shared by all cloze deletions on a note.</p>
+<p>As mentioned in the card generation section above, generation of regular
+cards depends on one or more fields on the question being non-empty.
+Cloze deletion note types are generated differently:</p>
 <ul>
 <li>
-<p>Ankiは表テンプレートで{{cloze:FieldName}}のような1つ以上の穴埋め置換を探します。</p>
+<p>Anki looks on the front template for one or more cloze replacements,
+like {{cloze:FieldName}}.</p>
 </li>
 <li>
-<p>次に、FieldNameフィールドで{{c1::text}}のようなすべての穴埋め参照を探します。</p>
+<p>It then looks in the FieldName field for all cloze references, like
+{{c1::text}}.</p>
 </li>
 <li>
-<p>個別の番号ごとに、カードが生成されます。</p>
+<p>For each separate number, a card will be generated.</p>
 </li>
 </ul>
-<p>穴埋め削除カードではカード生成が異なる動作をするため、{{cloze:…​}}タグは通常のノートタイプでは使用できません - 穴埋めノートタイプで使用した場合のみ正しく機能します。</p>
-<p>条件付き生成は、どのカードをレンダリングしているかを確認できる特別なフィールドを提供します。例えば、最初の穴埋めに「hint1」フィールドを表示し、2番目の穴埋めに「hint2」フィールドを表示したい場合、次のテンプレートを使用できます：</p>
+<p>Because card generation functions differently for cloze deletion cards,
+{{cloze:…​}} tags can not be used with a regular note type - they
+will only function properly when used with a cloze note type.</p>
+<p>Conditional generation provides a special field so you can check which
+card you are rendering. If you wanted to display the “hint1” field on
+the first cloze, and “hint2” field on the second cloze for example, you
+could use the following template:</p>
 <pre><code>{{cloze:Text}}
 
 {{#c1}}
@@ -288,7 +353,8 @@
 
 {{#c2}}
     {{Hint2}}
-{{/c2}}</code></pre>
+{{/c2}}
+</code></pre>
 
                     </main>
 

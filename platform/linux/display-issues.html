@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>表示の問題 - Ankiマニュアル</title>
+        <title>Display Issues - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/misc.css">
+        <link rel="stylesheet" href="../../css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -172,14 +173,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="linuxでの表示の問題"><a class="header" href="#linuxでの表示の問題">Linuxでの表示の問題</a></h2>
-<p>ハードウェアアクセラレーションはデフォルトでオンになっています。空白の画面や表示の問題が発生した場合は、ソフトウェアレンダリングを有効にしてみてください。</p>
-<h3 id="設定画面からドライバーを変更する"><a class="header" href="#設定画面からドライバーを変更する">設定画面からドライバーを変更する</a></h3>
-<p>Anki 23.10以降では、<strong>ツール → 設定</strong>に移動してドロップダウンメニューからドライバーを選択することで、設定画面からグラフィックスドライバーを変更できます。</p>
-<h3 id="ターミナルからドライバーを変更する"><a class="header" href="#ターミナルからドライバーを変更する">ターミナルからドライバーを変更する</a></h3>
+                        <h2 id="display-issues-on-linux"><a class="header" href="#display-issues-on-linux">Display Issues on Linux</a></h2>
+<p>Hardware acceleration defaults to on. If you experience blank screens
+or display issues, you can try enabling software rendering.</p>
+<h3 id="changing-the-driver-from-the-preferences-screen"><a class="header" href="#changing-the-driver-from-the-preferences-screen">Changing the Driver From the Preferences Screen</a></h3>
+<p>In Anki 23.10+, you can change the graphics driver from preferences screen by
+navigating to <strong>Tools → Preferences</strong> and then selecting the driver from the
+dropdown menu.</p>
+<h3 id="changing-the-driver-from-the-terminal"><a class="header" href="#changing-the-driver-from-the-terminal">Changing the Driver From the Terminal</a></h3>
 <pre><code>echo software &gt; ~/.local/share/Anki2/gldriver6
 </code></pre>
-<p>デフォルトに戻したい場合は、<code>software</code>を<code>auto</code>に変更するか、そのファイルを削除してください。</p>
+<p>If you wish to switch back to the default, change <code>software</code> to <code>auto</code>, or
+remove that file.</p>
 
                     </main>
 

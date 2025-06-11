@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>追加/編集 - Ankiマニュアル</title>
+        <title>Adding/Editing - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,247 +173,484 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="カードとノートの追加編集"><a class="header" href="#カードとノートの追加編集">カードとノートの追加/編集</a></h1>
+                        <h1 id="addingediting"><a class="header" href="#addingediting">Adding/Editing</a></h1>
 <ul>
-<li><a href="#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%A8%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">カードとノートの追加</a>
+<li><a href="#adding-cards-and-notes">Adding Cards and Notes</a>
 <ul>
-<li><a href="#%E9%87%8D%E8%A4%87%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF">重複チェック</a></li>
-<li><a href="#%E5%8A%B9%E6%9E%9C%E7%9A%84%E3%81%AA%E5%AD%A6%E7%BF%92">効果的な学習</a></li>
+<li><a href="#duplicate-check">Duplicate Check</a></li>
+<li><a href="#effective-learning">Effective Learning</a></li>
 </ul>
 </li>
-<li><a href="#%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E8%BF%BD%E5%8A%A0">ノートタイプの追加</a></li>
-<li><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">フィールドのカスタマイズ</a></li>
-<li><a href="#%E3%83%87%E3%83%83%E3%82%AD%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E5%A4%89%E6%9B%B4">デッキ/ノートタイプの変更</a></li>
-<li><a href="#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%AE%E6%95%B4%E7%90%86">コンテンツの整理</a>
+<li><a href="#adding-a-note-type">Adding a Note Type</a></li>
+<li><a href="#customizing-fields">Customizing Fields</a></li>
+<li><a href="#changing-deck--note-type">Changing Deck / Note Type</a></li>
+<li><a href="#organizing-content">Organizing Content</a>
 <ul>
-<li><a href="#%E3%83%87%E3%83%83%E3%82%AD%E3%81%AE%E9%81%A9%E5%88%87%E3%81%AA%E4%BD%BF%E7%94%A8">デッキの適切な使用</a></li>
-<li><a href="#%E3%82%BF%E3%82%B0%E3%81%AE%E4%BD%BF%E7%94%A8">タグの使用</a></li>
-<li><a href="#%E3%83%95%E3%83%A9%E3%82%B0%E3%81%AE%E4%BD%BF%E7%94%A8">フラグの使用</a></li>
-<li><a href="#marked%E3%82%BF%E3%82%B0">「marked」タグ</a></li>
-<li><a href="#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E4%BD%BF%E7%94%A8">フィールドの使用</a></li>
-<li><a href="#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E5%AD%A6%E7%BF%92%E3%81%A8%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC%E3%83%87%E3%83%83%E3%82%AD">カスタム学習とフィルターデッキ</a></li>
+<li><a href="#using-decks-appropriately">Using Decks Appropriately</a></li>
+<li><a href="#using-tags">Using Tags</a></li>
+<li><a href="#using-flags">Using Flags</a></li>
+<li><a href="#the-marked-tag">The “Marked” Tag</a></li>
+<li><a href="#using-fields">Using Fields</a></li>
+<li><a href="#custom-study-and-filtered-decks">Custom Study and Filtered Decks</a></li>
 </ul>
 </li>
-<li><a href="#%E7%B7%A8%E9%9B%86%E6%A9%9F%E8%83%BD">編集機能</a></li>
-<li><a href="#%E7%A9%B4%E5%9F%8B%E3%82%81%E5%89%8A%E9%99%A4">穴埋め削除</a></li>
-<li><a href="#%E7%94%BB%E5%83%8F%E3%82%AA%E3%82%AF%E3%83%AB%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">画像オクルージョン</a>
+<li><a href="#editing-features">Editing Features</a></li>
+<li><a href="#cloze-deletion">Cloze Deletion</a></li>
+<li><a href="#image-occlusion">Image Occlusion</a>
 <ul>
-<li><a href="#%E7%94%BB%E5%83%8F%E3%81%AE%E8%BF%BD%E5%8A%A0">画像の追加</a></li>
-<li><a href="#io%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E8%BF%BD%E5%8A%A0">IOカードの追加</a></li>
+<li><a href="#adding-an-image">Adding an image</a></li>
+<li><a href="#adding-io-cards">Adding IO cards</a></li>
 </ul>
 </li>
-<li><a href="#io%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AE%E7%B7%A8%E9%9B%86">IOノートの編集</a></li>
-<li><a href="#%E9%9D%9E%E3%83%A9%E3%83%86%E3%83%B3%E6%96%87%E5%AD%97%E3%81%A8%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%88%E3%81%AE%E5%85%A5%E5%8A%9B">非ラテン文字とアクセントの入力</a>
+<li><a href="#editing-io-notes">Editing IO notes</a></li>
+<li><a href="#inputting-non-latin-characters-and-accents">Inputting Non-Latin Characters and Accents</a>
 <ul>
-<li><a href="#%E5%9B%BD%E9%9A%9B%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">国際キーボードレイアウトの追加</a></li>
-<li><a href="#%E7%89%B9%E5%AE%9A%E3%81%AE%E8%A8%80%E8%AA%9E%E3%81%AE%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">特定の言語のキーボードレイアウトの追加</a></li>
-<li><a href="#%E5%8F%B3%E3%81%8B%E3%82%89%E5%B7%A6%E3%81%B8%E6%9B%B8%E3%81%8F%E8%A8%80%E8%AA%9E">右から左へ書く言語</a></li>
-<li><a href="#%E5%88%B6%E9%99%90%E4%BA%8B%E9%A0%85">制限事項</a></li>
+<li><a href="#adding-international-keyboard-layouts">Adding international keyboard layouts</a></li>
+<li><a href="#adding-keyboard-layouts-for-specific-languages">Adding keyboard layouts for specific languages</a></li>
+<li><a href="#right-to-left-languages">Right-to-left Languages</a></li>
+<li><a href="#limitations">Limitations</a></li>
 </ul>
 </li>
-<li><a href="#unicode%E6%AD%A3%E8%A6%8F%E5%8C%96">Unicode正規化</a></li>
+<li><a href="#unicode-normalization">Unicode Normalization</a></li>
 </ul>
-<h2 id="カードとノートの追加"><a class="header" href="#カードとノートの追加">カードとノートの追加</a></h2>
-<p><a href="getting-started.html">基本編</a>で説明したように、Ankiではカードではなくノートを追加し、Ankiが自動的にカードを作成します。<a href="studying.html#decks">メインウィンドウ</a>で<strong>追加</strong>をクリックすると、ノート追加ウィンドウが表示されます。</p>
-<p><img src="media/add_screen.png" alt="追加画面" /></p>
-<p>ウィンドウの左上には現在の<a href="getting-started.html#note-types">ノートタイプ</a>が表示されます。「基本」と表示されていない場合は、共有デッキをダウンロードした際にノートタイプが追加された可能性があります。以下の説明では「基本」が選択されていることを前提としています。</p>
-<p>ウィンドウの右上にはカードが追加される<a href="getting-started.html#decks">デッキ</a>が表示されます。新しいデッキにカードを追加したい場合は、デッキ名のボタンをクリックして<strong>追加</strong>をクリックします。</p>
-<p>ノートタイプの下にはいくつかのボタンと、「表面」と「裏面」というラベルの付いたエリアがあります。表面と裏面は<a href="getting-started.html#notes--fields">フィールド</a>と呼ばれ、上部の「フィールド…」ボタンをクリックすることで追加、削除、名前変更ができます。</p>
-<p>フィールドの下には「<strong>タグ</strong>」というラベルの付いたエリアがあります。タグはノートに付けることができるラベルで、ノートの整理や検索を容易にします。タグは空白のままでも構いませんし、1つ以上追加することもできます。タグはスペースで区切ります。タグエリアに以下のように入力した場合：</p>
+<h2 id="adding-cards-and-notes"><a class="header" href="#adding-cards-and-notes">Adding Cards and Notes</a></h2>
+<p>Recall from the <a href="getting-started.html">basics</a> that in Anki we add notes rather than
+cards, and Anki creates cards for us. Click <strong>Add</strong> in the <a href="studying.html#decks">main window</a>,
+and the Add Notes window will appear.</p>
+<p><img src="media/add_screen.png" alt="Add Screen" /></p>
+<p>The top left of the window shows us the current <a href="getting-started.html#note-types">note type</a>. If it does
+not say “Basic,” then you may have added some note types when you
+downloaded a shared deck. The text below assumes that “Basic” is
+selected.</p>
+<p>The top right of the window shows us the <a href="getting-started.html#decks">deck</a> cards will be added to. If
+you would like to add cards to a new deck, you can click on the deck name
+button and then click <strong>Add</strong>.</p>
+<p>Below the note type, you’ll see some buttons, and an area labelled
+“Front” and “Back”. Front and Back are called <a href="getting-started.html#notes--fields">fields</a>, and you can add,
+remove, and rename them by clicking the “Fields…​” button above.</p>
+<p>Below the fields is another area labelled “<strong>tags</strong>”. Tags are labels that
+you can attach to your notes, to make organizing and finding notes
+easier. You can leave the tags blank if you wish, or add one or more of
+them. Tags are separated by a space. If the tags area says</p>
 <pre><code>vocab check_with_tutor
 </code></pre>
-<p>追加するノートには2つのタグが付きます。</p>
-<p>表面と裏面にテキストを入力したら、「追加」ボタンをクリックするか、<kbd>Ctrl</kbd>+<kbd>Enter</kbd>（Macでは<kbd>Command</kbd>+<kbd>Enter</kbd>）を押してノートをコレクションに追加できます。これによりカードも作成され、選択したデッキに配置されます。追加したカードを編集したい場合は、履歴ボタンをクリックして<a href="browsing.html">ブラウザ</a>で最近追加したカードを検索できます。</p>
-<p>ノートタイプとフィールドの間にあるボタンの詳細については、<a href="editing.html">エディタ</a>のセクションをご覧ください。</p>
-<h3 id="重複チェック"><a class="header" href="#重複チェック">重複チェック</a></h3>
-<p>Ankiは最初のフィールドの一意性をチェックするため、例えば「apple」という表面フィールドを持つカードを2枚入力すると警告が表示されます。一意性チェックは現在のノートタイプに限定されるため、複数の言語を学習している場合、各言語に異なるノートタイプがあれば、同じ表面を持つ2枚のカードは重複として表示されません。</p>
-<p>効率性の理由から、Ankiは他のフィールドでの重複を自動的にチェックしませんが、ブラウザには「重複を検索」機能があり、定期的に実行できます。</p>
-<h3 id="効果的な学習"><a class="header" href="#効果的な学習">効果的な学習</a></h3>
-<p>人によって復習方法の好みは異なりますが、心に留めておくべき一般的な概念があります。優れた入門記事として、SuperMemoサイトの<a href="https://super-memory.com/articles/20rules.htm">この記事</a>があります。特に重要な点：</p>
+<p>…​then the note you add would have two tags.</p>
+<p>When you have entered text into the front and back, you can click the
+“Add” button or press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (<kbd>Command</kbd>+<kbd>Enter</kbd> on a Mac) to add the
+note to your collection. When you do so, a card will be created as well,
+and placed into the deck you chose. If you would like to edit a card you
+added, you can click the history button to search for a recently added
+card in the <a href="browsing.html">browser</a>.</p>
+<p>For more information on the buttons between the note type and the
+fields, please see the <a href="editing.html">editor</a> section.</p>
+<h3 id="duplicate-check"><a class="header" href="#duplicate-check">Duplicate Check</a></h3>
+<p>Anki checks the first field for uniqueness, so it will warn you if you
+enter two cards with a Front field of “apple” (for example). The
+uniqueness check is limited to the current note type, so if you’re
+studying multiple languages, two cards with the same Front would not be
+listed as duplicates as long as you had a different note type for each
+language.</p>
+<p>Anki does not check for duplicates in other fields automatically for
+efficiency reasons, but the browser has a “Find Duplicates” function,
+which you can run periodically.</p>
+<h3 id="effective-learning"><a class="header" href="#effective-learning">Effective Learning</a></h3>
+<p>Different people like to review in different ways, but there are some
+general concepts to keep in mind. An excellent introduction is <a href="https://super-memory.com/articles/20rules.htm">this article</a> on the SuperMemo
+site. In particular:</p>
 <ul>
 <li>
-<p><strong>シンプルに保つ</strong>: カードが短いほど、復習が簡単になります。「念のため」多くの情報を含めたくなるかもしれませんが、復習はすぐに苦痛になります。</p>
+<p><strong>Keep it simple</strong>: The shorter your cards, the easier they are to
+review. You may be tempted to include lots of information “just in
+case,” but reviews will quickly become painful.</p>
 </li>
 <li>
-<p><strong>理解なしに暗記しない</strong>: 言語を学習している場合、大量の単語リストは避けるようにしましょう。言語学習の最良の方法は文脈の中で学ぶことで、つまり文章の中で使われている単語を見ることです。同様に、コンピュータコースを学習している場合を想像してください。山のような略語を暗記しようとすると、進歩するのが非常に困難になります。しかし、略語の背後にある概念を理解する時間を取れば、略語の学習がずっと簡単になります。</p>
+<p><strong>Don’t memorize without understanding</strong>: If you are studying a
+language, try to avoid large lists of words. The best way to learn
+languages is in context, which means seeing those words used in a
+sentence. Likewise, imagine you’re studying a computer course. If
+you attempt to memorize the mountain of acronyms, you’ll find it
+very difficult to make progress. But if you take the time to
+understand the concepts behind the acronyms, learning the acronyms
+will become a lot easier.</p>
 </li>
 </ul>
-<h2 id="ノートタイプの追加"><a class="header" href="#ノートタイプの追加">ノートタイプの追加</a></h2>
-<p>基本的なノートタイプは表裏に単語やフレーズだけがある単純なカードには十分ですが、表面や裏面に複数の情報を含めたくなったら、その情報をより多くのフィールドに分割するのが良いでしょう。</p>
-<p>「でも私はカードを1枚だけ欲しいので、なぜ音声、画像、ヒント、翻訳をすべて表面フィールドに含められないのか？」と思うかもしれません。そうしたければ、それでも構いません。しかし、そのアプローチの欠点は、すべての情報が一緒になってしまうことです。ヒントでカードをソートしたい場合、他のコンテンツと混在しているためできません。また、音声を表面から裏面に移動させるなどのことも、すべてのノートに対して手作業でコピー＆ペーストする以外にはできません。コンテンツを別々のフィールドに保つことで、将来カードのレイアウトを調整することがずっと簡単になります。</p>
-<p>新しいタイプのノートを作成するには、メインのAnkiウィンドウからツール → ノートタイプを管理を選択します。次に「追加」をクリックして新しいタイプのノートを追加します。新しいタイプのベースとなるノートタイプを選択する画面が表示されます。「追加」はAnkiに付属するタイプをベースに新しく作成されたタイプを作ることを意味します。「複製」は既にコレクションにあるタイプをベースに新しく作成されたタイプを作ることを意味します。例えば、既にフランス語の語彙タイプを作成していた場合、ドイツ語の語彙タイプを作成する際にそれを複製したいかもしれません。</p>
-<p>OKを選択した後、新しいタイプに名前を付けるよう求められます。学習している教材名を選ぶのが良いでしょう - 「日本語」、「雑学」などです。名前を選んだら、ノートタイプウィンドウを閉じると、追加ウィンドウに戻ります。</p>
-<h2 id="フィールドのカスタマイズ"><a class="header" href="#フィールドのカスタマイズ">フィールドのカスタマイズ</a></h2>
-<p>フィールドをカスタマイズするには、ノートの追加または編集時に「フィールド…」ボタンをクリックするか、ノートタイプを管理ウィンドウでノートタイプが選択されている時にクリックします。</p>
-<p><img src="media/fields.png" alt="フィールド" /></p>
-<p>適切なボタンをクリックすることで、フィールドの追加、削除、名前変更ができます。</p>
-<p>このダイアログとノート追加ダイアログでフィールドが表示される順序を変更するには、位置変更ボタンを使用できます。これは、フィールドを配置したい数値の位置を尋ねます。したがって、フィールドを新しい最初のフィールドにしたい場合は、「1」と入力します。</p>
-<p>または、フィールド名をドラッグ＆ドロップして並べ替えることもできます。これを行うには、マウスまたは指を使ってフィールドを目的の位置にドラッグします。インジケーターがフィールドの移動先を表示します。</p>
-<p>「Tags」、「Type」、「Deck」、「Card」、「FrontSide」をフィールド名として使用しないでください。これらは<a href="templates/fields.html#special-fields">特殊フィールド</a>であり、正しく機能しません。</p>
-<p>画面下部のオプションでは、カードの追加と編集時に使用されるフィールドのさまざまなプロパティを編集できます。これは復習時にカードに表示される内容をカスタマイズする場所では<em>ありません</em>。それについては<a href="templates/intro.html">テンプレート</a>をご覧ください。</p>
+<h2 id="adding-a-note-type"><a class="header" href="#adding-a-note-type">Adding a Note Type</a></h2>
+<p>While basic note types are sufficient for simple cards with only a word
+or phrase on each side, as soon as you find yourself wanting to include
+more than one piece of information on the front or back, it’s better to
+split that information up into more fields.</p>
+<p>You may find yourself thinking “but I only want one card, so why can’t I
+just include the audio, a picture, a hint, and the translation in the
+Front field?” If you’d prefer to do that, that’s fine. But the
+disadvantage of that approach is that all the information is stuck
+together. If you wanted to sort your cards by the hint, you wouldn’t be
+able to do that as it is mixed in with the other content. You also
+wouldn’t be able to do things such as moving the audio from the front to the
+back, except by laboriously copying and pasting it for every note. By
+keeping content in separate fields, you make it much easier to adjust
+the layout of your cards in the future.</p>
+<p>To create a new type of note, choose Tools → Manage Note Types from the
+main Anki window. Then click “Add” to add a new type of note. You will now
+see another screen that gives you a choice of note types to base the new
+type on. “Add” means to base the newly created type on one that comes
+with Anki. “Clone” means to base the newly created type on one that is
+already in your collection. For instance, if you’d created a French
+vocab type already, you might want to clone that when creating a German
+vocab type.</p>
+<p>After choosing OK, you will be asked to name the new type. The subject
+material that you are studying is a good choice here – things like “Japanese”,
+“Trivia”, and so on. Once you have chosen a name, close the Note Types
+window, and you will return to the adding window.</p>
+<h2 id="customizing-fields"><a class="header" href="#customizing-fields">Customizing Fields</a></h2>
+<p>To customize fields, click the “Fields…​” button when adding or editing
+a note, or while the note type is selected in the Manage Note Types
+window.</p>
+<p><img src="media/fields.png" alt="Fields" /></p>
+<p>You can add, remove, or rename fields by clicking the appropriate
+buttons.</p>
+<p>To change the order in which the fields appear in this dialog
+and the add notes dialog, you can use the reposition button, which asks
+for the numerical position you want the field to have. So if you want to
+change a field to be the new first field, enter “1”.</p>
+<p>Alternatively you can also drag and drop the field names to re-order them. To do
+that, use your mouse or finger to drag the field to the desired position. An indicator will
+show you where the field will be moved to.</p>
+<p>Do not use “Tags”, “Type”, “Deck”, “Card”, or “FrontSide” as field
+names, as they are <a href="templates/fields.html#special-fields">special fields</a> and will not work
+properly.</p>
+<p>The options at the bottom of the screen allow you to edit various
+properties of the fields to be used when adding and editing the cards.
+This is <em>not</em> where you customize what appears on your cards when
+reviewing; for that, please see <a href="templates/intro.html">templates</a>.</p>
 <ul>
 <li>
-<p><strong>編集フォント</strong>では、ノート編集時に使用するフォントとサイズをカスタマイズできます。これは重要でない情報を小さくしたり、読みにくい非ラテン文字のサイズを大きくしたりするのに便利です。ここで行った変更は復習時のカードの表示には影響しません。それを行うには<a href="templates/intro.html">テンプレート</a>セクションをご覧ください。ただし、「答えを入力する」機能を有効にしている場合、入力するテキストはここで定義されたフォントサイズを使用します。（答えを入力する際の実際のフォント書体を変更する方法については、<a href="templates/fields.html#checking-your-answer">解答の確認</a>セクションをご覧ください。）</p>
+<p><strong>Editing Font</strong> allows you to customize the font and size used when
+editing notes. This is useful if you want to make unimportant
+information smaller, or increase the size of non-Latin characters which
+are hard to read. The changes you make here do not affect how cards
+appear when reviewing: to do that, please see the
+<a href="templates/intro.html">templates</a> section. If you have enabled the “type in the
+answer” function, however, the text you type will use the font size
+defined here. (For information about how to change the actual font face
+when typing the answer, please see the <a href="templates/fields.html#checking-your-answer">checking your answer</a> section.)</p>
 </li>
 <li>
-<p>**このフィールドでソート…**は、Ankiにブラウザのソートフィールド列にこのフィールドを表示するよう指示します。これを使用して、そのフィールドでカードをソートできます。一度に1つのフィールドのみがソートフィールドになることができます。</p>
+<p><strong>Sort by this field…​</strong> tells Anki to show this field in the Sort Field
+column of the browser. You can use this to sort cards by that field.
+Only one field can be the sort field at once.</p>
 </li>
 <li>
-<p><strong>テキスト方向を逆にする</strong>は、アラビア語やヘブライ語など、右から左（RTL）にテキストを表示する言語を学習している場合に便利です。この設定は現在編集のみを制御します。復習中にテキストが正しく表示されるようにするには、<a href="templates/styling.html#text-direction">テンプレート</a>を調整する必要があります。</p>
+<p><strong>Reverse text direction</strong> is useful if you are studying languages that
+display text from right to left (RTL), such as Arabic or Hebrew. This
+setting currently only controls editing; to make sure the text displays
+correctly during review, you’ll need to adjust your
+<a href="templates/styling.html#text-direction">template</a>.</p>
 </li>
 <li>
-<p><strong>デフォルトでHTMLエディタを使用</strong>は、フィールドを直接HTMLで編集することを好む場合に便利です。</p>
+<p><strong>Use HTML editor by default</strong> is useful if you prefer to edit the fields
+directly in HTML.</p>
 </li>
 <li>
-<p><strong>デフォルトで折りたたむ</strong>。フィールドは折りたたみ/展開できます。アニメーションは<a href="preferences.html">設定</a>で無効にできます。</p>
+<p><strong>Collapse by default</strong>. Fields can be collapsed/expanded.
+The animation can be disabled in the <a href="preferences.html">preferences.</a></p>
 </li>
 <li>
-<p>**限定されていない検索から除外（遅い）**は、特定のフィールドの内容を<a href="searching.html#limiting-to-a-field">特定のフィールドに限定されていない</a>検索に表示したくない場合に使用できます。</p>
+<p><strong>Exclude from unqualified searches (slower)</strong> can be used if you want
+the content of a certain field not to appear in unqualified <a href="searching.html#limiting-to-a-field">(not limited to a specific field)</a>
+searches.</p>
 </li>
 </ul>
-<p>フィールドを追加した後は、おそらくカードの表面または裏面に追加したいでしょう。詳細については、<a href="templates/intro.html">テンプレート</a>セクションをご覧ください。</p>
-<h2 id="デッキノートタイプの変更"><a class="header" href="#デッキノートタイプの変更">デッキ/ノートタイプの変更</a></h2>
-<p>追加中に、左上のボタンをクリックしてノートタイプを変更し、右上のボタンをクリックしてデッキを変更できます。開くウィンドウでは、デッキやノートタイプを選択するだけでなく、新しいデッキを追加したり、ノートタイプを管理したりすることもできます。</p>
-<h2 id="コンテンツの整理"><a class="header" href="#コンテンツの整理">コンテンツの整理</a></h2>
-<h3 id="デッキの適切な使用"><a class="header" href="#デッキの適切な使用">デッキの適切な使用</a></h3>
-<p><a href="getting-started.html#decks">デッキ</a>は、英語、地理など、個別に学習したい大まかなカテゴリーにコンテンツを分割するように設計されています。「私の地理の教科書第1章」や「食べ物に関する動詞」など、多くの小さなデッキを作成してコンテンツを整理したくなるかもしれませんが、以下の理由から推奨されません：</p>
+<p>After you have added fields, you will probably want to add them to the front
+or back of your cards. For more information on that, please see the
+<a href="templates/intro.html">templates</a> section.</p>
+<h2 id="changing-deck--note-type"><a class="header" href="#changing-deck--note-type">Changing Deck / Note Type</a></h2>
+<p>While adding, you can click on the top left button to change note type,
+and the top right button to change deck. The window that opens up will
+not only allow you to select a deck or note type, but also to add new
+decks or manage your note types.</p>
+<h2 id="organizing-content"><a class="header" href="#organizing-content">Organizing Content</a></h2>
+<h3 id="using-decks-appropriately"><a class="header" href="#using-decks-appropriately">Using Decks Appropriately</a></h3>
+<p><a href="getting-started.html#decks">Decks</a> are designed to divide your content up into
+broad categories that you wish to study separately, such as English, Geography,
+and so on. You may be tempted to create lots of little decks to keep your
+content organized, such as “my geography book chapter 1”, or “food verbs”, but
+this is not recommended, for the following reasons:</p>
 <ul>
 <li>
-<p>多くの小さなデッキは、認識可能な順序でカードを見ることになる可能性があります。古いスケジューラーバージョンでは、新しいカードはデッキの順序でしか導入できません。そして、各デッキを順番にクリックすることを計画していた場合（これは遅い）、すべての「第1章」や「食べ物の動詞」の復習を一緒に見ることになります。これにより、文脈から推測できるため、カードに答えるのが簡単になり、記憶が弱くなります。Anki以外で単語やフレーズを思い出す必要がある場合、常に関連するコンテンツが最初に表示される贅沢はありません！</p>
+<p>Lots of little decks may mean you end up seeing cards in a
+recognizable order. On older scheduler versions, new cards can only
+be introduced in deck order. And if you were planning to click on each deck
+in turn (which is slow), you will end up seeing all the “chapter 1” or
+“food verb” reviews together. This makes it easier to answer the
+cards, as you can guess them from the context, which leads to weaker
+memories. When you need to recall the word or phrase outside Anki,
+you won’t always have the luxury of being shown related content first!</p>
 </li>
 <li>
-<p>以前のAnkiバージョンほど問題ではありませんが、何百ものデッキを追加すると速度低下を引き起こす可能性があり、数千のアイテムを持つ非常に大きなデッキツリーは、Anki 2.1.50より前のバージョンでデッキリストの表示を実際に壊す可能性があります。</p>
+<p>While less of a problem than it was in earlier Anki versions,
+adding hundreds of decks may cause slowdowns, and very large deck
+trees with thousands of items can actually break the display of
+the deck list in Anki versions before 2.1.50.</p>
 </li>
 </ul>
-<h3 id="タグの使用"><a class="header" href="#タグの使用">タグの使用</a></h3>
-<p>多くの小さなデッキを作成する代わりに、タグやフィールドを使用してコンテンツを分類するのが良いアイデアです。タグは検索結果を向上させ、特定のコンテンツを見つけ、コレクションを整理するのに便利な方法です。タグとフラグを効果的に使用する方法は多くあり、それらをどのように使用したいかを事前に考えることで、何が最適かを決定するのに役立ちます。</p>
-<p>一部の人々はカードを整理するためにデッキとサブデッキを使用することを好みますが、タグを使用することにはデッキよりも大きな利点があります：単一のノートに複数のタグを追加できますが、単一のカードは1つのデッキにしか属することができないため、ほとんどの場合、タグはデッキよりも強力で柔軟な分類システムになります。また、<a href="getting-started.html#decks">デッキと同じように</a>タグをツリー状に整理することもできます。</p>
-<p>例えば、「食べ物の動詞」デッキを作成する代わりに、それらのカードをメインの言語学習デッキに追加し、「食べ物」と「動詞」でタグ付けすることができます。各カードには複数のタグを付けることができるため、すべての動詞、すべての食べ物関連の語彙、または食べ物に関連するすべての動詞を<a href="searching.html#tags-decks-cards-and-notes">検索</a>するなどのことができます。</p>
-<p>編集ウィンドウと<a href="browsing.html">ブラウザ</a>からタグを追加でき、そこでタグの追加、削除、名前変更、整理もできます。タグは<a href="getting-started.html#notes--fields">ノート</a>レベルで機能することに注意してください。つまり、兄弟カードを持つカードにタグを付けると、すべての兄弟カードもタグ付けされます。単一のカードにタグを付けたいが、その兄弟カードにはタグを付けたくない場合は、代わりにフラグの使用を検討してください。</p>
-<h3 id="フラグの使用"><a class="header" href="#フラグの使用">フラグの使用</a></h3>
-<p>フラグはタグに似ていますが、学習中の復習ウィンドウに表示され、画面の右上に色付きのフラグアイコンが表示されます。ブラウズ画面でフラグ付きカードを検索したり、ブラウザからフラグの名前を変更したり、フラグ付きカードからフィルターデッキを作成したりすることもできますが、タグとは異なり、単一のカードは一度に1つのフラグしか持つことができません。もう1つの重要な違いは、フラグは<a href="getting-started.html#cards">カード</a>レベルで機能するため、兄弟カードを持つカードにフラグを付けても、カードの兄弟には影響しません。</p>
-<p>復習モード中に直接カードにフラグを付ける/解除することができます（Windowsでは<kbd>CTRL</kbd> + <kbd>1-7</kbd>、Macでは<kbd>CMD</kbd> + <kbd>1-7</kbd>を押す）。また、<a href="browsing.html">ブラウザ</a>からも可能です。</p>
-<h3 id="markedタグ"><a class="header" href="#markedタグ">「marked」タグ</a></h3>
-<p>Ankiは「marked」というタグを特別に扱います。復習画面とブラウズ画面には「marked」タグを追加および削除するオプションがあります。復習画面では、現在のカードのノートにそのタグがある場合、星が表示されます。そして、ノートがマークされている場合、ブラウズ画面でカードは異なる色で表示されます。</p>
-<p>注：マーキングは主に古いAnkiバージョンとの互換性のために残されています。ほとんどのユーザーは代わりに<a href="editing.html#using-flags">フラグ</a>を使用したいでしょう。</p>
-<h3 id="フィールドの使用"><a class="header" href="#フィールドの使用">フィールドの使用</a></h3>
-<p>非常に整理された状態を保ちたい人のために、「本」、「ページ」などのフィールドをノートに追加してコンテンツを分類できます。Ankiは特定のフィールドでの検索をサポートしているため、<code>"book:my book" page:63</code>のような検索を行い、すぐに探しているものを見つけることができます。</p>
-<h3 id="カスタム学習とフィルターデッキ"><a class="header" href="#カスタム学習とフィルターデッキ">カスタム学習とフィルターデッキ</a></h3>
-<p><a href="filtered-decks.html">カスタム学習とフィルターデッキ</a>を使用して、検索条件から一時的なデッキを作成できます。これにより、ほとんどの時間コンテンツを単一のデッキで混ぜて復習できます（最適な記憶のため）が、テスト前など特定の教材に集中する必要がある時に一時的なデッキを作成することもできます。一般的なルールは、常に一部のコンテンツを個別に学習できるようにしたい場合は、通常のデッキに入れるべきです。時々個別に学習する必要がある場合（テスト、バックログの時など）は、タグ、フラグ、マーク、またはフィールドから作成されたフィルターデッキの方が良いでしょう。</p>
-<h2 id="編集機能"><a class="header" href="#編集機能">編集機能</a></h2>
-<p>エディタは<a href="editing.html">ノートの追加</a>、復習中の<a href="studying.html#editing-and-more">ノートの編集</a>、または<a href="browsing.html">ブラウジング</a>時に表示されます。</p>
-<p><img src="media/editor_icons.png" alt="エディタアイコン" /></p>
-<p>左上には2つのボタンがあり、<a href="editing.html#customizing-fields">フィールド</a>と<a href="templates/intro.html">カード</a>ウィンドウを開きます。</p>
-<p>右側には書式設定を制御するボタンがあります。太字、斜体、下線はワープロソフトと同じように機能します。次の2つのボタンでは、テキストを下付き文字または上付き文字にすることができ、H<sub>2</sub>Oのような化合物やx<sup>2</sup>のような簡単な数式に便利です。次に、テキストの色を変更できる2つのボタンがあります。</p>
-<p>消しゴムボタンは、現在選択されているテキストのすべての書式設定をクリアします - テキストの色、選択されたテキストが太字かどうかなどを含みます。次の3つのボタンでは、リストの作成、テキストの配置、テキストのインデントができます。</p>
-<p>クリップボタンを使用して、コンピュータのハードドライブから音声、画像、ビデオを選択してノートに添付できます。または、メディアをコンピュータのクリップボードにコピーして（例えば、ウェブ上の画像を右クリックして「画像をコピー」を選択）、配置したいフィールドに貼り付けることもできます。メディアの詳細については、<a href="media.html">メディア</a>セクションをご覧ください。</p>
-<p>マイクアイコンを使用すると、コンピュータのマイクから録音してノートに添付できます。</p>
-<p>FxボタンはMathJaxや<a href="math.html">LaTeX</a>をノートに追加するためのショートカットを表示します。</p>
-<p>[…​]ボタンは、穴埋め問題ノートタイプが選択されている時に表示されます。
-<img src="media/cloze_icons.png" alt="穴埋めアイコン" /></p>
-<p><code>&lt;/&gt;</code>ボタンでは、フィールドの基になるHTMLを編集できます。
-<img src="media/html_icon.png" alt="HTMLアイコン" /></p>
-<p>Anki 2.1.45以降では、編集画面から直接固定フィールドを調整できます。フィールドの右側にあるピンアイコンをクリックすると、ノートが追加された後もAnkiはフィールドの内容をクリアしません。複数のノートに同じコンテンツを入力している場合、これが便利かもしれません。以前のAnkiバージョンでは、固定フィールドはフィールド画面から切り替えられました。</p>
-<p><img src="media/Pin_icon.png" alt="ピンアイコン" /></p>
-<p>ほとんどのボタンにはショートカットキーがあります。ボタンの上にマウスカーソルを合わせると、そのショートカットを確認できます。</p>
-<p>テキストを貼り付ける時、Ankiはデフォルトでほとんどの書式設定を保持します。貼り付け中に<kbd>Shift</kbd>キーを押している場合、Ankiはほとんどの書式設定を削除します。設定では、「Shiftキーなしの貼り付けで書式設定を削除」を切り替えて、デフォルトの動作を変更できます。</p>
-<h2 id="穴埋め削除"><a class="header" href="#穴埋め削除">穴埋め削除</a></h2>
-<p>_穴埋め削除_は、文中の1つ以上の単語を隠すプロセスです。例えば、次の文があるとします：</p>
-<pre><code>キャンベラは1913年に設立されました。
+<h3 id="using-tags"><a class="header" href="#using-tags">Using Tags</a></h3>
+<p>Instead of creating lots of little decks, it’s a better idea to use tags
+and/or fields to classify your content. Tags are a useful way to boost
+search results, find specific content, and keep your collection
+organized.
+There are many ways of using tags and flags effectively, and
+thinking in advance about how you want to use them will help you decide
+what will work best for you.</p>
+<p>Some people prefer using decks and subdecks to keep their cards organized,
+but using tags have a big advantage over decks for that: you can add several
+tags to a single note, but a single card can only belong to one deck, which
+makes tags a more powerful and flexible categorization system than
+decks in most cases. You can also organize tags in trees <a href="getting-started.html#decks">in the same way as you can do for decks</a>.</p>
+<p>For example, instead of creating a “food verbs” deck, you could add those
+cards to your main language study deck, and tag the cards with “food” and
+“verb”. Since each card can have multiple tags, you can do things like
+<a href="searching.html#tags-decks-cards-and-notes">search</a> for all verbs, or all
+food-related vocabulary, or all verbs that are related to food.</p>
+<p>You can add tags from the Edit window and from the <a href="browsing.html">Browser</a>, and you can also add,
+delete, rename, or organize tags there. Please note that
+tags work at <a href="getting-started.html#notes--fields">note</a> level, which means that when you tag a card that has siblings,
+all the siblings will be tagged as well. If you need to tag a single card,
+but not its siblings, you should consider using flags instead.</p>
+<h3 id="using-flags"><a class="header" href="#using-flags">Using Flags</a></h3>
+<p>Flags are similar to tags, but they will appear during study in the review
+window, showing a colored flag icon on the upper right area of the screen.
+You can also search for flagged cards in the Browse screen, rename flags
+from the browser and create filtered decks from flagged cards, but unlike tags,
+a single card can have only one flag at a time. Another important difference
+is that flags work at <a href="getting-started.html#cards">card</a> level, so flagging a card that has siblings
+won’t have any effect on the card’s siblings.</p>
+<p>You can flag / unflag cards directly while in review mode (by pressing
+<kbd>CTRL</kbd> + <kbd>1-7</kbd> on Windows or <kbd>CMD</kbd> + <kbd>1-7</kbd> on Mac)
+and from the <a href="browsing.html">Browser.</a></p>
+<h3 id="the-marked-tag"><a class="header" href="#the-marked-tag">The “Marked” Tag</a></h3>
+<p>Anki treats a tag called “marked” specially. There are options in the review
+screen and browse screen to add and remove the “marked” tag. The study screen
+will show a star when the current card’s note has that tag. And cards are
+shown in a different color in the browse screen when their note is marked.</p>
+<p>Note: Marking is mainly left around for compatibility with older Anki
+versions; most users will want to use <a href="editing.html#using-flags">flags</a> instead.</p>
+<h3 id="using-fields"><a class="header" href="#using-fields">Using Fields</a></h3>
+<p>For those who like to stay very organized, you can add fields to your
+notes to classify your content, such as “book”, “page”, and so on. Anki
+supports searching in specific fields, which means you can do a search
+for <code>"book:my book" page:63</code> and immediately find what you’re looking
+for.</p>
+<h3 id="custom-study-and-filtered-decks"><a class="header" href="#custom-study-and-filtered-decks">Custom Study and Filtered Decks</a></h3>
+<p>Using <a href="filtered-decks.html">custom study and filtered deck</a> you can create
+temporary decks out of search
+terms. This allows you to review your content mixed together in a single
+deck most of the time (for optimum memory), but also create temporary
+decks when you need to focus on particular material, such as before a
+test. The general rule is that if you always want to be able to study
+some content separately, it should be in a normal deck; if you only
+occasionally need to be able to study it separately (for a test, when
+under a backlog, etc.), then filtered decks created from tags, flags,
+marks or fields are better.</p>
+<h2 id="editing-features"><a class="header" href="#editing-features">Editing Features</a></h2>
+<p>The editor is shown when <a href="editing.html">adding notes</a>, <a href="studying.html#editing-and-more">editing a note</a> during reviews, or <a href="browsing.html">browsing</a>.</p>
+<p><img src="media/editor_icons.png" alt="Editor icons" /></p>
+<p>On the top left are two buttons, which open the <a href="editing.html#customizing-fields">fields</a> and
+<a href="templates/intro.html">cards</a> windows.</p>
+<p>On the right are buttons that control formatting. Bold, italic and
+underline work like they do in a word processing program. The next two
+buttons allow you to subscript or superscript text, which is useful for
+chemical compounds like H<sub>2</sub>O or simple mathematical equations like
+x<sup>2</sup>. Then, there are two buttons to allow you to change text colour.</p>
+<p>The rubber eraser button clears any formatting in the currently selected text — including the colour
+of the text, whether the selected text is bold, etc. The next three buttons allow creating lists, text alignment and text indent.</p>
+<p>You can use the paper-clip button to select audio, images, and videos from
+your computer’s hard drive and attach them to your notes. Alternatively, you
+can copy the media onto your computer’s clipboard (for instance, by
+right-clicking an image on the web and choosing “Copy Image”) and paste
+it into the field that you want to place it in. For more information
+about media, please see the <a href="media.html">media</a> section.</p>
+<p>The microphone icon allows you to record from your computer’s microphone
+and attach the recording to the note.</p>
+<p>The Fx button shows shortcuts to add MathJax or
+<a href="math.html">LaTeX</a> to your notes.</p>
+<p>The […​] buttons are visible when a cloze note type is selected.
+<img src="media/cloze_icons.png" alt="Cloze icons" /></p>
+<p>The <code>&lt;/&gt;</code> button allows editing the underlying HTML of a field.
+<img src="media/html_icon.png" alt="HTML icon" /></p>
+<p>Anki 2.1.45+ supports adjusting sticky fields directly from the editing screen.
+If you click on the pin icon on the right of a field, Anki will not clear out
+the field’s content after a note is added. If you find yourself entering the
+same content into multiple notes, you may find this useful. On previous Anki
+versions, sticky fields were toggled from the Fields screen.</p>
+<p><img src="media/Pin_icon.png" alt="Pin icon" /></p>
+<p>Most of the buttons have shortcut keys. You can hover the mouse cursor
+over a button to see its shortcut.</p>
+<p>When pasting text, Anki will keep most formatting by default. If you
+hold down the <kbd>Shift</kbd> key while pasting, Anki will strip most of the
+formatting. Under Preferences, you can toggle “Paste without shift
+key strips formatting” to modify the default behaviour.</p>
+<h2 id="cloze-deletion"><a class="header" href="#cloze-deletion">Cloze Deletion</a></h2>
+<p><em>Cloze deletion</em> is the process of hiding one or more words in a
+sentence. For example, if you have the sentence:</p>
+<pre><code>Canberra was founded in 1913.
 </code></pre>
-<p>「1913」に穴埋め削除を作成すると、文は次のようになります：</p>
-<pre><code>キャンベラは[...]に設立されました。
+<p>…​and you create a cloze deletion on “1913”, then the sentence would
+become:</p>
+<pre><code>Canberra was founded in [...].
 </code></pre>
-<p>このように削除された部分は「隠蔽された」と言われることがあります。</p>
-<p>穴埋め削除を使用する理由の詳細については、<a href="https://super-memory.com/articles/20rules.htm">こちら</a>のルール5をご覧ください。</p>
-<p>Ankiは穴埋め削除を簡単に作成できるように、特別な穴埋め削除タイプのノートを提供しています。穴埋め削除ノートを作成するには、穴埋めノートタイプを選択し、「テキスト」フィールドにテキストを入力します。次に、隠したいテキストの上でマウスをドラッグして選択し、[…​]ボタンをクリックします。Ankiはテキストを次のように置き換えます：</p>
-<pre><code>キャンベラは{{c1::1913}}年に設立されました。
+<p>Sometimes sections that have been removed in this fashion are said to be
+“occluded”.</p>
+<p>For more information on why you might want to use cloze deletion, see
+Rule 5 <a href="https://super-memory.com/articles/20rules.htm">here</a>.</p>
+<p>Anki provides a special cloze deletion type of note, to make creating
+clozes easy. To create a cloze deletion note, select the Cloze note
+type, and type some text into the “Text” field. Then drag the mouse over
+the text you want to hide to select it, and click the […​] button.
+Anki will replace the text with:</p>
+<pre><code>Canberra was founded in {{c1::1913}}.
 </code></pre>
-<p>「c1」の部分は、文に1つの穴埋め削除を作成したことを意味します。必要に応じて複数の削除を作成できます。例えば、キャンベラを選択して再度[…​]をクリックすると、テキストは次のようになります：</p>
-<pre><code>{{c2::キャンベラ}}は{{c1::1913}}年に設立されました。
+<p>The “c1” part means that you have created one cloze deletion on the
+sentence. You can create more than one deletion if you’d like. For
+example, if you select Canberra and click […​] again, the text will
+now look like:</p>
+<pre><code>{{c2::Canberra}} was founded in {{c1::1913}}.
 </code></pre>
-<p>上記のノートを追加すると、Ankiは2枚のカードを作成します。最初のカードの質問には次が表示されます：</p>
-<pre><code>キャンベラは[...]年に設立されました。
+<p>When you add the above note, Anki will create two cards. The first card
+will show:</p>
+<pre><code>Canberra was founded in [...].
 </code></pre>
-<p>完全な文が答えに表示されます。もう1枚のカードの質問には次が表示されます：</p>
-<pre><code>[...]は1913年に設立されました。
+<p>…​on the question, with the full sentence on the answer. The other card
+will have the following on the question:</p>
+<pre><code>[...] was founded in 1913.
 </code></pre>
-<p>同じカードで複数のセクションを省略することもできます。上記の例で、c2をc1に変更すると、キャンベラと1913の両方が隠された1枚のカードのみが作成されます。穴埋めを作成する際に<kbd>Alt</kbd>（Macでは<kbd>Option</kbd>）を押している場合、Ankiは自動的に番号を増やさずに同じ番号を使用します。</p>
-<p>穴埋め削除は単語の境界に落ちる必要はないため、上記の例で「キャンベラ」ではなく「ャンベラ」を選択した場合、質問は「キ[…​]は1913年に設立されました」と表示され、ヒントが与えられます。</p>
-<p>テキストと一致しないヒントを自分に与えることもできます。元の文を次のように置き換えた場合：</p>
-<pre><code>キャンベラ::都市は1913年に設立されました
+<p>You can also elide multiple sections on the same card. In the above
+example, if you change c2 to c1, only one card would be created, with
+both Canberra and 1913 hidden. If you hold down <kbd>Alt</kbd> (<kbd>Option</kbd> on a Mac)
+while creating a cloze, Anki will automatically use the same number
+instead of incrementing it.</p>
+<p>Cloze deletions don’t need to fall on word boundaries, so if you select
+“anberra” rather than “Canberra” in the above example, the question
+would appear as “C[…​] was founded in 1913”, giving you a hint.</p>
+<p>You can also give yourself hints that don’t match the text. If you
+replace the original sentence with:</p>
+<pre><code>Canberra::city was founded in 1913
 </code></pre>
-<p>「キャンベラ::都市」を選択した後に[…​]を押すと、Ankiは2つのコロンの後のテキストをヒントとして扱い、テキストを次のように変更します：</p>
-<pre><code>{{c1::キャンベラ::都市}}は1913年に設立されました
+<p>…​and then press […​] after selecting “Canberra::city”, Anki will
+treat the text after the two colons as a hint, changing the text into:</p>
+<pre><code>{{c1::Canberra::city}} was founded in 1913
 </code></pre>
-<p>カードが復習に出てきた時、次のように表示されます：</p>
-<pre><code>[都市]は1913年に設立されました。
+<p>When the card comes up for review, it will appear as:</p>
+<pre><code>[city] was founded in 1913.
 </code></pre>
-<p>穴埋め削除に正しく入力する能力をテストする方法については、<a href="templates/fields.html#checking-your-answer">解答の入力</a>のセクションをご覧ください。</p>
-<p>バージョン2.1.56から、ネストされた穴埋め削除がサポートされています。例えば、以下は有効です：</p>
-<pre><code>{{c1::キャンベラは{{c2::設立されました}}}}1913年に
+<p>For information on testing your ability to type in a cloze deletion
+correctly, please see the section on <a href="templates/fields.html#checking-your-answer">typing answers</a>.</p>
+<p>From version 2.1.56, nested cloze deletions are supported. For example, the following is valid:</p>
+<pre><code>{{c1::Canberra was {{c2::founded}}}} in 1913
 </code></pre>
-<p>内側の穴埋めは外側の中に完全にネストされています。部分的な重複はサポートされていません。例えば：</p>
-<pre><code>[...]設立されました1913年に -&gt; キャンベラは
-キャンベラ[...]1913年に -&gt; は設立されました
+<p>The inner cloze is entirely nested within the outer. There is no support for partial overlaps, such as:</p>
+<pre><code>[...] founded in 1913 -&gt; Canberra was
+Canberra [...] in 1913 -&gt; was founded
 </code></pre>
-<p>「は」という単語が両方の削除に表示されます。</p>
-<p>現在の実装では、限られた量のネストしか処理できません。Anki 24.11では、3レベルまでです。他のバージョンでは、制限は約8ですが、制限に近づくとAnkiが遅くなる可能性があります。制限を拡張することはできません。この機能を使用する場合は、数レベルのネストに制限することをお勧めします。</p>
-<p>バージョン2.1.56より前では、重複するテキストから穴埋めを作成する必要がある場合は、穴埋めに別のテキストフィールドを追加し、<a href="templates/intro.html">テンプレート</a>に追加してから、ノートを作成する時にテキストを2つの別々のフィールドに貼り付けます：</p>
-<pre><code>テキスト1フィールド: {{c1::キャンベラは設立されました}}1913年に
+<p>with the word “was” appearing in both deletions.</p>
+<p>The current implementation can only handle a limited amount of nesting. In Anki 24.11, it is 3 levels.
+In other versions, the limit is around 8, but Anki may become slow as you approach the limit. It is
+not possible to extend the limit. If you use this feature, it is recommended you limit yourself to a
+few levels of nesting.</p>
+<p>Prior to version 2.1.56, if you need to create clozes from overlapping text, add another Text
+field to your cloze, add it to the <a href="templates/intro.html">template</a>, and then when
+creating notes, paste the text into two separate fields, like so:</p>
+<pre><code>Text1 field: {{c1::Canberra was founded}} in 1913
 
-テキスト2フィールド: {{c2::キャンベラ}}は1913年に設立されました
+Text2 field: {{c2::Canberra}} was founded in 1913
 </code></pre>
-<p>デフォルトの穴埋めノートタイプには、各カードの答え側に表示される「その他」という2番目のフィールドがあります。使用上の注意や追加情報を追加するために使用できます。</p>
-<p>穴埋めノートタイプはAnkiによって特別に扱われ、通常のノートタイプに基づいて作成することはできません。カスタマイズしたい場合は、別のタイプのノートではなく、既存の穴埋めタイプを複製してください。書式設定などはカスタマイズできますが、穴埋めノートタイプに追加のカードテンプレートを追加することはできません。</p>
-<h2 id="画像オクルージョン"><a class="header" href="#画像オクルージョン">画像オクルージョン</a></h2>
-<p>Anki 23.10以降は画像オクルージョンカードをネイティブでサポートしています。画像オクルージョン（IO）ノートは、テキストではなく画像に基づく穴埋め削除の特殊なケースで、画像の一部を隠すカードを作成し、その隠された情報についての知識をテストできます。</p>
-<p><img src="media/io.jpg" alt="画像オクルージョン" /></p>
-<h3 id="画像の追加"><a class="header" href="#画像の追加">画像の追加</a></h3>
-<p>コレクションにIOカードを追加するには、追加画面を開き、「タイプ」をクリックして、組み込みのノートタイプのリストから「画像オクルージョン」を選択します。次に、「画像を選択」をクリックしてコンピュータのハードドライブに保存されている画像ファイルを読み込むか、クリップボードに画像がコピーされている場合は「クリップボードから画像を貼り付け」をクリックします。</p>
-<h3 id="ioカードの追加"><a class="header" href="#ioカードの追加">IOカードの追加</a></h3>
-<p>画像を読み込んだ後、IOエディタが開きます。左側のアイコンをクリックして、画像に必要なだけエリアを追加します。選択できる基本的な形状は3つあります：</p>
+<p>The default cloze note type has a second field called Extra, that is
+shown on the answer side of each card. It can be used for adding some
+usage notes or extra information.</p>
+<p>The cloze note type is treated specially by Anki, and cannot be created
+based on a regular note type. If you wish to customize it, please make
+sure to clone the existing Cloze type instead of another type of note.
+Things like formatting can be customized, but it is not possible to add
+extra card templates to the cloze note type.</p>
+<h2 id="image-occlusion"><a class="header" href="#image-occlusion">Image Occlusion</a></h2>
+<p>Anki 23.10+ supports Image Occlusion cards natively. An Image
+Occlusion (IO) note is a special case of cloze deletion based on images
+instead of text, and allows you to create cards that hide some parts
+of an image, testing your knowledge of that hidden information.</p>
+<p><img src="media/io.jpg" alt="Image Occlusion" /></p>
+<h3 id="adding-an-image"><a class="header" href="#adding-an-image">Adding an image</a></h3>
+<p>To add IO cards to your collection, open the Add screen, click on “Type”
+and choose “Image Occlusion” from the list of built-in note types.
+Then, click on “Select Image” to load an image file saved on your
+computer’s hard drive, or on “Paste image from clipboard”
+if you have an image copied to the clipboard.</p>
+<h3 id="adding-io-cards"><a class="header" href="#adding-io-cards">Adding IO cards</a></h3>
+<p>After loading an image, the IO editor will open. Click on the
+icons on the left to add as many areas to your image as you want.
+There are three basic shapes to choose from:</p>
 <ul>
-<li>長方形</li>
-<li>楕円</li>
-<li>多角形</li>
+<li>Rectangle</li>
+<li>Ellipse</li>
+<li>Polygon</li>
 </ul>
-<p>各ノートに対して2つの異なるIOモードから選択することもできます：</p>
+<p>You can also choose between two different IO modes for each note:</p>
 <ul>
-<li><strong>すべて隠して1つずつ推測</strong>: すべてのエリアが隠され、学習中は一度に1つのエリアのみが表示されます。</li>
-<li><strong>1つ隠して1つ推測</strong>: 一度に1つのエリアのみが隠され、学習中に表示されます。他のエリアは表示されます。</li>
+<li><strong>Hide All, Guess One</strong>: All areas are hidden and only one
+area at a time is revealed while learning.</li>
+<li><strong>Hide One, Guess One</strong>: Only one area at a time is hidden
+and will be revealed during learning. The other areas will be visible.</li>
 </ul>
-<p><img src="media/io_modes.jpg" alt="画像オクルージョンモード" /></p>
-<!-- フィールドとタグはエディタで見つけにくい -->
-<p>デフォルトのIOノートタイプには標準フィールドもあります：
-<strong>ヘッダー</strong>（各カードの表面と裏面の画像の上に表示）、
-<strong>裏面追加</strong>（各カードの裏面の画像の下に表示）、
-<strong>コメント</strong>（カードには表示されません）。IOエディタからこれらにアクセスするには、<strong>マスクエディタを切り替える</strong>ボタンをクリックします。
-そこでノートの<strong>タグ</strong>も表示および編集できます。</p>
-<p>完了したら、画面下部の「追加」ボタンをクリックします。Ankiは前のステップで追加した各形状または形状のグループに対してカードを追加し、通常どおり復習を開始できます。</p>
-<h2 id="ioノートの編集"><a class="header" href="#ioノートの編集">IOノートの編集</a></h2>
-<p>復習中に「編集」をクリックするか、ブラウザから直接IOノートを編集できます。使用できるツールがいくつかあります。特に重要なもの：</p>
+<p><img src="media/io_modes.jpg" alt="Image Occlusion Modes" /></p>
+<!-- fields & tags are not intuitive to find in editor -->
+<p>The default IO note type also has standard fields:
+<strong>Header</strong> (displayed above the image on the front and back of each card),
+<strong>Back Extra</strong> (displayed below the image on the back of each card),
+and <strong>Comments</strong> (not displayed on the cards). To access those from the IO editor,
+click the <strong>Toggle Mask Editor</strong> button.
+There you can also view and edit the <strong>Tags</strong> of the note.</p>
+<p>Once you’re done, click on the “Add” button, at the bottom of the screen.
+Anki will add a card for each shape or group of shapes you added in the previous step,
+and you can start reviewing them normally.</p>
+<h2 id="editing-io-notes"><a class="header" href="#editing-io-notes">Editing IO notes</a></h2>
+<p>You can edit your IO notes by clicking on “Edit” while reviewing,
+or directly from the browser. There are several tools that you
+can use. Of note:</p>
 <ul>
-<li>選択：1つ以上の形状を選択して、移動、サイズ変更、削除、またはグループ化できます。</li>
-<li>ズーム：画像を自由に移動し、マウスホイールを使用してズームイン/アウトできます。</li>
-<li>形状（長方形、楕円、多角形）：新しい形状/カードを追加するために使用します。</li>
-<li>テキスト：画像にテキストエリアを追加します。これらのテキストエリアは移動、サイズ変更、削除できますが、このツールを使用してもカードは作成されません。</li>
-<li>元に戻す/やり直し。</li>
-<li>ズームイン/アウト - ズームをリセット。</li>
-<li>半透明を切り替える：このツールを使用して、隠されたエリアを一時的に表示します。</li>
-<li>削除：このツールを使用して、選択した形状とテキストエリアを削除します。形状を削除しても、関連するカードは自動的に削除されないことに注意してください。通常の穴埋め削除と同様に、その後ツール&gt;空のカードを使用する必要があります。</li>
-<li>複製。</li>
-<li>選択をグループ化：このツールを使用して形状のクラスターを作成し、同時に移動、サイズ変更、削除できるようにします。2つ以上の単一の形状がグループ化されると、1枚のカードのみが作成されることに注意してください。</li>
-<li>選択のグループ化を解除：グループを選択してこのボタンをクリックすると、各形状が再び独立します。</li>
-<li>配置：このツールを使用して、形状/テキストエリアを希望どおりに配置できます。</li>
+<li>Select: It allows you selecting one or more shapes to move,
+resize, delete or group them.</li>
+<li>Zoom: You can freely move the image and zoom in or out using the mouse wheel.</li>
+<li>Shapes (Rectangle, Ellipse or Polygon): Use them to add new shapes / cards.</li>
+<li>Text: It adds text areas to your image. These text areas can be moved,
+resized or deleted, but no card will be created when you use this tool.</li>
+<li>Undo / Redo.</li>
+<li>Zoom In / Out - Reset zoom.</li>
+<li>Toggle Translucency: Use this tool to temporarily view the hidden areas.</li>
+<li>Delete: Use this tool to delete selected shapes and text areas. Please
+note that deleting a shape won’t delete its associated card automatically;
+you will need to use Tools&gt;Empty Cards afterwards, the same as
+with regular cloze deletions.</li>
+<li>Duplicate.</li>
+<li>Group selection: Use this tool to create a cluster of shapes, which will
+allow you to move, resize or delete them simultaneously. Please note that
+two or more single shapes will create only one card once grouped.</li>
+<li>Ungroup selection: Select a group and then click this button to make each shape independent again.</li>
+<li>Alignment: This tool can be used to align your shapes / text areas as desired.</li>
 </ul>
-<p>IOカードの復習中、画像のすぐ下に「マスクを切り替える」ボタンが表示されます。このボタンは、「すべて隠して1つずつ推測」モードを使用している時に、ノートのすべての形状を一時的にクリアします。</p>
-<h2 id="非ラテン文字とアクセントの入力"><a class="header" href="#非ラテン文字とアクセントの入力">非ラテン文字とアクセントの入力</a></h2>
-<p>すべての現代のコンピュータには、アクセントと非ラテン文字を入力するための組み込みサポートがあり、それを行う複数の方法があります。推奨する方法は、学習したい言語のキーボードレイアウトを使用することです。</p>
-<p>日本語、中国語、タイ語などの別の文字体系を持つ言語には、その言語に固有のレイアウトがあります。</p>
-<p>アクセントを使用するヨーロッパ言語には独自のレイアウトがある場合がありますが、多くの場合、汎用の「国際キーボード」レイアウトで入力できます。これらは、アクセントを入力してから、アクセントを付けたい文字を入力することで機能します - 例えば、アポストロフィ（<kbd>´</kbd>）の後に文字a（<kbd>a</kbd>）でáになります。</p>
-<h3 id="国際キーボードレイアウトの追加"><a class="header" href="#国際キーボードレイアウトの追加">国際キーボードレイアウトの追加</a></h3>
-<p>国際キーボードの使用方法は、使用しているオペレーティングシステムとデスクトップ環境によって異なります。開始するには、以下のリンクをご覧ください。</p>
+<p>While reviewing IO Cards a “Toggle Masks” button will appear just below the image.
+This button will temporary clear all shapes of the note when using “Hide All, Guess One” mode.</p>
+<h2 id="inputting-non-latin-characters-and-accents"><a class="header" href="#inputting-non-latin-characters-and-accents">Inputting Non-Latin Characters and Accents</a></h2>
+<p>All modern computers have built-in support for typing accents and
+non-Latin characters, and multiple ways to go about it. The method we
+recommend is by using a keyboard layout for the language you want to learn.</p>
+<p>Languages with a separate script like Japanese, Chinese, Thai, and so on,
+have their own layouts specific to that language.</p>
+<p>European languages that use accents may have their own layout, but can
+often be typed on a generic “international keyboard” layout. These work
+by typing the accent, then the character you want accented - e.g. an
+apostrophe (<kbd>´</kbd>) then the letter a (<kbd>a</kbd>) gives á.</p>
+<h3 id="adding-international-keyboard-layouts"><a class="header" href="#adding-international-keyboard-layouts">Adding international keyboard layouts</a></h3>
+<p>Instructions on how to use international keyboards vary depending on the operating
+system and desktop environment that you are using. To get started, please see the
+links below.</p>
 <p>Windows:</p>
 <ul>
 <li><a href="https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/">https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/</a></li>
@@ -426,23 +664,43 @@
 <li>Gnome: <a href="https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en">https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en</a></li>
 <li>KDE Plasma: <a href="https://userbase.kde.org/Tutorials/ComposeKey">https://userbase.kde.org/Tutorials/ComposeKey</a></li>
 </ul>
-<h3 id="特定の言語のキーボードレイアウトの追加"><a class="header" href="#特定の言語のキーボードレイアウトの追加">特定の言語のキーボードレイアウトの追加</a></h3>
-<p>特定の言語のキーボードは同様の方法で追加されますが、ここですべてをカバーすることはできません。詳細については、「Macで日本語を入力」、「Windows 10で中国語を入力」などでインターネット検索してみてください。</p>
-<p>Linuxの場合は、ディストリビューションのWikiページを見るのが最善です。例えば
-<a href="https://wiki.archlinux.org/title/Input_method">Arch Linux</a>と
-<a href="https://wiki.debian.org/Keyboard#Modern_strategy">Debian Linux</a>。
-例として、Debianで<code>apt install ibus-anthy</code>を実行すると、ひらがな文字を入力できるようになります。</p>
-<h3 id="右から左へ書く言語"><a class="header" href="#右から左へ書く言語">右から左へ書く言語</a></h3>
-<p>右から左へ書く言語を学習している場合、考慮すべきことが他にもたくさんあります。詳細については<a href="http://dotancohen.com/howto/rtl_right_to_left.html">このページ</a>をご覧ください。</p>
-<h3 id="制限事項"><a class="header" href="#制限事項">制限事項</a></h3>
-<p>Ankiが構築されているツールキットは、macOSでキーを押し続けてアクセント付き文字を選択する方法や、Windowsで<kbd>Alt</kbd>キーを押しながら数字コードを入力して文字を入力する方法など、いくつかの入力方法で問題があります。</p>
-<h2 id="unicode正規化"><a class="header" href="#unicode正規化">Unicode正規化</a></h2>
-<p><code>á</code>のようなテキストは、コンピュータ上で複数の方法で表現できます。例えば、その記号の特定のコードを使用したり、標準の<code>a</code>を使用してその上にアクセントの別のコードを使用したりできます。これにより、異なるソースからの入力を混在させたり、異なるコンピュータを使用したりする時に問題が発生します - コンピュータがキーボード入力を1つの形式で処理しているが、コンテンツが異なる形式で保存されている場合、最終結果が同じに見えても、検索時に一致しません。</p>
-<p>コンテンツが検索で簡単に見つかるようにするため、Ankiはテキストを標準形式に正規化します。ほとんどのユーザーにとってこのプロセスは透過的ですが、古代日本語の記号のような特定の教材を学習している場合、正規化プロセスによってそれらがより現代的な同等物に変換される可能性があります。</p>
-<p>文字の変種を保持したい場合、<a href="./misc.html">デバッグコンソール</a>で以下を実行すると正規化がオフになります：</p>
+<h3 id="adding-keyboard-layouts-for-specific-languages"><a class="header" href="#adding-keyboard-layouts-for-specific-languages">Adding keyboard layouts for specific languages</a></h3>
+<p>Keyboards for specific languages are added in a similar way, but we can
+not cover them all here. For more information, please try searching
+on the internet for “input Japanese on a mac”, “type Chinese on Windows 10”, and
+so on.</p>
+<p>For Linux it’s best to look at the wiki pages of your distro, e.g.
+<a href="https://wiki.archlinux.org/title/Input_method">Arch Linux</a> and
+<a href="https://wiki.debian.org/Keyboard#Modern_strategy">Debian Linux</a>.
+As an example, <code>apt install ibus-anthy</code> on Debian allows you to type hiragana characters.</p>
+<h3 id="right-to-left-languages"><a class="header" href="#right-to-left-languages">Right-to-left Languages</a></h3>
+<p>If you are learning a right-to-left language, there are lots of other
+things to consider. Please see <a href="http://dotancohen.com/howto/rtl_right_to_left.html">this page</a>
+for more information.</p>
+<h3 id="limitations"><a class="header" href="#limitations">Limitations</a></h3>
+<p>The toolkit on which Anki is built has trouble dealing with a few input
+methods, such as holding down keys to select accented characters on macOS,
+and typing characters by holding down the <kbd>Alt</kbd> key and typing a
+numeric code on Windows.</p>
+<h2 id="unicode-normalization"><a class="header" href="#unicode-normalization">Unicode Normalization</a></h2>
+<p>Text like <code>á</code> can be represented in multiple ways on a computer, such as
+using a specific code for that symbol, or by using a standard <code>a</code> and then
+another code for the accent on top. This causes problems when mixing input
+from different sources, or using different computers - if your computer
+handles keyboard input in one form, but the content is stored in a different
+form, it will not match when searching, even though the end result appears
+identical.</p>
+<p>To ensure content can easily be found in searches, Anki normalizes the text
+to a standard form. For most users this process is transparent, but if you
+are studying certain material like archaic Japanese symbols, the normalization
+process can end up converting them to a more modern equivalent.</p>
+<p>If you want character variants preserved, the following in the <a href="./misc.html">debug console</a>
+will turn off normalization:</p>
 <pre><code class="language-python">mw.col.conf["normalize_note_text"] = False
 </code></pre>
-<p>その後に追加されたコンテンツは変更されません。トレードオフは、オペレーティングシステムを切り替えたり、混在したソースからコンテンツを貼り付けたりする場合、コンテンツを検索するのが困難になる可能性があることです。</p>
+<p>Any content added after that will remain untouched. The trade-off is that you may
+find it difficult to search for the content if you’re switching between operating
+systems, or pasting content from mixed sources.</p>
 
                     </main>
 

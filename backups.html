@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>バックアップ - Ankiマニュアル</title>
+        <title>Backups - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,61 +173,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="バックアップ"><a class="header" href="#バックアップ">バックアップ</a></h1>
+                        <h1 id="backups"><a class="header" href="#backups">Backups</a></h1>
 <ul>
-<li><a href="#%E8%87%AA%E5%8B%95%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">自動バックアップ</a>
+<li><a href="#automatic-backups">Automatic backups</a>
 <ul>
-<li><a href="#%E5%BE%A9%E5%85%83">復元</a></li>
-<li><a href="#%E4%BD%9C%E6%88%90">作成</a></li>
+<li><a href="#restoring">Restoring</a></li>
+<li><a href="#creating">Creating</a></li>
 </ul>
 </li>
-<li><a href="#%E6%89%8B%E5%8B%95colpkg%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">手動colpkgバックアップ</a>
+<li><a href="#manual-colpkg-backups">Manual colpkg backups</a>
 <ul>
-<li><a href="#%E5%BE%A9%E5%85%83-1">復元</a></li>
-<li><a href="#%E4%BD%9C%E6%88%90-1">作成</a></li>
+<li><a href="#restoring-1">Restoring</a></li>
+<li><a href="#creating-1">Creating</a></li>
 </ul>
 </li>
 <li><a href="#ankiweb">AnkiWeb</a></li>
-<li><a href="#%E5%89%8A%E9%99%A4%E3%83%AD%E3%82%B0">削除ログ</a></li>
+<li><a href="#deletion-log">Deletion log</a></li>
 </ul>
-<h2 id="自動バックアップ"><a class="header" href="#自動バックアップ">自動バックアップ</a></h2>
-<p>Ankiはカードデータの自動バックアップを作成します。これにはカードのテキストとスケジューリング情報が含まれますが、音声や画像ファイルは含まれません。</p>
-<p>自動バックアップはミスから復旧するのに便利ですが、これだけに頼るべきではありません。自動バックアップはローカルデバイスに保存されるため、デバイスが故障したり盗まれたりした場合には保護されません。<a href="#%E6%89%8B%E5%8B%95colpkg%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">手動バックアップ</a>と組み合わせることをお勧めします。</p>
-<h3 id="復元"><a class="header" href="#復元">復元</a></h3>
-<p>自動バックアップから復元するには：</p>
+<h2 id="automatic-backups"><a class="header" href="#automatic-backups">Automatic backups</a></h2>
+<p>Anki will create automatic backups of your card data. These include the text
+on your cards and your scheduling information, but do not include sounds or
+image files.</p>
+<p>Automatic backups can be useful to recover from mistakes, but you should not
+rely solely on them. Because they are stored on your local device, they will not
+protect you if your device breaks or is stolen. We recommend you combine them with
+<a href="#manual-colpkg-backups">manual backups</a>.</p>
+<h3 id="restoring"><a class="header" href="#restoring">Restoring</a></h3>
+<p>To restore from an automatic backup:</p>
 <ul>
-<li>Ankiを開き、ファイルメニューから「プロファイルを切り替える」を選択します。</li>
-<li>「バックアップを開く」ボタンをクリックします。</li>
-<li>復元したいバックアップを選択します。</li>
+<li>Open Anki, and choose Switch Profile from the File menu.</li>
+<li>Click on the “Open Backup” button.</li>
+<li>Select the backup you wish to restore from.</li>
 </ul>
-<p>バックアップから復元すると、バックアップ作成後に行われた変更はすべて失われます。</p>
-<p>Ankiはバックアップから復元すると、自動同期とバックアップを無効にします。正しいバックアップを復元できたことを確認したら、Ankiを閉じて再度開いて通常の状態に戻してください。</p>
-<h3 id="作成"><a class="header" href="#作成">作成</a></h3>
-<p>バックアップは定期的に作成されます。バックアップ間隔は<a href="preferences.html">設定</a>画面で設定できます。デフォルトは30分です。</p>
-<p>特定の操作は、設定した時間が経過していなくてもバックアップをトリガーします：</p>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-warning"></a>
+</div>
+<div>
+<p>When restoring from a backup, any changes made since the backup was created will be lost.</p>
+</div>
+</div>
+<p>Anki disables automatic syncing and backups when you restore from a backup. Once you’re
+happy that you’ve restored the correct backup, close and re-open Anki to return to normal.</p>
+<h3 id="creating"><a class="header" href="#creating">Creating</a></h3>
+<p>Backups are created periodically. You can configure the time between backups
+in the <a href="preferences.html">preferences</a> screen. The default is 30 minutes.</p>
+<p>Certain operations will trigger a backup, even if the configured time has not
+elapsed yet:</p>
 <ul>
-<li>一方向同期ダウンロード</li>
-<li>ファイル&gt;インポートで.colpkgファイルをインポート</li>
-<li>ツール&gt;データベースをチェック</li>
+<li>A one-way sync download</li>
+<li>Importing a .colpkg file using File&gt;Import</li>
+<li>Tools&gt;Check Database</li>
 </ul>
-<p>バックアップが2日経過すると、Ankiは古いものの一部を削除し始めます。保持したい日次、週次、月次バックアップの数を制御できます。</p>
-<p>2.1.50で作成されたバックアップは、古いAnkiバージョンにインポートできません。</p>
-<h2 id="手動colpkgバックアップ"><a class="header" href="#手動colpkgバックアップ">手動colpkgバックアップ</a></h2>
-<h3 id="復元-1"><a class="header" href="#復元-1">復元</a></h3>
-<p>ファイル&gt;インポートを使用して手動バックアップから復元できます。</p>
-<h3 id="作成-1"><a class="header" href="#作成-1">作成</a></h3>
-<p>Anki 2.1.50以降では、ファイル&gt;バックアップを作成を使用して即座にバックアップをトリガーできます。これは通常の自動バックアップと同様に機能し、メディアファイルは含まれません。</p>
-<p>音声と画像を含むバックアップを作成するには：</p>
+<p>After backups are two days old, Anki will start removing some of the older ones.
+You can control how many daily, weekly and monthly backups you’d like to keep.</p>
+<p>Backups created with 2.1.50 will not be importable into older Anki versions.</p>
+<h2 id="manual-colpkg-backups"><a class="header" href="#manual-colpkg-backups">Manual colpkg backups</a></h2>
+<h3 id="restoring-1"><a class="header" href="#restoring-1">Restoring</a></h3>
+<p>You can restore from a manual backup by using File&gt;Import.</p>
+<h3 id="creating-1"><a class="header" href="#creating-1">Creating</a></h3>
+<p>In Anki 2.1.50+, you can use File&gt;Create Backup to trigger an immediate backup. This
+functions like regular automatic backups, and does not include media files.</p>
+<p>To create a backup that includes your sounds and images:</p>
 <ul>
-<li>ファイルメニューから「エクスポート」を選択します。</li>
-<li>「Ankiコレクションパッケージ (.colpkg)」が選択されていることを確認します。</li>
-<li>「メディアを含める」オプションを有効にします。</li>
+<li>Select Export from the File menu.</li>
+<li>Ensure “Anki collection package (.colpkg)” is selected.</li>
+<li>Enable the “include media” option.</li>
 </ul>
-<p>これにより、すべてのカードと使用している音声/画像を含む.colpkgファイルが作成されます。このファイルを別のデバイスや、DropboxやGoogle Driveなどのクラウドベースのファイルストレージサービスなど、安全な場所に保存することをお勧めします。</p>
+<p>This will create a .colpkg file that contains all of your cards and any sounds/images they
+use. We recommend you store the file somewhere safe, like a different device, or a cloud-based
+file storage service like Dropbox or Google Drive.</p>
 <h2 id="ankiweb"><a class="header" href="#ankiweb">AnkiWeb</a></h2>
-<p>AnkiWebでコレクションを<a href="./syncing.html">同期</a>することで、デバイスの紛失や盗難に対するある程度の保護が提供されます。AnkiWebからコレクションを復元する必要がある場合は、設定画面で一方向同期を強制するか、新しいデバイスから同期して「ダウンロード」を選択できます。</p>
-<h2 id="削除ログ"><a class="header" href="#削除ログ">削除ログ</a></h2>
-<p>Ankiは削除されたノートをプロファイルフォルダ内のdeleted.txtというテキストファイルに記録します。これらのノートはファイル&gt;インポートで読み込める形式になっていますが、インポート機能は一度に1つのノートタイプしかサポートしていないため、異なるノートタイプから削除されたノートがある場合は、まず各ノートタイプごとに別々のファイルに分割する必要があります。</p>
+<p><a href="./syncing.html">Synchronising</a> your collection with AnkiWeb provides some level of protection
+against your device being lost or stolen. If you need to restore your collection from AnkiWeb,
+you can force a one-way sync in the preferences screen, or sync from a new device, and then choose
+“Download”.</p>
+<h2 id="deletion-log"><a class="header" href="#deletion-log">Deletion log</a></h2>
+<p>Anki logs deleted notes to a text file called deleted.txt in your
+profile folder. These notes are in a text format that can be read by
+File&gt;Import, though please note the import feature only supports a
+single note type at one time, so if you have deleted notes from
+different note types, you’ll need to split the file into separate files
+for each note type first.</p>
 
                     </main>
 

@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>テキストサイズ - Ankiマニュアル</title>
+        <title>Text Size - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../css/misc.css">
+        <link rel="stylesheet" href="../../css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
@@ -172,21 +173,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="テキストサイズ"><a class="header" href="#テキストサイズ">テキストサイズ</a></h1>
-<p>テキストのサイズが間違っている場合、試すことができる2つの環境変数があります：</p>
+                        <h1 id="text-size"><a class="header" href="#text-size">Text Size</a></h1>
+<p>If you find the text is the wrong size, there are two environmental
+variables you can try:</p>
 <ul>
 <li>
-<p>ANKI_NOHIGHDPI=1は、Qtの高DPIサポートの一部をオフにします</p>
+<p>ANKI_NOHIGHDPI=1 will turn off some of Qt’s high dpi support</p>
 </li>
 <li>
-<p>ANKI_WEBSCALE=1は、メニューバーなどのインターフェース要素はそのままにして、Ankiのウェブビュー（デッキリスト、学習画面など）のスケールを変更します。1を1.5や0.75などの希望するスケールに置き換えてください。</p>
+<p>ANKI_WEBSCALE=1 will alter the scale of Anki’s web views (like the
+deck list, study screen, etc), while leaving interface elements like
+the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
+0.75.</p>
 </li>
 </ul>
-<p>WindowsではこれらをバッチファイルINHI追加して、Ankiの起動を簡単にすることができます。例えば、デスクトップに次のテキストを含むstartanki.batというファイルを作成します：</p>
+<p>On Windows you can add these to a batch file to make it easier to start
+Anki. For example, create a file called startanki.bat on your desktop
+with the following text:</p>
 <pre><code>set ANKI_WEBSCALE=0.75
 start "Anki" "%LocalAppData%\Programs\Anki\anki.exe"
 </code></pre>
-<p>保存後、ファイルをダブルクリックして、その設定でAnkiを起動できます。</p>
+<p>After saving, you can double click on the file to start Anki with that
+setting.</p>
 
                     </main>
 

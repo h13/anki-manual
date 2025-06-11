@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>エクスポート - Ankiマニュアル</title>
+        <title>Exporting - Anki Manual</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Ankiのユーザーマニュアル。Ankiは学習を容易にするフラッシュカードプログラムです。">
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Ankiマニュアル</h1>
+                    <h1 class="menu-title">Anki Manual</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -172,35 +173,67 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="エクスポート"><a class="header" href="#エクスポート">エクスポート</a></h1>
+                        <h1 id="exporting"><a class="header" href="#exporting">Exporting</a></h1>
 <ul>
-<li><a href="#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">テキストファイル</a></li>
-<li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%83%87%E3%83%83%E3%82%AD">パッケージデッキ</a>
+<li><a href="#text-files">Text Files</a></li>
+<li><a href="#packaged-decks">Packaged Decks</a>
 <ul>
-<li><a href="#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3colpkg">コレクション（.colpkg）</a></li>
-<li><a href="#%E3%83%87%E3%83%83%E3%82%ADapkg">デッキ（.apkg）</a></li>
+<li><a href="#collection-colpkg">Collection (.colpkg)</a></li>
+<li><a href="#deck-apkg">Deck (.apkg)</a></li>
 </ul>
 </li>
 </ul>
-<p>エクスポートを使用すると、コレクションの一部をテキストファイルまたはパッケージ化されたAnkiデッキとして保存できます。エクスポートするには、ファイルメニューをクリックして<strong>エクスポート</strong>を選択します。</p>
-<h2 id="テキストファイル"><a class="header" href="#テキストファイル">テキストファイル</a></h2>
-<p>「プレーンテキストのノート」を選択すると、Ankiはノートの内容をテキストファイルに書き込みます。各フィールドはタブで区切られます。結果のファイルを編集して最初のフィールドを変更しない場合、後でそのファイルをAnkiにインポートし直すことができ、同じノートタイプにインポートしている限り、Ankiは編集内容に基づいてノートを更新します。</p>
-<p>最初のフィールドも編集する必要がある場合は、ノートタイプの形式を変更して、最初のフィールドが実際のテキストではなくID番号になるようにする必要があります。（これを簡単にするために<a href="https://ankiweb.net/shared/info/8897764">Add note id</a>アドオンをインストールできます。）</p>
-<p>テキストを再インポートする際にフォーマットを保持するために、テキストはすべてのHTMLフォーマットが埋め込まれた状態でエクスポートされます。</p>
-<h2 id="パッケージデッキ"><a class="header" href="#パッケージデッキ">パッケージデッキ</a></h2>
-<p>「パッケージデッキ」は、カード、ノート、ノートタイプ、および音声や画像を.apkgまたは.colpkgで終わるファイルにバンドルしたものです。パッケージデッキを使用して、人々の間でカードを転送したり、コレクションの一部をバックアップしたりできます。</p>
-<p>パッケージデッキには2種類あります。</p>
-<h3 id="コレクションcolpkg"><a class="header" href="#コレクションcolpkg">コレクション（.colpkg）</a></h3>
-<p>スケジューリングを含めてすべてのデッキをエクスポートする場合、これは「コレクションパッケージ」と呼ばれます。Ankiはコレクション全体を.colpkgで終わるファイルにコピーし、デスクトップに配置します。コレクションパッケージは、コレクションをバックアップしたり、別のデバイスにコピーしたりするために使用されます。</p>
-<p>以前のバージョンのAnkiで作成されたコレクションパッケージはcollection.apkgと呼ばれていました。</p>
-<p>このファイルを後でインポートすると、Ankiはコレクション内の現在のすべてのカードを削除し、コレクションをファイル内のアイテムに置き換えます。これは、デバイス間でコレクションをコピーするのに便利です。</p>
-<p>コレクションパッケージをインポートしても、コレクション内の既存のメディアは削除されません。未使用のメディアを削除するには、ツール&gt;メディアをチェックを使用してください。</p>
-<p>Anki 2.1.50+コレクションパッケージ形式を選択すると、インポートとエクスポートが高速になり、メディアファイルが圧縮されますが、結果の.colpkgファイルは古いAnkiクライアントでは読み取れません。</p>
-<h3 id="デッキapkg"><a class="header" href="#デッキapkg">デッキ（.apkg）</a></h3>
-<p>デッキパッケージには単一のデッキ（およびそれが持つ可能性のある子デッキ）が含まれています。
-ファイル名は.apkgで終わりますが、collection.apkg以外のファイル名です。デッキパッケージをインポートすると、Ankiはコレクションを上書きするのではなく、内容をコレクションに追加します。</p>
-<p>デッキパッケージ内の一部のノートが以前にインポートされている場合、Ankiは最新の変更時刻を持つバージョンを保持します。したがって、更新されたデッキをダウンロードすると、更新されたバージョンで行われた編集もコレクションに反映されますが、コレクションで編集を行った後に変更されていないデッキを再インポートすると、コレクションの変更が保持されます。</p>
-<p>スケジューリング情報を含めないことを選択した場合、Ankiはデッキを他の人と共有していると想定し、きれいなコピーを持てるようにマーク付きタグとリーチタグを削除します。</p>
+<p>Exporting allows you to save part of your collection as a text file or
+packaged Anki deck. To export, click the File menu and choose <strong>Export</strong>.</p>
+<h2 id="text-files"><a class="header" href="#text-files">Text Files</a></h2>
+<p>If you choose “Notes in Plain Text”, Anki will write the contents of the
+notes into a text file. Each field is separated by a tab. If you edit
+the resulting file and don’t modify the first field, you can later
+import that file back into Anki and Anki will update your notes based on
+your edits, provided you import back into the same note type.</p>
+<p>If you find yourself needing to edit the first field as well, you’ll
+need to change the format of your note type so that the first field is
+an ID number rather than actual text. (You can install
+the <a href="https://ankiweb.net/shared/info/8897764">Add note id</a>
+add-on to make this easier.)</p>
+<p>In order for formatting to be preserved when you import text back in,
+the text is exported with all the HTML formatting embedded in it.</p>
+<h2 id="packaged-decks"><a class="header" href="#packaged-decks">Packaged Decks</a></h2>
+<p>A “packaged deck” consists of cards, notes, note types, and any sounds or
+images bundled up into a file ending with .apkg or .colpkg. You can use
+packaged decks to transfer cards between people, or for backing up parts
+of your collection.</p>
+<p>There are two different kinds of packaged decks.</p>
+<h3 id="collection-colpkg"><a class="header" href="#collection-colpkg">Collection (.colpkg)</a></h3>
+<p>When you export all decks with scheduling included, this is called a
+“collection package”. Anki will copy your entire collection into a file
+ending in .colpkg, and place it on your desktop. A collection package is
+used to back up your collection, or copy it to another device.</p>
+<p>Collection packages created with previous versions of Anki were called
+collection.apkg.</p>
+<p>When this file is later imported, Anki will delete all the current cards
+in the collection, and replace the collection with the items in the
+file. This is useful for copying your collection back and forth between
+devices.</p>
+<p>Existing media in your collection is not deleted when you import a
+collection package. To delete unused media, use Tools&gt;Check Media.</p>
+<p>If you choose Anki 2.1.50+ Collection Package format, imports and exports
+will be faster, and media files will be compressed, but the resulting
+.colpkg file will not be readable by older Anki clients.</p>
+<h3 id="deck-apkg"><a class="header" href="#deck-apkg">Deck (.apkg)</a></h3>
+<p>Deck packages contain a single deck (and any child decks it may have).
+They have a filename ending with .apkg, but a filename other than
+collection.apkg. When you import a deck package, Anki will add the
+contents into your collection, rather than overwriting your collection.</p>
+<p>If some notes in the deck package have previously been imported, Anki
+will keep the version with the most recent modification time. So if you
+download an updated deck, the edits that have been made in the updated
+version will be made in your collection as well, but if you re-import an
+unchanged deck after making edits in your collection, the changes in
+your collection will be kept.</p>
+<p>If you choose not to include scheduling information, Anki will assume
+that you are sharing the deck with other people, and will remove marked
+and leech tags so that they will have a clean copy of it.</p>
 
                     </main>
 
