@@ -32,6 +32,7 @@ translations may not always be up to date.
 - [العربية](https://abdnh.github.io/anki-manual/)
 - [فارسى](https://web.archive.org/web/20250328102629/http://ankidroid.ir/anki.pdf)
 - [日本語](http://wikiwiki.jp/rage2050/)
+- [日本語 - GitHub Pages](https://h13.github.io/anki-manual/)
 - [简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/)
 
 If you would like to help translate the manual into a different language,
